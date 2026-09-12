@@ -1,0 +1,31 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id           String   @id @default(cuid())
+  name         String
+  priceInCents Int
+  imageUrl     String
+  active       Boolean  @default(true)
+  sortOrder    Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([active, sortOrder])
+  @@map("products")
+}
+
+model ShopConfig {
+  id             String   @id @default("default")
+  storeName      String   @default("Catálogo de Roupas")
+  whatsappNumber String   @default("")
+  updatedAt      DateTime @updatedAt
+
+  @@map("shop_configs")
+}
