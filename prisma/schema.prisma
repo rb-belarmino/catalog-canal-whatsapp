@@ -30,3 +30,12 @@ model ShopConfig {
 
   @@map("shop_configs")
 }
+
+model SharedWishlist {
+  id         String   @id // short 6-8 char code, e.g. "x7k9p2"
+  productIds String   // comma-separated product IDs
+  createdAt  DateTime @default(now())
+
+  @@map("shared_wishlists")
+}
+

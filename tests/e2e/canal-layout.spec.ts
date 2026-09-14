@@ -72,7 +72,7 @@ test.describe("Canal Concept Layout & Flow E2E Tests", () => {
     await expect(page.getByText(/ou até 10x de R\$\s*49,90/i)).toBeVisible();
 
     // Verify WhatsApp checkout button is present
-    const checkoutBtn = page.getByRole("button", { name: /Enviar Lista no WhatsApp/i });
+    const checkoutBtn = page.getByRole("button", { name: /Envie aqui a sua lista|Enviar Lista no WhatsApp/i });
     await expect(checkoutBtn).toBeVisible();
   });
 });

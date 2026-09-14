@@ -5,7 +5,7 @@ test.describe("User Story 4: Send Wishlist to WhatsApp", () => {
     await page.goto("/");
     await page.locator('[data-testid="wishlist-trigger"]').click();
 
-    const sendButton = page.getByRole("button", { name: /Enviar Lista no WhatsApp/i });
+    const sendButton = page.getByRole("button", { name: /Envie aqui a sua lista|Enviar Lista no WhatsApp/i });
     await expect(sendButton).not.toBeVisible();
     await expect(page.getByText(/Sua Lista de Desejos está Vazia/i)).toBeVisible();
   });
@@ -32,7 +32,7 @@ test.describe("User Story 4: Send Wishlist to WhatsApp", () => {
     await page.reload();
     await page.locator('[data-testid="wishlist-trigger"]').click();
 
-    const sendButton = page.getByRole("button", { name: /Enviar Lista no WhatsApp/i });
+    const sendButton = page.getByRole("button", { name: /Envie aqui a sua lista|Enviar Lista no WhatsApp/i });
     // Check if configured or warning is shown
     const isButtonEnabled = await sendButton.isEnabled().catch(() => false);
     if (isButtonEnabled) {
@@ -43,7 +43,9 @@ test.describe("User Story 4: Send Wishlist to WhatsApp", () => {
       if (popup) {
         expect(popup.url()).toMatch(/wa\.me|whatsapp\.com/);
         const decodedUrl = decodeURIComponent(popup.url().replace(/\+/g, " "));
-        expect(decodedUrl).toContain("Blusa de Linho");
+        expect(decodedUrl).toMatch(/Olá,\s*Jéssica!/i);
+        expect(decodedUrl).toContain("da *Canal*:");
+        expect(decodedUrl).toMatch(/\/l\/|\/lista\?ids=/);
       }
     }
   });

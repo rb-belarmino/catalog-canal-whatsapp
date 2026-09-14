@@ -64,4 +64,29 @@ test.describe("User Story 3: Wishlist Flow", () => {
       await expect(firstAddButton).toBeVisible();
     }
   });
+
+  test("renders shared wishlist page /lista with selected items", async ({ page }) => {
+    // Inject item into localStorage
+    await page.goto("/");
+    await page.evaluate(() => {
+      localStorage.setItem(
+        "catalog_wishlist_items",
+        JSON.stringify([
+          {
+            id: "test-prod-lista",
+            name: "Camisa Seda Canal",
+            priceInCents: 29900,
+            imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400",
+            addedAt: Date.now(),
+          },
+        ])
+      );
+    });
+
+    await page.goto("/lista");
+    await expect(page.getByRole("heading", { name: /Lista de Desejos/i })).toBeVisible();
+    await expect(page.getByText("Camisa Seda Canal")).toBeVisible();
+    await expect(page.getByText(/R\$\s*299,00/).first()).toBeVisible();
+    await expect(page.getByText(/1 peça selecionada/i)).toBeVisible();
+  });
 });

@@ -1,0 +1,70 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { getProductsByIds, getShopConfig } from '@/modules/catalog/queries'
+import { CanalLogo } from '@/modules/catalog/components/canal-logo'
+import { WishlistListViewer } from './wishlist-list-viewer'
+
+export const revalidate = 60
+
+export const metadata: Metadata = {
+  title: 'Lista de Desejos | Catálogo By Jéssica Lindsey - Canal Concept',
+  description: 'Confira as peças selecionadas na lista de desejos da Canal Concept.'
+}
+
+interface WishlistPageProps {
+  searchParams: Promise<{ ids?: string }>
+}
+
+export default async function WishlistPage({ searchParams }: WishlistPageProps) {
+  const resolvedParams = await searchParams
+  const idsString = resolvedParams?.ids || ''
+  const ids = idsString
+    .split(',')
+    .map((id) => id.trim())
+    .filter(Boolean)
+
+  const [products, config] = await Promise.all([
+    getProductsByIds(ids),
+    getShopConfig()
+  ])
+
+  return (
+    <div className="min-h-screen flex flex-col bg-[#F7F7F7]">
+      {/* Minimalist Header */}
+      <header className="sticky top-0 z-40 w-full bg-white border-b border-[#E2E2E2]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+          <CanalLogo />
+          <Link
+            href="/"
+            className="text-[11px] uppercase tracking-[2px] text-neutral-600 hover:text-black font-medium transition-colors"
+          >
+            Ver Catálogo
+          </Link>
+        </div>
+      </header>
+
+      {/* Main Content Area */}
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="mb-8 text-center">
+          <h1 className="inline-block bg-taupe-300 text-black px-4 py-1.5 text-xs sm:text-sm font-semibold tracking-[4px] uppercase">
+            Lista de Desejos
+          </h1>
+          <p className="text-neutral-500 text-[11px] sm:text-xs tracking-[1px] uppercase mt-2">
+            Seleção exclusiva de peças para atendimento da Consultora Jéssica
+          </p>
+        </div>
+
+        <WishlistListViewer
+          initialProducts={products}
+          whatsappNumber={config.whatsappNumber}
+          storeName={config.storeName}
+        />
+      </main>
+
+      {/* Minimalist Footer */}
+      <footer className="border-t border-[#E2E2E2] bg-white py-8 text-center text-xs text-neutral-500 tracking-[1.5px] uppercase mt-auto">
+        <p>© {new Date().getFullYear()} Canal Concept. Todos os direitos reservados.</p>
+      </footer>
+    </div>
+  )
+}

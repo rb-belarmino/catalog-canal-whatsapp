@@ -48,10 +48,10 @@ export default async function HomePage() {
 
           {/* Section Heading with Editorial Canal Concept Typography */}
           <div className="mb-6 sm:mb-8 text-center">
-            <h1 className="text-xs sm:text-sm font-semibold tracking-[4px] uppercase text-black">
-              Coleção Oficial
+            <h1 className="inline-block bg-taupe-300 text-black px-4 py-1.5 text-xs sm:text-sm font-semibold tracking-[4px] uppercase">
+              Coleção Verão 2027
             </h1>
-            <p className="text-neutral-500 text-[11px] sm:text-xs tracking-[1px] uppercase mt-1">
+            <p className="text-neutral-500 text-[11px] sm:text-xs tracking-[1px] uppercase mt-2">
               Monte sua seleção de favoritos para que a consultora oriente você
               e reserve suas peças no WhatsApp
             </p>

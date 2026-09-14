@@ -6,57 +6,31 @@ export interface BuildWhatsAppMessageOptions {
   totalInCents?: number
   whatsappNumber: string
   storeName?: string
-}
-
-function formatItemLine(item: WishlistItem): string[] {
-  return [
-    `• *${item.name}* - ${formatCurrencyBRL(item.priceInCents)}`,
-    item.imageUrl ? `  Foto: ${item.imageUrl}` : ''
-  ].filter(Boolean)
-}
-
-function truncateIfLong(
-  lines: string[],
-  items: WishlistItem[],
-  greeting: string
-): string {
-  const full = lines.join('\n')
-  if (full.length <= 1900 || items.length <= 3) return full
-
-  const remainder = items.length - 3
-  const countLabel = remainder === 1 ? 'peça selecionada' : 'peças selecionadas'
-
-  const truncated: string[] = [
-    greeting,
-    '',
-    ...items.slice(0, 3).flatMap(formatItemLine),
-    `_(... e mais ${remainder} ${countLabel})_`,
-    '',
-    'Gostaria de verificar a disponibilidade dos tamanhos e tirar algumas dúvidas com você!'
-  ]
-
-  return truncated.join('\n')
+  shareUrl?: string
+  origin?: string
 }
 
 export function formatWhatsAppMessage({
   items,
-  storeName = 'Canal Concept'
+  shareUrl
 }: {
   items: WishlistItem[]
   totalInCents?: number
   storeName?: string
+  shareUrl?: string
 }): string {
-  const greeting = `Olá! Separei essas peças da minha lista de desejos na *${storeName}*:`
+  const greeting = 'Olá, Jéssica! Separei essas peças da minha lista de desejos da *Canal*:'
 
-  const lines: string[] = [
+  if (shareUrl) {
+    return `${greeting}\n\n${shareUrl}`
+  }
+
+  // Fallback if no shareUrl is provided
+  return [
     greeting,
     '',
-    ...items.flatMap(formatItemLine),
-    '',
-    'Gostaria de verificar a disponibilidade dos tamanhos e tirar algumas dúvidas com você!'
-  ]
-
-  return truncateIfLong(lines, items, greeting)
+    ...items.map(item => `• *${item.name}* - ${formatCurrencyBRL(item.priceInCents)}`)
+  ].join('\n')
 }
 
 export function buildWhatsAppUrl(
@@ -65,7 +39,21 @@ export function buildWhatsAppUrl(
   const cleanNumber = options.whatsappNumber.replace(/\D/g, '')
   if (!cleanNumber) return null
 
-  const message = formatWhatsAppMessage(options)
+  let shareUrl = options.shareUrl
+  if (!shareUrl) {
+    const origin =
+      options.origin ||
+      (typeof window !== 'undefined' ? window.location.origin : '')
+    if (origin && options.items.length > 0) {
+      const ids = options.items.map(i => i.id).filter(Boolean).join(',')
+      shareUrl = `${origin}/lista?ids=${encodeURIComponent(ids)}`
+    }
+  }
+
+  const message = formatWhatsAppMessage({
+    ...options,
+    shareUrl
+  })
   return `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`
 }
 

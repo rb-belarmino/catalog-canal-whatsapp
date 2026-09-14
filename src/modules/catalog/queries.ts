@@ -46,6 +46,38 @@ export async function getCatalogProducts(): Promise<CatalogProduct[]> {
 }
 
 /**
+ * Fetches specific products by their IDs
+ */
+export async function getProductsByIds(ids: string[]): Promise<CatalogProduct[]> {
+  if (!ids || ids.length === 0) return [];
+  try {
+    const products = await prisma.product.findMany({
+      where: {
+        id: { in: ids },
+        active: true,
+      },
+      select: {
+        id: true,
+        name: true,
+        priceInCents: true,
+        imageUrl: true,
+      },
+    });
+
+    // Maintain the order in which the IDs were provided
+    const productMap = new Map(products.map((p) => [p.id, p]));
+    return ids
+      .map((id) => productMap.get(id))
+      .filter((p): p is CatalogProduct => Boolean(p));
+  } catch (err) {
+    logger.warn("CatalogQueries", "Database not accessible in getProductsByIds", {
+      reason: err instanceof Error ? err.message : String(err),
+    });
+    return [];
+  }
+}
+
+/**
  * Fetches store display configuration
  */
 export async function getShopConfig(): Promise<PublicShopConfig> {

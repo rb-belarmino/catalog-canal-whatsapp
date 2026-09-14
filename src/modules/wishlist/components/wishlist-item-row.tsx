@@ -30,6 +30,9 @@ export function WishlistItemRow({ item, onRemove }: WishlistItemRowProps) {
           <p className="text-xs font-semibold text-black mt-1">
             {formatCurrencyBRL(item.priceInCents)}
           </p>
+          <p className="text-[9px] text-neutral-500 uppercase tracking-wider mt-0.5">
+            ou até 10x de {formatCurrencyBRL(Math.floor(item.priceInCents / 10))} sem juros
+          </p>
         </div>
       </div>
 
