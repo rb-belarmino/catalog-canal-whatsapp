@@ -36,7 +36,7 @@ export function WishlistItemRow({ item, onRemove }: WishlistItemRowProps) {
       <button
         type="button"
         onClick={() => onRemove(item.id)}
-        aria-label={`Remover ${item.name} da sacola`}
+        aria-label={`Remover ${item.name} da lista de desejos`}
         className="p-2 text-neutral-400 hover:text-black transition-colors cursor-pointer"
       >
         <Trash2 className="w-4 h-4" />

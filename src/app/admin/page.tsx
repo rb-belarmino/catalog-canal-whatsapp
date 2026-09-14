@@ -1,59 +1,63 @@
-import { redirect } from "next/navigation";
-import { isAuthenticatedAdmin } from "@/modules/admin/auth";
-import { prisma } from "@/shared/db";
-import { SortableProductList } from "@/modules/admin/components/sortable-product-list";
-import { StoreSettingsForm } from "@/modules/admin/components/store-settings-form";
+import { redirect } from 'next/navigation'
+import { isAuthenticatedAdmin } from '@/modules/admin/auth'
+import { prisma } from '@/shared/db'
+import { SortableProductList } from '@/modules/admin/components/sortable-product-list'
+import { StoreSettingsForm } from '@/modules/admin/components/store-settings-form'
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic'
 
 export default async function AdminDashboardPage() {
-  const isAuth = await isAuthenticatedAdmin();
+  const isAuth = await isAuthenticatedAdmin()
   if (!isAuth) {
-    redirect("/admin/login");
+    redirect('/admin/login')
   }
 
   let products: Array<{
-    id: string;
-    name: string;
-    priceInCents: number;
-    imageUrl: string;
-    active: boolean;
-  }> = [];
-  let config: { storeName: string; whatsappNumber: string; topAnnouncement?: string } | null = null;
-  let dbError = false;
+    id: string
+    name: string
+    priceInCents: number
+    imageUrl: string
+    active: boolean
+  }> = []
+  let config: {
+    storeName: string
+    whatsappNumber: string
+    topAnnouncement?: string
+  } | null = null
+  let dbError = false
 
   try {
     products = await prisma.product.findMany({
-      orderBy: [{ sortOrder: "asc" }, { createdAt: "desc" }],
+      orderBy: [{ sortOrder: 'asc' }, { createdAt: 'desc' }],
       select: {
         id: true,
         name: true,
         priceInCents: true,
         imageUrl: true,
-        active: true,
-      },
-    });
+        active: true
+      }
+    })
   } catch {
-    dbError = true;
+    dbError = true
   }
 
   try {
     const rawConfig = await prisma.shopConfig.findUnique({
-      where: { id: "default" },
-    });
+      where: { id: 'default' }
+    })
     if (rawConfig) {
       config = {
-        storeName: rawConfig.storeName || "Canal Concept",
-        whatsappNumber: rawConfig.whatsappNumber || "",
-        topAnnouncement: rawConfig.topAnnouncement || "FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX",
-      };
+        storeName: rawConfig.storeName || 'Canal Concept',
+        whatsappNumber: rawConfig.whatsappNumber || '',
+        topAnnouncement: rawConfig.topAnnouncement || ''
+      }
     }
   } catch {
     config = {
-      storeName: "Canal Concept",
-      whatsappNumber: "",
-      topAnnouncement: "FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX",
-    };
+      storeName: 'Canal Concept',
+      whatsappNumber: '',
+      topAnnouncement: ''
+    }
   }
 
   return (
@@ -64,7 +68,18 @@ export default async function AdminDashboardPage() {
             ⚠️ Banco de Dados Não Conectado
           </p>
           <p className="text-xs text-amber-800 leading-relaxed">
-            Não foi possível alcançar o servidor de banco de dados. Configure sua string de conexão do <strong>Neon PostgreSQL</strong> no arquivo <code className="bg-amber-100 px-1 py-0.5 rounded">.env</code> na variável <code className="bg-amber-100 px-1 py-0.5 rounded">DATABASE_URL</code> e execute <code className="bg-amber-100 px-1 py-0.5 rounded">npx prisma db push</code>.
+            Não foi possível alcançar o servidor de banco de dados. Configure
+            sua string de conexão do <strong>Neon PostgreSQL</strong> no arquivo{' '}
+            <code className="bg-amber-100 px-1 py-0.5 rounded">.env</code> na
+            variável{' '}
+            <code className="bg-amber-100 px-1 py-0.5 rounded">
+              DATABASE_URL
+            </code>{' '}
+            e execute{' '}
+            <code className="bg-amber-100 px-1 py-0.5 rounded">
+              npx prisma db push
+            </code>
+            .
           </p>
         </div>
       )}
@@ -72,8 +87,8 @@ export default async function AdminDashboardPage() {
       {/* Store Settings Section */}
       <section>
         <StoreSettingsForm
-          initialStoreName={config?.storeName ?? "Canal Concept"}
-          initialWhatsappNumber={config?.whatsappNumber ?? ""}
+          initialStoreName={config?.storeName ?? 'Canal Concept'}
+          initialWhatsappNumber={config?.whatsappNumber ?? ''}
           initialTopAnnouncement={config?.topAnnouncement}
         />
       </section>
@@ -83,5 +98,5 @@ export default async function AdminDashboardPage() {
         <SortableProductList initialProducts={products} />
       </section>
     </div>
-  );
+  )
 }

@@ -1,12 +1,13 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("User Story 4: Send Wishlist to WhatsApp", () => {
-  test("button is disabled when wishlist is empty", async ({ page }) => {
+  test("button is not visible when wishlist is empty", async ({ page }) => {
     await page.goto("/");
-    await page.click('button[aria-label="Abrir Lista de Desejos"]');
+    await page.locator('[data-testid="wishlist-trigger"]').click();
 
-    const sendButton = page.getByRole("button", { name: /Enviar para a Vendedora/i });
-    await expect(sendButton).toBeDisabled();
+    const sendButton = page.getByRole("button", { name: /Enviar Lista no WhatsApp/i });
+    await expect(sendButton).not.toBeVisible();
+    await expect(page.getByText(/Sua Lista de Desejos está Vazia/i)).toBeVisible();
   });
 
   test("generates correct WhatsApp redirection format when items exist", async ({ page }) => {
@@ -29,19 +30,20 @@ test.describe("User Story 4: Send Wishlist to WhatsApp", () => {
     });
 
     await page.reload();
-    await page.click('button[aria-label="Abrir Lista de Desejos"]');
+    await page.locator('[data-testid="wishlist-trigger"]').click();
 
-    const sendButton = page.getByRole("button", { name: /Enviar para a Vendedora/i });
+    const sendButton = page.getByRole("button", { name: /Enviar Lista no WhatsApp/i });
     // Check if configured or warning is shown
     const isButtonEnabled = await sendButton.isEnabled().catch(() => false);
     if (isButtonEnabled) {
       // Mock window.open / window.location to assert target URL
-      const popupPromise = page.waitForEvent("popup").catch(() => null);
+      const popupPromise = page.waitForEvent("popup", { timeout: 5000 }).catch(() => null);
       await sendButton.click();
       const popup = await popupPromise;
       if (popup) {
-        expect(popup.url()).toContain("wa.me");
-        expect(popup.url()).toContain(encodeURIComponent("Blusa de Linho"));
+        expect(popup.url()).toMatch(/wa\.me|whatsapp\.com/);
+        const decodedUrl = decodeURIComponent(popup.url().replace(/\+/g, " "));
+        expect(decodedUrl).toContain("Blusa de Linho");
       }
     }
   });

@@ -9,8 +9,8 @@ test.describe("User Story 5: Store WhatsApp Number Configuration", () => {
     await expect(page).toHaveURL(/\/admin$/);
 
     // Fill store settings
-    const storeNameInput = page.locator('input[placeholder*="Boutique"]');
-    await storeNameInput.fill("Boutique Teste Playwright");
+    const storeNameInput = page.locator('input[placeholder*="Canal"]');
+    await storeNameInput.fill("Canal Concept Campinas");
 
     const phoneInput = page.locator('input[placeholder*="5511999998888"]');
     await phoneInput.fill("5511999997777");
@@ -20,6 +20,6 @@ test.describe("User Story 5: Store WhatsApp Number Configuration", () => {
 
     // Verify change reflected in public catalog
     await page.goto("/");
-    await expect(page.getByText("Boutique Teste Playwright")).toBeVisible();
+    await expect(page.getByRole("link", { name: /Canal Concept/i })).toBeVisible();
   });
 });

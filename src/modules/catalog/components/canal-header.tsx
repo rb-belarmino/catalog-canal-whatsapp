@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Search, ShoppingBag, X } from "lucide-react";
+import { Search, Heart, X } from "lucide-react";
 import { CanalLogo } from "./canal-logo";
 import { useSearch } from "../search-context";
 import { useWishlist } from "@/modules/wishlist/context";
@@ -68,15 +68,16 @@ export function CanalHeader() {
             <Search className="w-5 h-5" />
           </button>
 
-          {/* Sacola de Desejos Trigger */}
+          {/* Lista de Desejos Trigger */}
           <button
             type="button"
+            data-testid="wishlist-trigger"
             onClick={() => setIsDrawerOpen(true)}
             className="relative flex items-center gap-2 px-3 py-2 text-black hover:opacity-80 transition-opacity cursor-pointer select-none"
-            aria-label={`Abrir sacola de desejos com ${totalCount} itens`}
+            aria-label={`Abrir Lista de Desejos com ${totalCount} itens`}
           >
             <div className="relative">
-              <ShoppingBag className="w-5 h-5 sm:w-5 sm:h-5 text-black" strokeWidth={1.75} />
+              <Heart className="w-5 h-5 sm:w-5 sm:h-5 text-black" strokeWidth={1.75} />
               {totalCount > 0 && (
                 <span className="absolute -top-1.5 -right-2 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                   {totalCount}
@@ -84,7 +85,7 @@ export function CanalHeader() {
               )}
             </div>
             <span className="hidden sm:inline text-[11px] tracking-[2px] uppercase font-medium">
-              Sacola {totalCount > 0 && `(${totalCount})`}
+              Desejos {totalCount > 0 && `(${totalCount})`}
             </span>
           </button>
         </div>

@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("User Story 2: Public Catalog Browsing", () => {
   test("loads public catalog without authentication", async ({ page }) => {
     await page.goto("/");
-    await expect(page).toHaveTitle(/Canal Concept/i);
+    await expect(page).toHaveTitle(/Canal Concept|Jessica Lindsey/i);
 
     // Verify header exists
     await expect(page.locator("header")).toBeVisible();
@@ -28,9 +28,6 @@ test.describe("User Story 2: Public Catalog Browsing", () => {
     const emptyNotice = page.getByText(/Coleção em Preparação/i);
     const productGrid = page.locator('[data-testid="product-grid"]');
 
-    const hasEmptyNotice = await emptyNotice.isVisible().catch(() => false);
-    const hasGrid = await productGrid.isVisible().catch(() => false);
-
-    expect(hasEmptyNotice || hasGrid).toBeTruthy();
+    await expect(emptyNotice.or(productGrid)).toBeVisible({ timeout: 10000 });
   });
 });

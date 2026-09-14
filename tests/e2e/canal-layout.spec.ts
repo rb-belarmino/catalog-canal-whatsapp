@@ -1,21 +1,20 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Canal Concept Layout & Flow E2E Tests", () => {
-  test("displays Canal Concept branding, top announcement bar, and header", async ({
+  test("displays Canal Concept branding and clean header without top announcement bar", async ({
     page,
   }) => {
     await page.goto("/");
 
     // Verify title
-    await expect(page).toHaveTitle(/Canal Concept/i);
+    await expect(page).toHaveTitle(/Jessica Lindsey/i);
 
-    // Verify Top Announcement Bar is visible with perks
+    // Verify Top Announcement Bar is not rendered (clean editorial layout)
     const announcementBar = page.getByRole("region", { name: /Avisos e promoções/i });
-    await expect(announcementBar).toBeVisible();
-    await expect(announcementBar).toContainText(/FRETE GRÁTIS|PIX|PARCELE/i);
+    await expect(announcementBar).not.toBeVisible();
 
-    // Verify Canal Concept logo in header
-    const logoLink = page.getByRole("link", { name: /Canal Concept - Página Inicial/i });
+    // Verify Brand logo in header
+    const logoLink = page.getByRole("link", { name: /Jessica Lindsey/i });
     await expect(logoLink).toBeVisible();
   });
 
@@ -39,7 +38,7 @@ test.describe("Canal Concept Layout & Flow E2E Tests", () => {
     await expect(page.getByText(/Nenhuma Peça Encontrada/i)).not.toBeVisible();
   });
 
-  test("manages Sacola de Desejos and generates formatted WhatsApp link", async ({
+  test("manages Lista de Desejos and generates formatted WhatsApp link", async ({
     page,
   }) => {
     await page.goto("/");
@@ -62,9 +61,10 @@ test.describe("Canal Concept Layout & Flow E2E Tests", () => {
 
     await page.reload();
 
-    // Open Sacola
-    const openSacolaBtn = page.locator('button[aria-label*="sacola"]').first();
-    await openSacolaBtn.click();
+    // Wait for hydration to load items from localStorage into the header counter
+    const openWishlistBtn = page.locator('[data-testid="wishlist-trigger"]');
+    await expect(openWishlistBtn).toContainText("1");
+    await openWishlistBtn.click();
 
     // Verify item in drawer
     await expect(page.getByText("Vestido Midi Linho Canal")).toBeVisible();
@@ -72,7 +72,7 @@ test.describe("Canal Concept Layout & Flow E2E Tests", () => {
     await expect(page.getByText(/ou até 10x de R\$\s*49,90/i)).toBeVisible();
 
     // Verify WhatsApp checkout button is present
-    const checkoutBtn = page.getByRole("button", { name: /Finalizar no WhatsApp/i });
+    const checkoutBtn = page.getByRole("button", { name: /Enviar Lista no WhatsApp/i });
     await expect(checkoutBtn).toBeVisible();
   });
 });

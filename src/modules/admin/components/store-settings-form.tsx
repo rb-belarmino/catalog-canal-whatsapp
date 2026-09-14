@@ -13,7 +13,7 @@ interface StoreSettingsFormProps {
 export function StoreSettingsForm({
   initialStoreName,
   initialWhatsappNumber,
-  initialTopAnnouncement = "FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX",
+  initialTopAnnouncement = "PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX",
 }: StoreSettingsFormProps) {
   const [storeName, setStoreName] = useState(initialStoreName);
   const [whatsappNumber, setWhatsappNumber] = useState(initialWhatsappNumber);
@@ -121,11 +121,11 @@ export function StoreSettingsForm({
           value={topAnnouncement}
           onChange={(e) => setTopAnnouncement(e.target.value)}
           maxLength={255}
-          placeholder="FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX"
+          placeholder="PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX"
           className="w-full px-3 py-2 bg-neutral-50 border border-[#E2E2E2] text-black text-sm focus:outline-none focus:border-black transition-colors"
         />
         <p className="text-[10px] text-neutral-400 mt-1">
-          Exemplo: FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX
+          Exemplo: PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX
         </p>
       </div>
 

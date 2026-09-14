@@ -16,7 +16,7 @@ export interface PublicShopConfig {
 }
 
 const DEFAULT_ANNOUNCEMENT =
-  "FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX";
+  "PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX";
 
 /**
  * Fetches all active products ordered manually by the shopkeeper (sortOrder ASC)

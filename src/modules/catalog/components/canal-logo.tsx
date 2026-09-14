@@ -1,38 +1,48 @@
-import * as React from "react";
-import Link from "next/link";
-import { cn } from "@/shared/utils";
+import * as React from 'react'
+import Link from 'next/link'
+import { cn } from '@/shared/utils'
 
 interface CanalLogoProps {
-  className?: string;
-  variant?: "dark" | "light";
+  className?: string
+  variant?: 'dark' | 'light'
 }
 
 /**
- * Official Canal Concept typographic SVG brand logo
+ * Official Catalogo By Jessica Lindsey brand logo & consultant signature
  */
-export function CanalLogo({ className, variant = "dark" }: CanalLogoProps) {
-  const fillColor = variant === "dark" ? "#000000" : "#FFFFFF";
+export function CanalLogo({ className, variant = 'dark' }: CanalLogoProps) {
+  const primaryColor = variant === 'dark' ? 'text-black' : 'text-white'
+  const subtitleColor =
+    variant === 'dark' ? 'text-neutral-500' : 'text-neutral-400'
 
   return (
     <Link
       href="/"
-      aria-label="Canal Concept - Página Inicial"
-      className={cn("inline-flex items-center transition-opacity hover:opacity-85", className)}
+      aria-label="Catálogo By Jéssica Lindsey - Consultora Canal Concept Anália Franco"
+      className={cn(
+        'inline-flex flex-col items-start justify-center transition-opacity hover:opacity-85 select-none',
+        className
+      )}
     >
-      <div className="flex flex-col items-center">
-        {/* Geometric CANAL typographic wordmark */}
-        <span
-          className="text-xl sm:text-2xl font-black tracking-[7px] uppercase leading-none font-sans"
-          style={{ color: fillColor }}
-        >
-          CANAL
-        </span>
-        <span
-          className="text-[7.5px] sm:text-[8.5px] font-medium tracking-[4px] uppercase text-neutral-500 mt-1"
-        >
-          CONCEPT
-        </span>
-      </div>
+      {/* Main Brand Title */}
+      <span
+        className={cn(
+          'text-xs sm:text-sm md:text-[15px] font-bold tracking-[1.5px] sm:tracking-[2px] uppercase leading-tight font-sans',
+          primaryColor
+        )}
+      >
+        Catálogo By Jéssica Lindsey
+      </span>
+
+      {/* Subtitle */}
+      <span
+        className={cn(
+          'text-[8.5px] sm:text-[9.5px] md:text-[10px] font-medium tracking-[0.8px] sm:tracking-[1.2px] uppercase mt-0.5',
+          subtitleColor
+        )}
+      >
+        Consultora Canal Concept - Anália Franco
+      </span>
     </Link>
-  );
+  )
 }

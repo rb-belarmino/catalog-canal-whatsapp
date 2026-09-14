@@ -16,7 +16,6 @@ export function SkeletonGrid() {
           <div className="p-3 sm:p-4 space-y-2.5">
             <div className="h-3 bg-neutral-200 w-4/5" />
             <div className="h-4 bg-neutral-200 w-1/2" />
-            <div className="h-2.5 bg-neutral-100 w-2/3" />
             <div className="h-8 bg-neutral-200 w-full mt-3" />
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Heart, Check, ImageOff, ShoppingBag } from "lucide-react";
+import { Heart, Check, ImageOff } from "lucide-react";
 import { formatCurrencyBRL } from "@/shared/utils";
 import { useWishlist } from "@/modules/wishlist/context";
 import { Button } from "@/shared/components/ui/button";
@@ -21,10 +21,6 @@ export function ProductCard({ product }: ProductCardProps) {
     toggleItem(product);
   }
 
-  // Calculate 10x installment and 5% PIX discount
-  const installmentsCount = 10;
-  const installmentCents = Math.round(product.priceInCents / installmentsCount);
-  const pixPriceCents = Math.round(product.priceInCents * 0.95);
 
   return (
     <div className="group bg-white flex flex-col justify-between border border-[#E2E2E2] hover:border-black transition-all duration-300">
@@ -51,7 +47,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <button
           type="button"
           onClick={handleToggleWishlist}
-          aria-label={isSelected ? "Remover da sacola" : "Adicionar à sacola"}
+          aria-label={isSelected ? "Remover da lista de desejos" : "Adicionar à lista de desejos"}
           className={`absolute top-2.5 right-2.5 p-2 transition-all duration-200 cursor-pointer ${
             isSelected
               ? "bg-black text-white"
@@ -73,12 +69,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <p className="text-sm sm:text-base font-semibold text-black tracking-tight">
               {formatCurrencyBRL(product.priceInCents)}
             </p>
-            <p className="text-[11px] text-neutral-500 font-normal tracking-wide mt-0.5">
-              ou {installmentsCount}x de {formatCurrencyBRL(installmentCents)} sem juros
-            </p>
-            <p className="text-[10px] font-medium text-emerald-700 tracking-wider uppercase mt-1">
-              {formatCurrencyBRL(pixPriceCents)} no PIX (5% OFF)
-            </p>
+
           </div>
         </div>
 
@@ -94,12 +85,12 @@ export function ProductCard({ product }: ProductCardProps) {
             {isSelected ? (
               <>
                 <Check className="w-3.5 h-3.5" />
-                <span>Na Sacola</span>
+                <span>Na Lista de Desejos</span>
               </>
             ) : (
               <>
-                <ShoppingBag className="w-3.5 h-3.5" />
-                <span>Adicionar à Sacola</span>
+                <Heart className="w-3.5 h-3.5" />
+                <span>Adicionar aos Desejos</span>
               </>
             )}
           </Button>

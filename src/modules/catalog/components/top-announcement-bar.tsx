@@ -1,36 +1,36 @@
-"use client";
+'use client'
 
-import * as React from "react";
+import * as React from 'react'
 
 interface TopAnnouncementBarProps {
-  announcement?: string;
+  announcement?: string
 }
 
 export function TopAnnouncementBar({
-  announcement = "FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX",
+  announcement = 'CATÁLOGO DA CONSULTORA JÉSSICA LINDSEY'
 }: TopAnnouncementBarProps) {
   const items = React.useMemo(() => {
     return announcement
-      .split("|")
-      .map((item) => item.trim())
-      .filter(Boolean);
-  }, [announcement]);
+      .split('|')
+      .map(item => item.trim())
+      .filter(Boolean)
+  }, [announcement])
 
-  const [currentIndex, setCurrentIndex] = React.useState(0);
+  const [currentIndex, setCurrentIndex] = React.useState(0)
 
   React.useEffect(() => {
-    if (items.length <= 1) return;
+    if (items.length <= 1) return
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % items.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [items]);
+      setCurrentIndex(prev => (prev + 1) % items.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [items])
 
-  if (items.length === 0) return null;
+  if (items.length === 0) return null
 
   return (
     <div
-      className="w-full bg-white border-b border-[#E2E2E2] h-7 flex items-center justify-center px-4 overflow-hidden select-none"
+      className="w-full bg-white border-b border-canal-border h-7 flex items-center justify-center px-4 overflow-hidden select-none"
       role="region"
       aria-label="Avisos e promoções"
     >
@@ -53,5 +53,5 @@ export function TopAnnouncementBar({
         </div>
       </div>
     </div>
-  );
+  )
 }

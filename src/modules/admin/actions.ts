@@ -251,7 +251,7 @@ export async function updateShopConfigAction(input: {
         id: "default",
         storeName: data.storeName ?? "Canal Concept",
         whatsappNumber: data.whatsappNumber ?? "",
-        topAnnouncement: data.topAnnouncement ?? "FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX",
+        topAnnouncement: data.topAnnouncement ?? "PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX",
       },
       update: data,
     });
