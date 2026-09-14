@@ -106,7 +106,7 @@ export function WishlistDrawer({
               <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3">
                 <Heart className="w-5 h-5 text-neutral-400" />
               </div>
-              <h3 className="text-xs font-semibold uppercase tracking-[2px] text-black">
+              <h3 className="text-xs font-semibold uppercase tracking-canal-wide text-black">
                 Sua Lista de Desejos está Vazia
               </h3>
               <p className="text-xs text-neutral-500 mt-2 max-w-xs leading-relaxed">

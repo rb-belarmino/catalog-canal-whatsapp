@@ -88,7 +88,7 @@ export function StoreSettingsForm({
       className="bg-white border border-canal-border p-5 sm:p-6 shadow-xs space-y-4"
     >
       <div className="flex items-center justify-between border-b border-canal-border pb-3">
-        <h3 className="text-xs font-semibold uppercase tracking-[2px] text-black flex items-center gap-2">
+        <h3 className="text-xs font-semibold uppercase tracking-canal-wide text-black flex items-center gap-2">
           <Store className="w-4 h-4 text-black" />
           Configurações da Loja
         </h3>

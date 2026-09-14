@@ -23,6 +23,9 @@
   --color-canal-border: #e2e2e2;
   --color-canal-dark: #111111;
   --color-canal-muted: #767676;
+
+  --tracking-canal-wide: 2px;
+  --tracking-canal-loose: 2.8px;
 }
 
 body {
@@ -42,13 +45,4 @@ body,
 html {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-/* High-tracking editorial typography utilities */
-.tracking-canal-wide {
-  letter-spacing: 2px;
-}
-
-.tracking-canal-loose {
-  letter-spacing: 2.8px;
 }

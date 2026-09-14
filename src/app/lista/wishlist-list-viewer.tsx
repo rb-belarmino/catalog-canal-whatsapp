@@ -59,7 +59,7 @@ export function WishlistListViewer({
         <div className="mt-6">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-black hover:bg-neutral-800 text-white text-xs uppercase tracking-[2px] transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-black hover:bg-neutral-800 text-white text-xs uppercase tracking-canal-wide transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Explorar Catálogo</span>
@@ -74,7 +74,7 @@ export function WishlistListViewer({
       {/* Summary Card */}
       <div className="bg-white border border-canal-border p-4 sm:p-5 flex items-center justify-between">
         <div>
-          <span className="text-[10px] uppercase tracking-[2px] text-neutral-400 font-medium">
+          <span className="text-[10px] uppercase tracking-canal-wide text-neutral-400 font-medium">
             Resumo da Seleção
           </span>
           <p className="text-sm font-semibold uppercase tracking-[1.5px] text-black mt-0.5">
@@ -134,7 +134,7 @@ export function WishlistListViewer({
       <div className="mt-10 text-center pt-4">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-8 py-3.5 bg-black hover:bg-neutral-800 text-white text-xs uppercase tracking-[2px] transition-colors"
+          className="inline-flex items-center gap-2 px-8 py-3.5 bg-black hover:bg-neutral-800 text-white text-xs uppercase tracking-canal-wide transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Explorar Coleção Completa</span>

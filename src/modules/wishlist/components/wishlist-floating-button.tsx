@@ -22,7 +22,7 @@ export function WishlistFloatingButton() {
           {totalCount}
         </span>
       </div>
-      <span className="text-xs font-normal tracking-[2px] uppercase">
+      <span className="text-xs font-normal tracking-canal-wide uppercase">
         Ver Lista de Desejos ({totalCount})
       </span>
     </button>

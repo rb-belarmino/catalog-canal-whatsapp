@@ -44,7 +44,7 @@ Reproduzir a estética contemporânea e minimalista da **Canal Concept** (basead
   - Linhas e divisores: `#E2E2E2` e `#EEEEEE` (bordas ultra-finas e discretas).
   - Destaque sutil: `#FF005C` ou badge preto para indicativos de desconto / contador de sacola.
 - **Tipografia**:
-  - Estilo sem serifa geométrico com caixa alta e espaçamento ampliado (`uppercase`, `tracking-[2px]` a `tracking-[2.8px]`).
+  - Estilo sem serifa geométrico com caixa alta e espaçamento ampliado (`uppercase`, `tracking-canal-wide` a `tracking-[2.8px]`).
 - **Proporção Fotográfica**:
   - Aspect ratio vertical 3:4 ou 2:3 nos cartões de peças (estética de editorial de moda).
 - **Logotipo e Cabeçalho**:

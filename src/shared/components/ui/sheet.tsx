@@ -65,7 +65,7 @@ export function Sheet({
           <div>
             <h2
               id="sheet-title"
-              className="text-xs font-semibold tracking-[2px] uppercase text-black"
+              className="text-xs font-semibold tracking-canal-wide uppercase text-black"
             >
               {title}
             </h2>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, ImageOff } from 'lucide-react'
-import { getProductsByIds, getShopConfig } from '@/modules/catalog/queries'
+import { getProductsByIds } from '@/modules/catalog/queries'
 import { getSharedWishlistProductIds } from '@/modules/wishlist/actions'
 import { CanalLogo } from '@/modules/catalog/components/canal-logo'
 import { formatCurrencyBRL } from '@/shared/utils'
@@ -44,7 +44,7 @@ export default async function ShortWishlistPage({
           <CanalLogo />
           <Link
             href="/"
-            className="text-[11px] uppercase tracking-[2px] text-neutral-600 hover:text-black font-medium transition-colors flex items-center gap-1.5"
+            className="text-[11px] uppercase tracking-canal-wide text-neutral-600 hover:text-black font-medium transition-colors flex items-center gap-1.5"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Ver Catálogo</span>
@@ -59,7 +59,7 @@ export default async function ShortWishlistPage({
           <span className="inline-block bg-[#D6D2CC] text-black px-4 py-1.5 text-xs font-semibold tracking-[3.5px] uppercase">
             Seleção da Cliente
           </span>
-          <h1 className="text-xl sm:text-2xl font-normal uppercase tracking-[2px] text-black mt-3">
+          <h1 className="text-xl sm:text-2xl font-normal uppercase tracking-canal-wide text-black mt-3">
             Lista de Desejos
           </h1>
           <p className="text-neutral-500 text-xs tracking-[1px] uppercase mt-1">
@@ -70,7 +70,7 @@ export default async function ShortWishlistPage({
         {/* Summary Card */}
         <div className="bg-white border border-canal-border p-4 sm:p-5 mb-8 flex items-center justify-between">
           <div>
-            <span className="text-[10px] uppercase tracking-[2px] text-neutral-400 font-medium">
+            <span className="text-[10px] uppercase tracking-canal-wide text-neutral-400 font-medium">
               Resumo da Seleção
             </span>
             <p className="text-sm font-semibold uppercase tracking-[1.5px] text-black mt-0.5">
@@ -128,7 +128,7 @@ export default async function ShortWishlistPage({
         <div className="mt-12 text-center">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-black hover:bg-neutral-800 text-white text-xs uppercase tracking-[2px] transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-black hover:bg-neutral-800 text-white text-xs uppercase tracking-canal-wide transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Explorar Coleção Completa</span>

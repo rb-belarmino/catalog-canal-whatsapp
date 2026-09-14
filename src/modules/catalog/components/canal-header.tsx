@@ -41,7 +41,7 @@ export function CanalHeader() {
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               placeholder="BUSCAR NO CATÁLOGO..."
-              className="w-full bg-transparent border-b border-canal-border focus:border-black pl-6 pr-6 py-1.5 text-[11px] tracking-[2px] uppercase text-black placeholder:text-neutral-400 focus:outline-none transition-colors"
+              className="w-full bg-transparent border-b border-canal-border focus:border-black pl-6 pr-6 py-1.5 text-[11px] tracking-canal-wide uppercase text-black placeholder:text-neutral-400 focus:outline-none transition-colors"
             />
             {searchQuery && (
               <button
@@ -87,7 +87,7 @@ export function CanalHeader() {
                 </span>
               )}
             </div>
-            <span className="hidden sm:inline text-[11px] tracking-[2px] uppercase font-medium">
+            <span className="hidden sm:inline text-[11px] tracking-canal-wide uppercase font-medium">
               Desejos {totalCount > 0 && `(${totalCount})`}
             </span>
           </button>

@@ -43,7 +43,7 @@ export default async function WishlistPage({
           <CanalLogo />
           <Link
             href="/"
-            className="text-[11px] uppercase tracking-[2px] text-neutral-600 hover:text-black font-medium transition-colors"
+            className="text-[11px] uppercase tracking-canal-wide text-neutral-600 hover:text-black font-medium transition-colors"
           >
             Ver Catálogo
           </Link>
@@ -56,7 +56,7 @@ export default async function WishlistPage({
           <span className="inline-block bg-[#D6D2CC] text-black px-4 py-1.5 text-xs font-semibold tracking-[3.5px] uppercase">
             Seleção da Cliente
           </span>
-          <h1 className="text-xl sm:text-2xl font-normal uppercase tracking-[2px] text-black mt-3">
+          <h1 className="text-xl sm:text-2xl font-normal uppercase tracking-canal-wide text-black mt-3">
             Lista de Desejos
           </h1>
           <p className="text-neutral-500 text-xs tracking-[1px] uppercase mt-1">

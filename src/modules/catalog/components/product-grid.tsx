@@ -28,7 +28,7 @@ export function ProductGrid({ products }: ProductGridProps) {
         <div className="w-12 h-12 rounded-full bg-neutral-100 text-black flex items-center justify-center mx-auto mb-4">
           <Sparkles className="w-5 h-5" />
         </div>
-        <h2 className="text-xs font-semibold uppercase tracking-[2px] text-black mb-2">
+        <h2 className="text-xs font-semibold uppercase tracking-canal-wide text-black mb-2">
           Coleção em Preparação
         </h2>
         <p className="text-xs text-neutral-500 leading-relaxed max-w-xs mx-auto">
@@ -46,7 +46,7 @@ export function ProductGrid({ products }: ProductGridProps) {
         <div className="w-12 h-12 rounded-full bg-neutral-100 text-neutral-500 flex items-center justify-center mx-auto mb-3">
           <SearchX className="w-5 h-5" />
         </div>
-        <h3 className="text-xs font-semibold uppercase tracking-[2px] text-black mb-2">
+        <h3 className="text-xs font-semibold uppercase tracking-canal-wide text-black mb-2">
           Nenhuma Peça Encontrada
         </h3>
         <p className="text-xs text-neutral-500 mb-5">

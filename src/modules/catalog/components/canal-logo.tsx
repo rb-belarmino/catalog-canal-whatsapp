@@ -28,7 +28,7 @@ export function CanalLogo({ className, variant = 'dark' }: CanalLogoProps) {
       <div className="flex items-center gap-2 sm:gap-2.5">
         <span
           className={cn(
-            'text-xs sm:text-sm md:text-[15px] font-bold tracking-[2px] uppercase leading-none font-sans',
+            'text-xs sm:text-sm md:text-[15px] font-bold tracking-canal-wide uppercase leading-none font-sans',
             primaryColor
           )}
         >

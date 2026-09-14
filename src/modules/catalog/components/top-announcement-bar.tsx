@@ -37,7 +37,7 @@ export function TopAnnouncementBar({
       <div className="relative w-full max-w-4xl text-center h-full flex items-center justify-center">
         {/* Mobile: Ticker cycling smoothly between items */}
         <div className="sm:hidden w-full flex items-center justify-center transition-opacity duration-300">
-          <span className="text-[10px] tracking-[2px] font-normal uppercase text-black truncate">
+          <span className="text-[10px] tracking-canal-wide font-normal uppercase text-black truncate">
             {items[currentIndex]}
           </span>
         </div>
