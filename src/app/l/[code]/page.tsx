@@ -66,25 +66,13 @@ export default async function ShortWishlistPage({ params }: ShortWishlistPagePro
         </div>
 
         {/* Summary Card */}
-        <div className="bg-white border border-[#E2E2E2] p-4 sm:p-6 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="bg-white border border-[#E2E2E2] p-4 sm:p-5 mb-8 flex items-center justify-between">
           <div>
-            <span className="text-[11px] uppercase tracking-[2px] text-neutral-400 font-medium">
+            <span className="text-[10px] uppercase tracking-[2px] text-neutral-400 font-medium">
               Resumo da Seleção
             </span>
-            <p className="text-sm font-semibold uppercase tracking-[1px] text-black mt-0.5">
-              {totalCount} {totalCount === 1 ? 'peça escolhida' : 'peças escolhidas'}
-            </p>
-          </div>
-
-          <div className="sm:text-right border-t sm:border-t-0 pt-3 sm:pt-0 border-neutral-100">
-            <span className="text-[10px] uppercase tracking-[2px] text-neutral-400">
-              Valor Total Estimado
-            </span>
-            <p className="text-xl sm:text-2xl font-bold tracking-tight text-black">
-              {formatCurrencyBRL(totalInCents)}
-            </p>
-            <p className="text-[10px] text-neutral-500 uppercase tracking-wider mt-0.5">
-              ou até 10x de {formatCurrencyBRL(Math.floor(totalInCents / 10))} sem juros
+            <p className="text-sm font-semibold uppercase tracking-[1.5px] text-black mt-0.5">
+              {totalCount} {totalCount === 1 ? 'peça selecionada' : 'peças selecionadas'}
             </p>
           </div>
         </div>
