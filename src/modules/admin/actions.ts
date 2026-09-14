@@ -227,12 +227,18 @@ export async function updateShopConfigAction(input: {
     }
 
     if (input.whatsappNumber !== undefined) {
-      const cleanPhone = input.whatsappNumber.replace(/\D/g, "");
-      if (cleanPhone && !/^[1-9][0-9]{9,14}$/.test(cleanPhone)) {
-        return {
-          success: false,
-          error: "Número de WhatsApp inválido. Digite o código do país + DDD + número (ex: 5511999998888).",
-        };
+      let cleanPhone = input.whatsappNumber.replace(/\D/g, "");
+      if (cleanPhone) {
+        // If user typed only DDD + number (10 or 11 digits), automatically prepend Brazil DDI (55)
+        if (cleanPhone.length === 10 || cleanPhone.length === 11) {
+          cleanPhone = `55${cleanPhone}`;
+        }
+        if (!/^[1-9][0-9]{9,14}$/.test(cleanPhone)) {
+          return {
+            success: false,
+            error: "Número de WhatsApp inválido. Digite apenas DDD + número (ex: 11 99999-8888).",
+          };
+        }
       }
       data.whatsappNumber = cleanPhone;
     }

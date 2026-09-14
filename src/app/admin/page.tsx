@@ -89,7 +89,6 @@ export default async function AdminDashboardPage() {
         <StoreSettingsForm
           initialStoreName={config?.storeName ?? 'Canal Concept'}
           initialWhatsappNumber={config?.whatsappNumber ?? ''}
-          initialTopAnnouncement={config?.topAnnouncement}
         />
       </section>
 
