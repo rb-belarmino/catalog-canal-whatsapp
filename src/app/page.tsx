@@ -7,7 +7,7 @@ import { SearchProvider } from '@/modules/catalog/search-context'
 import { WishlistDrawer } from '@/modules/wishlist/components/wishlist-drawer'
 import { WishlistFloatingButton } from '@/modules/wishlist/components/wishlist-floating-button'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 60
 
 async function CatalogSection() {
   const products = await getCatalogProducts()
