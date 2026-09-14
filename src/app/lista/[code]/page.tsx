@@ -34,7 +34,6 @@ export default async function ShortWishlistPage({
   }
 
   const products = await getProductsByIds(productIds)
-  const totalInCents = products.reduce((acc, p) => acc + p.priceInCents, 0)
   const totalCount = products.length
 
   return (

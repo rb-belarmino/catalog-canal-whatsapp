@@ -1,9 +1,11 @@
 'use client'
 
-import { MessageCircle, AlertCircle, Heart } from 'lucide-react'
+import * as React from 'react'
+import { MessageCircle, AlertCircle, Heart, Loader2 } from 'lucide-react'
 import { useWishlist } from '../context'
 import { WishlistItemRow } from './wishlist-item-row'
 import { buildWhatsAppUrl, dispatchToWhatsApp } from '../whatsapp'
+import { createShortWishlistAction } from '../actions'
 import { Sheet } from '@/shared/components/ui/sheet'
 import { Button } from '@/shared/components/ui/button'
 
@@ -26,27 +28,50 @@ export function WishlistDrawer({
     setIsDrawerOpen
   } = useWishlist()
 
+  const [isGenerating, setIsGenerating] = React.useState(false)
+
   const isConfigured = Boolean(
     whatsappNumber && whatsappNumber.replace(/\D/g, '')
   )
   const isEmpty = items.length === 0
-  function handleSendToWhatsApp() {
-    if (isEmpty || !isConfigured) return
 
-    const origin = typeof window !== 'undefined' ? window.location.origin : ''
-    const ids = items.map((i) => i.id).filter(Boolean).join(',')
-    const shareUrl = origin && ids ? `${origin}/lista?ids=${ids}` : undefined
+  async function handleSendToWhatsApp() {
+    if (isEmpty || !isConfigured || isGenerating) return
 
-    const url = buildWhatsAppUrl({
-      items,
-      totalInCents,
-      whatsappNumber,
-      storeName,
-      shareUrl
-    })
+    setIsGenerating(true)
+    try {
+      const origin = typeof window !== 'undefined' ? window.location.origin : ''
+      const ids = items.map((i) => i.id).filter(Boolean)
 
-    if (url) {
-      dispatchToWhatsApp(url)
+      let shareUrl: string | undefined
+
+      try {
+        const res = await createShortWishlistAction(ids)
+        if (res.success && res.code && origin) {
+          shareUrl = `${origin}/lista/${res.code}`
+        }
+      } catch (err) {
+        console.error('Failed to create short wishlist link, using fallback', err)
+      }
+
+      // Fallback if shortener failed or origin is missing
+      if (!shareUrl && origin && ids.length > 0) {
+        shareUrl = `${origin}/lista?ids=${ids.join(',')}`
+      }
+
+      const url = buildWhatsAppUrl({
+        items,
+        totalInCents,
+        whatsappNumber,
+        storeName,
+        shareUrl
+      })
+
+      if (url) {
+        dispatchToWhatsApp(url)
+      }
+    } finally {
+      setIsGenerating(false)
     }
   }
 
@@ -114,11 +139,20 @@ export function WishlistDrawer({
             <Button
               type="button"
               onClick={handleSendToWhatsApp}
-              disabled={isEmpty || !isConfigured}
-              className="w-full min-h-[48px] h-auto py-3 px-4 bg-black hover:bg-neutral-800 text-white font-medium text-xs tracking-[1.5px] uppercase flex items-center justify-center gap-2 text-center"
+              disabled={isEmpty || !isConfigured || isGenerating}
+              className="w-full min-h-[48px] h-auto py-3 px-4 bg-black hover:bg-neutral-800 text-white font-medium text-xs tracking-[1.5px] uppercase flex items-center justify-center gap-2 text-center disabled:opacity-50 cursor-pointer"
             >
-              <MessageCircle className="w-4 h-4 shrink-0" />
-              <span>Envie aqui a sua lista e fale com a consultora</span>
+              {isGenerating ? (
+                <>
+                  <Loader2 className="w-4 h-4 shrink-0 animate-spin" />
+                  <span>Gerando link da lista...</span>
+                </>
+              ) : (
+                <>
+                  <MessageCircle className="w-4 h-4 shrink-0" />
+                  <span>Envie aqui a sua lista e fale com a consultora</span>
+                </>
+              )}
             </Button>
 
             <p className="text-[10px] text-center text-neutral-400 uppercase tracking-widest">

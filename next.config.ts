@@ -17,6 +17,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/l/:code',
+        destination: '/lista/:code',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

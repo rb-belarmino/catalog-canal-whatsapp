@@ -45,7 +45,7 @@ test.describe("User Story 4: Send Wishlist to WhatsApp", () => {
         const decodedUrl = decodeURIComponent(popup.url().replace(/\+/g, " "));
         expect(decodedUrl).toMatch(/Olá,\s*Jéssica!/i);
         expect(decodedUrl).toContain("da *Canal*:");
-        expect(decodedUrl).toMatch(/\/l\/|\/lista\?ids=/);
+        expect(decodedUrl).toMatch(/\/l\/|\/lista\/|\/lista\?ids=/);
       }
     }
   });
