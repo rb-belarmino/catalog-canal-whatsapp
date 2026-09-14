@@ -1,11 +1,22 @@
 import { prisma } from '@/shared/db'
 import { logger } from '@/shared/logger'
 
+export interface CatalogPiece {
+  id: string
+  name: string
+  priceInCents: number
+  formattedPrice?: string
+  colors?: string[]
+  composition?: string
+  details?: string[]
+}
+
 export interface CatalogProduct {
   id: string
   name: string
   priceInCents: number
   imageUrl: string
+  pieces?: CatalogPiece[]
 }
 
 export interface PublicShopConfig {
@@ -29,10 +40,11 @@ export async function getCatalogProducts(): Promise<CatalogProduct[]> {
         id: true,
         name: true,
         priceInCents: true,
-        imageUrl: true
+        imageUrl: true,
+        pieces: true
       }
     })
-    return products
+    return products as unknown as CatalogProduct[]
   } catch (err) {
     logger.warn(
       'CatalogQueries',
@@ -46,30 +58,62 @@ export async function getCatalogProducts(): Promise<CatalogProduct[]> {
 }
 
 /**
- * Fetches specific products by their IDs
+ * Fetches specific products or individual pieces by their IDs
  */
 export async function getProductsByIds(
   ids: string[]
 ): Promise<CatalogProduct[]> {
   if (!ids || ids.length === 0) return []
   try {
+    // Extract base look IDs if IDs refer to pieces like 'look-01-p2'
+    const parentIds = ids.map(id => id.replace(/-p\d+$/, ''))
+    const uniqueLookupIds = Array.from(new Set([...ids, ...parentIds]))
+
     const products = await prisma.product.findMany({
       where: {
-        id: { in: ids },
+        id: { in: uniqueLookupIds },
         active: true
       },
       select: {
         id: true,
         name: true,
         priceInCents: true,
-        imageUrl: true
+        imageUrl: true,
+        pieces: true
       }
     })
 
-    // Maintain the order in which the IDs were provided
-    const productMap = new Map(products.map(p => [p.id, p]))
+    // Maintain a map of both the Look itself and each of its constituent pieces
+    const itemMap = new Map<string, CatalogProduct>()
+    for (const p of products) {
+      const piecesList = (p.pieces as unknown as CatalogPiece[]) || []
+      itemMap.set(p.id, {
+        id: p.id,
+        name: p.name,
+        priceInCents: p.priceInCents,
+        imageUrl: p.imageUrl,
+        pieces: piecesList
+      })
+
+      for (const piece of piecesList) {
+        if (piece && piece.id) {
+          const colorsStr =
+            piece.colors && piece.colors.length > 0
+              ? ` (${piece.colors.join(', ')})`
+              : ''
+          itemMap.set(piece.id, {
+            id: piece.id,
+            name: `${piece.name}${colorsStr} - ${p.name}`,
+            priceInCents: piece.priceInCents,
+            imageUrl: p.imageUrl
+          })
+        }
+      }
+    }
+
+    // Maintain the order in which the IDs were requested
     return ids
-      .map(id => productMap.get(id))
+      .map(id => itemMap.get(id))
       .filter((p): p is CatalogProduct => Boolean(p))
   } catch (err) {
     logger.warn(

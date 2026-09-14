@@ -7,10 +7,15 @@ const globalForPrisma = globalThis as unknown as {
   pool: Pool | undefined
 }
 
+const connectionString = process.env.DATABASE_URL?.replace(
+  /([?&])sslmode=require(?=&|$)/g,
+  '$1sslmode=verify-full'
+)
+
 const pool =
   globalForPrisma.pool ??
   new Pool({
-    connectionString: process.env.DATABASE_URL
+    connectionString
   })
 
 const adapter = new PrismaPg(pool)

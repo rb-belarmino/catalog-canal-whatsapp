@@ -14,11 +14,22 @@ interface ProductGridProps {
 export function ProductGrid({ products }: ProductGridProps) {
   const { searchQuery, setSearchQuery } = useSearch()
 
-  // Filter products by search query
+  // Filter products by search query across look title, piece names, colors, and composition
   const filteredProducts = React.useMemo(() => {
     if (!searchQuery.trim()) return products
     const query = searchQuery.toLowerCase().trim()
-    return products.filter(p => p.name.toLowerCase().includes(query))
+    return products.filter(p => {
+      if (p.name.toLowerCase().includes(query)) return true
+      if (p.pieces && Array.isArray(p.pieces)) {
+        return p.pieces.some(piece => {
+          if (piece.name.toLowerCase().includes(query)) return true
+          if (piece.composition && piece.composition.toLowerCase().includes(query)) return true
+          if (piece.colors && piece.colors.some(c => c.toLowerCase().includes(query))) return true
+          return false
+        })
+      }
+      return false
+    })
   }, [products, searchQuery])
 
   // Case 1: Catalog is genuinely empty (no products in store)

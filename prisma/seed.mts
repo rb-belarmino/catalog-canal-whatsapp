@@ -2,129 +2,120 @@ import { PrismaClient } from '@prisma/client'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { Pool } from 'pg'
 
+const connectionString = process.env.DATABASE_URL?.replace(
+  /([?&])sslmode=require(?=&|$)/g,
+  '$1sslmode=verify-full'
+)
+
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL
+  connectionString
 })
 const adapter = new PrismaPg(pool)
 const prisma = new PrismaClient({ adapter })
 
-const PRODUCTS = [
-  {
-    name: 'Vestido Midi Floral Elegante',
-    priceInCents: 18990, // R$ 189,90
-    imageUrl:
-      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80',
-    active: true,
-    sortOrder: 1
-  },
-  {
-    name: 'Camisa Casual Linho Cru',
-    priceInCents: 14990, // R$ 149,90
-    imageUrl:
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80',
-    active: true,
-    sortOrder: 2
-  },
-  {
-    name: 'Calça Alfaiataria Pantalona Bege',
-    priceInCents: 19990, // R$ 199,90
-    imageUrl:
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80',
-    active: true,
-    sortOrder: 3
-  },
-  {
-    name: 'Blazer Slim Fit Terracota',
-    priceInCents: 27990, // R$ 279,90
-    imageUrl:
-      'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&w=800&q=80',
-    active: true,
-    sortOrder: 4
-  },
-  {
-    name: 'Cropped Tricot Canelado Off-White',
-    priceInCents: 7990, // R$ 79,90
-    imageUrl:
-      'https://images.unsplash.com/photo-1534126511673-b6899657816a?auto=format&fit=crop&w=800&q=80',
-    active: true,
-    sortOrder: 5
-  },
-  {
-    name: 'Jaqueta Jeans Oversized Vintage',
-    priceInCents: 22990, // R$ 229,90
-    imageUrl:
-      'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80',
-    active: true,
-    sortOrder: 6
-  },
-  {
-    name: 'Conjunto Moletom Minimalista Cinza',
-    priceInCents: 24990, // R$ 249,90
-    imageUrl:
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
-    active: true,
-    sortOrder: 7
-  },
-  {
-    name: 'Saia Midi Plissada Verde Oliva',
-    priceInCents: 13990, // R$ 139,90
-    imageUrl:
-      'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=800&q=80',
-    active: true,
-    sortOrder: 8
-  },
-  {
-    name: 'Cardigan Tricot Alongado Avelã',
-    priceInCents: 16990, // R$ 169,90
-    imageUrl:
-      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=800&q=80',
-    active: true,
-    sortOrder: 9
-  },
-  {
-    name: 'Macacão Utilitário Sarja Caqui',
-    priceInCents: 21990, // R$ 219,90
-    imageUrl:
-      'https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=800&q=80',
-    active: true,
-    sortOrder: 10
+import fs from 'node:fs'
+import path from 'node:path'
+
+interface CatalogPiece {
+  name: string
+  price: number
+  priceInCents: number
+  formattedPrice: string
+  colors?: string[]
+}
+
+interface CatalogLook {
+  id: string
+  index: number
+  imageFile: string
+  imageUrl: string
+  rawText: string
+  title: string
+  pieces: CatalogPiece[]
+  composition?: string | null
+  details?: string[]
+  totalPriceInCents: number
+  formattedTotalPrice: string
+}
+
+interface CatalogData {
+  metadata: {
+    date: string
+    source: string
+    totalLooks: number
+    totalIndividualPieces: number
   }
-]
+  looks: CatalogLook[]
+}
 
 async function main() {
-  console.log('🌱 Iniciando o seed do catálogo...')
+  console.log('🌱 Iniciando o seed do catálogo oficial Canal Concept...')
+
+  const catalogFilePath = path.join(process.cwd(), 'src/public/catalog-2026-09-14.json')
+  const catalogRaw = fs.readFileSync(catalogFilePath, 'utf-8')
+  const catalogData: CatalogData = JSON.parse(catalogRaw)
+
+  console.log(`📁 Catálogo carregado: ${catalogData.looks.length} looks encontrados.`)
 
   // Configuração padrão da loja
-  console.log('Configurando informações da loja (ShopConfig)...')
+  console.log('⚙️  Configurando informações da loja (ShopConfig)...')
   await prisma.shopConfig.upsert({
     where: { id: 'default' },
     update: {
-      storeName: 'Aura & Co. Ateliê',
-      whatsappNumber: '5511999998888'
+      storeName: 'Canal Concept',
+      whatsappNumber: '5511999998888',
+      topAnnouncement: 'PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX'
     },
     create: {
       id: 'default',
-      storeName: 'Aura & Co. Ateliê',
-      whatsappNumber: '5511999998888'
+      storeName: 'Canal Concept',
+      whatsappNumber: '5511999998888',
+      topAnnouncement: 'PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX'
     }
   })
 
   // Limpeza de produtos anteriores para garantir estado limpo e reproduzível
-  console.log('Removendo produtos antigos...')
+  console.log('🗑️  Removendo produtos antigos do mock...')
   await prisma.product.deleteMany({})
 
-  // Inserção dos produtos mockados
-  console.log(`Inserindo ${PRODUCTS.length} produtos mockados com fotos...`)
-  for (const product of PRODUCTS) {
+  // Inserção dos 41 looks com suas peças
+  console.log(`🚀 Inserindo ${catalogData.looks.length} looks com suas respectivas peças...`)
+  let totalPiecesCount = 0
+
+  for (const look of catalogData.looks) {
+    const piecesWithId = look.pieces.map((piece, pIdx) => ({
+      id: `${look.id}-p${pIdx + 1}`,
+      name: piece.name,
+      priceInCents: piece.priceInCents,
+      formattedPrice: piece.formattedPrice,
+      colors: piece.colors || [],
+      composition: look.composition || undefined,
+      details: look.details || []
+    }))
+
+    totalPiecesCount += piecesWithId.length
+
+    const primaryPiece = piecesWithId[0]
     const created = await prisma.product.create({
-      data: product
+      data: {
+        id: look.id,
+        name: look.title,
+        priceInCents: primaryPiece.priceInCents,
+        imageUrl: look.imageUrl,
+        pieces: piecesWithId,
+        active: true,
+        sortOrder: look.index
+      }
     })
+
     console.log(
-      `  ✓ [${created.sortOrder}] ${created.name} - R$ ${(created.priceInCents / 100).toFixed(2)}`
+      `  ✓ [Look ${String(created.sortOrder).padStart(2, '0')}] ${created.name} (${piecesWithId.length} ${piecesWithId.length > 1 ? 'peças' : 'peça'}) - Img: ${created.imageUrl}`
     )
   }
 
-  console.log('🎉 Seed concluído com sucesso!')
+  console.log(
+    `🎉 Seed concluído com sucesso! ${catalogData.looks.length} looks e ${totalPiecesCount} peças registradas.`
+  )
 }
 
 main()
