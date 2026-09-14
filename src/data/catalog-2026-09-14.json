@@ -1,0 +1,2426 @@
+{
+  "metadata": {
+    "date": "2026-09-14",
+    "source": "WhatsApp Chat - Jeh ❤️",
+    "totalLooks": 41,
+    "totalIndividualPieces": 66
+  },
+  "looks": [
+    {
+      "id": "look-01",
+      "index": 1,
+      "imageFile": "01-blusa-e-saia-caramelo-bege.jpg",
+      "imageUrl": "/images/01-blusa-e-saia-caramelo-bege.jpg",
+      "rawText": "Blusa 279,99\nSaia 329,99\nNas cores: caramelo e bege\n\nPeças em viscose e com forro ",
+      "title": "Blusa e Saia",
+      "pieces": [
+        {
+          "name": "Blusa",
+          "price": 279.99,
+          "priceInCents": 27999,
+          "formattedPrice": "R$ 279,99",
+          "colors": [
+            "Caramelo",
+            "Bege"
+          ]
+        },
+        {
+          "name": "Saia",
+          "price": 329.99,
+          "priceInCents": 32999,
+          "formattedPrice": "R$ 329,99",
+          "colors": [
+            "Caramelo",
+            "Bege"
+          ]
+        }
+      ],
+      "composition": "Peças em viscose e com forro",
+      "details": [
+        "Com forro"
+      ],
+      "totalPriceInCents": 60998,
+      "formattedTotalPrice": "R$ 609,98"
+    },
+    {
+      "id": "look-02",
+      "index": 2,
+      "imageFile": "02-blusa-e-calca-caramelo-onca.jpg",
+      "imageUrl": "/images/02-blusa-e-calca-caramelo-onca.jpg",
+      "rawText": "Blusa 279,99\nNas cores: caramelo, onça e bege\n\nCalça 399,99\nNas cores: caramelo, marinho e bege\n\nEm Viscose,\nCalça com forro estilo shortinho ",
+      "title": "Blusa e Calça",
+      "pieces": [
+        {
+          "name": "Blusa",
+          "price": 279.99,
+          "priceInCents": 27999,
+          "formattedPrice": "R$ 279,99",
+          "colors": [
+            "Caramelo",
+            "Onça",
+            "Bege"
+          ]
+        },
+        {
+          "name": "Calça",
+          "price": 399.99,
+          "priceInCents": 39999,
+          "formattedPrice": "R$ 399,99",
+          "colors": [
+            "Caramelo",
+            "Marinho",
+            "Bege"
+          ]
+        }
+      ],
+      "composition": "Em Viscose",
+      "details": [
+        "Calça com forro estilo shortinho"
+      ],
+      "totalPriceInCents": 67998,
+      "formattedTotalPrice": "R$ 679,98"
+    },
+    {
+      "id": "look-03",
+      "index": 3,
+      "imageFile": "03-camisa-e-shorts-marinho-bege.jpg",
+      "imageUrl": "/images/03-camisa-e-shorts-marinho-bege.jpg",
+      "rawText": "Camisa 319,99\nNas cores: marinho e bege\n\nShorts 319,99\nNas cores: marinho e caramelo\n\nEm viscose,\nShort forrado ",
+      "title": "Camisa e Shorts",
+      "pieces": [
+        {
+          "name": "Camisa",
+          "price": 319.99,
+          "priceInCents": 31999,
+          "formattedPrice": "R$ 319,99",
+          "colors": [
+            "Marinho",
+            "Bege"
+          ]
+        },
+        {
+          "name": "Shorts",
+          "price": 319.99,
+          "priceInCents": 31999,
+          "formattedPrice": "R$ 319,99",
+          "colors": [
+            "Marinho",
+            "Caramelo"
+          ]
+        }
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "totalPriceInCents": 63998,
+      "formattedTotalPrice": "R$ 639,98"
+    },
+    {
+      "id": "look-04",
+      "index": 4,
+      "imageFile": "04-vestido-marinho-bege.jpg",
+      "imageUrl": "/images/04-vestido-marinho-bege.jpg",
+      "rawText": "Vestido 479,99\nNas cores: marinho e bege\n\nEm viscose e com forro ",
+      "title": "Vestido",
+      "pieces": [
+        {
+          "name": "Vestido",
+          "price": 479.99,
+          "priceInCents": 47999,
+          "formattedPrice": "R$ 479,99",
+          "colors": [
+            "Marinho",
+            "Bege"
+          ]
+        }
+      ],
+      "composition": "Em viscose e com forro",
+      "details": [
+        "Com forro"
+      ],
+      "totalPriceInCents": 47999,
+      "formattedTotalPrice": "R$ 479,99"
+    },
+    {
+      "id": "look-05",
+      "index": 5,
+      "imageFile": "05-blazer-shorts-e-calca-marinho-bege.jpg",
+      "imageUrl": "/images/05-blazer-shorts-e-calca-marinho-bege.jpg",
+      "rawText": "Blazer 569,99\nShorts 329,99\nCalça 399,99\n\nNas cores: marinho e bege\n\nTem algodão na composição ",
+      "title": "Blazer, Shorts e Calça",
+      "pieces": [
+        {
+          "name": "Blazer",
+          "price": 569.99,
+          "priceInCents": 56999,
+          "formattedPrice": "R$ 569,99",
+          "colors": [
+            "Marinho",
+            "Bege"
+          ]
+        },
+        {
+          "name": "Shorts",
+          "price": 329.99,
+          "priceInCents": 32999,
+          "formattedPrice": "R$ 329,99",
+          "colors": [
+            "Marinho",
+            "Bege"
+          ]
+        },
+        {
+          "name": "Calça",
+          "price": 399.99,
+          "priceInCents": 39999,
+          "formattedPrice": "R$ 399,99",
+          "colors": [
+            "Marinho",
+            "Bege"
+          ]
+        }
+      ],
+      "composition": "Tem algodão na composição",
+      "details": [],
+      "totalPriceInCents": 129997,
+      "formattedTotalPrice": "R$ 1.299,97"
+    },
+    {
+      "id": "look-06",
+      "index": 6,
+      "imageFile": "06-blazer-e-shorts-listrado-natural.jpg",
+      "imageUrl": "/images/06-blazer-e-shorts-listrado-natural.jpg",
+      "rawText": "Blazer 599,99\nShorts 359,99\n\nNa cor: listrado natural\n\nEm linho e liocel ",
+      "title": "Blazer e Shorts",
+      "pieces": [
+        {
+          "name": "Blazer",
+          "price": 599.99,
+          "priceInCents": 59999,
+          "formattedPrice": "R$ 599,99",
+          "colors": [
+            "Listrado natural"
+          ]
+        },
+        {
+          "name": "Shorts",
+          "price": 359.99,
+          "priceInCents": 35999,
+          "formattedPrice": "R$ 359,99",
+          "colors": [
+            "Listrado natural"
+          ]
+        }
+      ],
+      "composition": "Em linho e liocel",
+      "details": [],
+      "totalPriceInCents": 95998,
+      "formattedTotalPrice": "R$ 959,98"
+    },
+    {
+      "id": "look-07",
+      "index": 7,
+      "imageFile": "07-blazer-e-shorts-khaki-natural.jpg",
+      "imageUrl": "/images/07-blazer-e-shorts-khaki-natural.jpg",
+      "rawText": "Blazer 499,99\nShorts 359,99\n\nNas cores: khaki e natural\n\nLinho e viscose na composição ",
+      "title": "Blazer e Shorts",
+      "pieces": [
+        {
+          "name": "Blazer",
+          "price": 499.99,
+          "priceInCents": 49999,
+          "formattedPrice": "R$ 499,99",
+          "colors": [
+            "Khaki",
+            "Natural"
+          ]
+        },
+        {
+          "name": "Shorts",
+          "price": 359.99,
+          "priceInCents": 35999,
+          "formattedPrice": "R$ 359,99",
+          "colors": [
+            "Khaki",
+            "Natural"
+          ]
+        }
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "totalPriceInCents": 85998,
+      "formattedTotalPrice": "R$ 859,98"
+    },
+    {
+      "id": "look-08",
+      "index": 8,
+      "imageFile": "08-camisa-e-calca-marrom-off.jpg",
+      "imageUrl": "/images/08-camisa-e-calca-marrom-off.jpg",
+      "rawText": "Camisa 379,99\nCalça 429,99\n\nNas cores: marrom e off\n\nAlgodão e linho na composição ",
+      "title": "Camisa e Calça",
+      "pieces": [
+        {
+          "name": "Camisa",
+          "price": 379.99,
+          "priceInCents": 37999,
+          "formattedPrice": "R$ 379,99",
+          "colors": [
+            "Marrom",
+            "Off"
+          ]
+        },
+        {
+          "name": "Calça",
+          "price": 429.99,
+          "priceInCents": 42999,
+          "formattedPrice": "R$ 429,99",
+          "colors": [
+            "Marrom",
+            "Off"
+          ]
+        }
+      ],
+      "composition": "Algodão e linho na composição",
+      "details": [],
+      "totalPriceInCents": 80998,
+      "formattedTotalPrice": "R$ 809,98"
+    },
+    {
+      "id": "look-09",
+      "index": 9,
+      "imageFile": "09-vestido-marrom-off.jpg",
+      "imageUrl": "/images/09-vestido-marrom-off.jpg",
+      "rawText": "Vestido 459,99\n\nNas cores: marrom e off ",
+      "title": "Vestido",
+      "pieces": [
+        {
+          "name": "Vestido",
+          "price": 459.99,
+          "priceInCents": 45999,
+          "formattedPrice": "R$ 459,99",
+          "colors": [
+            "Marrom",
+            "Off"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 45999,
+      "formattedTotalPrice": "R$ 459,99"
+    },
+    {
+      "id": "look-10",
+      "index": 10,
+      "imageFile": "10-blusa-e-calca-marrom-off.jpg",
+      "imageUrl": "/images/10-blusa-e-calca-marrom-off.jpg",
+      "rawText": "Blusa 299,99\nCalça 399,99\n\nNas cores: marrom e off ",
+      "title": "Blusa e Calça",
+      "pieces": [
+        {
+          "name": "Blusa",
+          "price": 299.99,
+          "priceInCents": 29999,
+          "formattedPrice": "R$ 299,99",
+          "colors": [
+            "Marrom",
+            "Off"
+          ]
+        },
+        {
+          "name": "Calça",
+          "price": 399.99,
+          "priceInCents": 39999,
+          "formattedPrice": "R$ 399,99",
+          "colors": [
+            "Marrom",
+            "Off"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 69998,
+      "formattedTotalPrice": "R$ 699,98"
+    },
+    {
+      "id": "look-11",
+      "index": 11,
+      "imageFile": "11-macaquinho-khaki-verde.jpg",
+      "imageUrl": "/images/11-macaquinho-khaki-verde.jpg",
+      "rawText": "Macaquinho 459,99\n\nNas cores: khaki e verde ",
+      "title": "Macaquinho",
+      "pieces": [
+        {
+          "name": "Macaquinho",
+          "price": 459.99,
+          "priceInCents": 45999,
+          "formattedPrice": "R$ 459,99",
+          "colors": [
+            "Khaki",
+            "Verde"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 45999,
+      "formattedTotalPrice": "R$ 459,99"
+    },
+    {
+      "id": "look-12",
+      "index": 12,
+      "imageFile": "12-vestido-bege.jpg",
+      "imageUrl": "/images/12-vestido-bege.jpg",
+      "rawText": "Vestido 499,99\n\nCor bege ",
+      "title": "Vestido",
+      "pieces": [
+        {
+          "name": "Vestido",
+          "price": 499.99,
+          "priceInCents": 49999,
+          "formattedPrice": "R$ 499,99",
+          "colors": [
+            "Bege"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 49999,
+      "formattedTotalPrice": "R$ 499,99"
+    },
+    {
+      "id": "look-13",
+      "index": 13,
+      "imageFile": "13-camisa-e-bermuda-khaki.jpg",
+      "imageUrl": "/images/13-camisa-e-bermuda-khaki.jpg",
+      "rawText": "Camisa 319,99\nNa cor: Khaki\n\nBermuda 359,99\nNas cores: khaki e verde ",
+      "title": "Camisa e Bermuda",
+      "pieces": [
+        {
+          "name": "Camisa",
+          "price": 319.99,
+          "priceInCents": 31999,
+          "formattedPrice": "R$ 319,99",
+          "colors": [
+            "Khaki"
+          ]
+        },
+        {
+          "name": "Bermuda",
+          "price": 359.99,
+          "priceInCents": 35999,
+          "formattedPrice": "R$ 359,99",
+          "colors": [
+            "Khaki",
+            "Verde"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 67998,
+      "formattedTotalPrice": "R$ 679,98"
+    },
+    {
+      "id": "look-14",
+      "index": 14,
+      "imageFile": "14-top-e-calca-off-khaki.jpg",
+      "imageUrl": "/images/14-top-e-calca-off-khaki.jpg",
+      "rawText": "Top 269,99\nCalça 399,99\n\nNas cores: off e khaki ",
+      "title": "Top e Calça",
+      "pieces": [
+        {
+          "name": "Top",
+          "price": 269.99,
+          "priceInCents": 26999,
+          "formattedPrice": "R$ 269,99",
+          "colors": [
+            "Off",
+            "Khaki"
+          ]
+        },
+        {
+          "name": "Calça",
+          "price": 399.99,
+          "priceInCents": 39999,
+          "formattedPrice": "R$ 399,99",
+          "colors": [
+            "Off",
+            "Khaki"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 66998,
+      "formattedTotalPrice": "R$ 669,98"
+    },
+    {
+      "id": "look-15",
+      "index": 15,
+      "imageFile": "15-camisa-e-shorts-amarelo-off.jpg",
+      "imageUrl": "/images/15-camisa-e-shorts-amarelo-off.jpg",
+      "rawText": "Camisa 359,99\nNas cores: Amarelo e off\n\nShorts 359,99\nNas cores: Natural e khaki\n\nLinho e viscose na composição ",
+      "title": "Camisa e Shorts",
+      "pieces": [
+        {
+          "name": "Camisa",
+          "price": 359.99,
+          "priceInCents": 35999,
+          "formattedPrice": "R$ 359,99",
+          "colors": [
+            "Amarelo",
+            "Off"
+          ]
+        },
+        {
+          "name": "Shorts",
+          "price": 359.99,
+          "priceInCents": 35999,
+          "formattedPrice": "R$ 359,99",
+          "colors": [
+            "Natural",
+            "Khaki"
+          ]
+        }
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "totalPriceInCents": 71998,
+      "formattedTotalPrice": "R$ 719,98"
+    },
+    {
+      "id": "look-16",
+      "index": 16,
+      "imageFile": "16-vestido-longo-amarelo-off.jpg",
+      "imageUrl": "/images/16-vestido-longo-amarelo-off.jpg",
+      "rawText": "Vestido longo 499,99\nNas cores: Amarelo e off\n\nLinho e viscose na composição ",
+      "title": "Vestido longo",
+      "pieces": [
+        {
+          "name": "Vestido longo",
+          "price": 499.99,
+          "priceInCents": 49999,
+          "formattedPrice": "R$ 499,99",
+          "colors": [
+            "Amarelo",
+            "Off"
+          ]
+        }
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "totalPriceInCents": 49999,
+      "formattedTotalPrice": "R$ 499,99"
+    },
+    {
+      "id": "look-17",
+      "index": 17,
+      "imageFile": "17-vestido-off-amarelo.jpg",
+      "imageUrl": "/images/17-vestido-off-amarelo.jpg",
+      "rawText": "Vestido 479,99\nNas cores: off e amarelo\n\nLinho e viscose na composição ",
+      "title": "Vestido",
+      "pieces": [
+        {
+          "name": "Vestido",
+          "price": 479.99,
+          "priceInCents": 47999,
+          "formattedPrice": "R$ 479,99",
+          "colors": [
+            "Off",
+            "Amarelo"
+          ]
+        }
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "totalPriceInCents": 47999,
+      "formattedTotalPrice": "R$ 479,99"
+    },
+    {
+      "id": "look-18",
+      "index": 18,
+      "imageFile": "18-macaquinho-khaki-preto.jpg",
+      "imageUrl": "/images/18-macaquinho-khaki-preto.jpg",
+      "rawText": "Macaquinho 459,99\n\nNas cores: khaki e preto ",
+      "title": "Macaquinho",
+      "pieces": [
+        {
+          "name": "Macaquinho",
+          "price": 459.99,
+          "priceInCents": 45999,
+          "formattedPrice": "R$ 459,99",
+          "colors": [
+            "Khaki",
+            "Preto"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 45999,
+      "formattedTotalPrice": "R$ 459,99"
+    },
+    {
+      "id": "look-19",
+      "index": 19,
+      "imageFile": "19-camisa-e-saia-verde.jpg",
+      "imageUrl": "/images/19-camisa-e-saia-verde.jpg",
+      "rawText": "Camisa 329,99\nNa cor Verde \n\nSaia 429,99\nNas cores: Verde e khaki ",
+      "title": "Camisa e Saia",
+      "pieces": [
+        {
+          "name": "Camisa",
+          "price": 329.99,
+          "priceInCents": 32999,
+          "formattedPrice": "R$ 329,99",
+          "colors": [
+            "Verde"
+          ]
+        },
+        {
+          "name": "Saia",
+          "price": 429.99,
+          "priceInCents": 42999,
+          "formattedPrice": "R$ 429,99",
+          "colors": [
+            "Verde",
+            "Khaki"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 75998,
+      "formattedTotalPrice": "R$ 759,98"
+    },
+    {
+      "id": "look-20",
+      "index": 20,
+      "imageFile": "20-camisa-e-calca-khaki-areia.jpg",
+      "imageUrl": "/images/20-camisa-e-calca-khaki-areia.jpg",
+      "rawText": "Camisa 319,99\nCalça 399,99\n\nNas cores: khaki e areia ",
+      "title": "Camisa e Calça",
+      "pieces": [
+        {
+          "name": "Camisa",
+          "price": 319.99,
+          "priceInCents": 31999,
+          "formattedPrice": "R$ 319,99",
+          "colors": [
+            "Khaki",
+            "Areia"
+          ]
+        },
+        {
+          "name": "Calça",
+          "price": 399.99,
+          "priceInCents": 39999,
+          "formattedPrice": "R$ 399,99",
+          "colors": [
+            "Khaki",
+            "Areia"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 71998,
+      "formattedTotalPrice": "R$ 719,98"
+    },
+    {
+      "id": "look-21",
+      "index": 21,
+      "imageFile": "21-blazer-e-calca-natural-khaki.jpg",
+      "imageUrl": "/images/21-blazer-e-calca-natural-khaki.jpg",
+      "rawText": "Blazer 499,99\nCalça 429,99\n\nNas cores: natural e Khaki\n\nLinho e viscose na composição ",
+      "title": "Blazer e Calça",
+      "pieces": [
+        {
+          "name": "Blazer",
+          "price": 499.99,
+          "priceInCents": 49999,
+          "formattedPrice": "R$ 499,99",
+          "colors": [
+            "Natural",
+            "Khaki"
+          ]
+        },
+        {
+          "name": "Calça",
+          "price": 429.99,
+          "priceInCents": 42999,
+          "formattedPrice": "R$ 429,99",
+          "colors": [
+            "Natural",
+            "Khaki"
+          ]
+        }
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "totalPriceInCents": 92998,
+      "formattedTotalPrice": "R$ 929,98"
+    },
+    {
+      "id": "look-22",
+      "index": 22,
+      "imageFile": "22-regata-e-calca-aladin-verde-preto.jpg",
+      "imageUrl": "/images/22-regata-e-calca-aladin-verde-preto.jpg",
+      "rawText": "Regata 219,99\nCalça Aladin 439,99\n\nNas cores: verde e preto\n\nEm viscose ",
+      "title": "Regata e Calça Aladin",
+      "pieces": [
+        {
+          "name": "Regata",
+          "price": 219.99,
+          "priceInCents": 21999,
+          "formattedPrice": "R$ 219,99",
+          "colors": [
+            "Verde",
+            "Preto"
+          ]
+        },
+        {
+          "name": "Calça Aladin",
+          "price": 439.99,
+          "priceInCents": 43999,
+          "formattedPrice": "R$ 439,99",
+          "colors": [
+            "Verde",
+            "Preto"
+          ]
+        }
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "totalPriceInCents": 65998,
+      "formattedTotalPrice": "R$ 659,98"
+    },
+    {
+      "id": "look-23",
+      "index": 23,
+      "imageFile": "23-vestido-onca-marinho.jpg",
+      "imageUrl": "/images/23-vestido-onca-marinho.jpg",
+      "rawText": "Vestido 529,99\nNas cores: onça, marinho e bege\n\nEm viscose ",
+      "title": "Vestido",
+      "pieces": [
+        {
+          "name": "Vestido",
+          "price": 529.99,
+          "priceInCents": 52999,
+          "formattedPrice": "R$ 529,99",
+          "colors": [
+            "Onça",
+            "Marinho",
+            "Bege"
+          ]
+        }
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "totalPriceInCents": 52999,
+      "formattedTotalPrice": "R$ 529,99"
+    },
+    {
+      "id": "look-24",
+      "index": 24,
+      "imageFile": "24-regata-e-saia-onca.jpg",
+      "imageUrl": "/images/24-regata-e-saia-onca.jpg",
+      "rawText": "Regata 199,99\nSaia 329,99\n\nCor: Onça\n\nEm viscose ",
+      "title": "Regata e Saia",
+      "pieces": [
+        {
+          "name": "Regata",
+          "price": 199.99,
+          "priceInCents": 19999,
+          "formattedPrice": "R$ 199,99",
+          "colors": [
+            "Onça"
+          ]
+        },
+        {
+          "name": "Saia",
+          "price": 329.99,
+          "priceInCents": 32999,
+          "formattedPrice": "R$ 329,99",
+          "colors": [
+            "Onça"
+          ]
+        }
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "totalPriceInCents": 52998,
+      "formattedTotalPrice": "R$ 529,98"
+    },
+    {
+      "id": "look-25",
+      "index": 25,
+      "imageFile": "25-blusa-e-saia-cinza.jpg",
+      "imageUrl": "/images/25-blusa-e-saia-cinza.jpg",
+      "rawText": "Blusa 359,99\nSaia 399,99\n\nCinza ",
+      "title": "Blusa e Saia",
+      "pieces": [
+        {
+          "name": "Blusa",
+          "price": 359.99,
+          "priceInCents": 35999,
+          "formattedPrice": "R$ 359,99",
+          "colors": [
+            "Cinza"
+          ]
+        },
+        {
+          "name": "Saia",
+          "price": 399.99,
+          "priceInCents": 39999,
+          "formattedPrice": "R$ 399,99",
+          "colors": [
+            "Cinza"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 75998,
+      "formattedTotalPrice": "R$ 759,98"
+    },
+    {
+      "id": "look-26",
+      "index": 26,
+      "imageFile": "26-colete-e-shorts-cinza.jpg",
+      "imageUrl": "/images/26-colete-e-shorts-cinza.jpg",
+      "rawText": "Colete 499,99\nShorts 359,99\n\nCinza ",
+      "title": "Colete e Shorts",
+      "pieces": [
+        {
+          "name": "Colete",
+          "price": 499.99,
+          "priceInCents": 49999,
+          "formattedPrice": "R$ 499,99",
+          "colors": [
+            "Cinza"
+          ]
+        },
+        {
+          "name": "Shorts",
+          "price": 359.99,
+          "priceInCents": 35999,
+          "formattedPrice": "R$ 359,99",
+          "colors": [
+            "Cinza"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 85998,
+      "formattedTotalPrice": "R$ 859,98"
+    },
+    {
+      "id": "look-27",
+      "index": 27,
+      "imageFile": "27-colete-e-calca-cinza.jpg",
+      "imageUrl": "/images/27-colete-e-calca-cinza.jpg",
+      "rawText": "Colete 499,99\nCalça 499,99\n\nCinza ",
+      "title": "Colete e Calça",
+      "pieces": [
+        {
+          "name": "Colete",
+          "price": 499.99,
+          "priceInCents": 49999,
+          "formattedPrice": "R$ 499,99",
+          "colors": [
+            "Cinza"
+          ]
+        },
+        {
+          "name": "Calça",
+          "price": 499.99,
+          "priceInCents": 49999,
+          "formattedPrice": "R$ 499,99",
+          "colors": [
+            "Cinza"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 99998,
+      "formattedTotalPrice": "R$ 999,98"
+    },
+    {
+      "id": "look-28",
+      "index": 28,
+      "imageFile": "28-blusa-e-shorts-marrom-off.jpg",
+      "imageUrl": "/images/28-blusa-e-shorts-marrom-off.jpg",
+      "rawText": "Blusa 319,99\nShorts 329,99\n\nNas cores: Marrom e off\n\nLinho e viscose na composição ",
+      "title": "Blusa e Shorts",
+      "pieces": [
+        {
+          "name": "Blusa",
+          "price": 319.99,
+          "priceInCents": 31999,
+          "formattedPrice": "R$ 319,99",
+          "colors": [
+            "Marrom",
+            "Off"
+          ]
+        },
+        {
+          "name": "Shorts",
+          "price": 329.99,
+          "priceInCents": 32999,
+          "formattedPrice": "R$ 329,99",
+          "colors": [
+            "Marrom",
+            "Off"
+          ]
+        }
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "totalPriceInCents": 64998,
+      "formattedTotalPrice": "R$ 649,98"
+    },
+    {
+      "id": "look-29",
+      "index": 29,
+      "imageFile": "29-vestido-azul-off.jpg",
+      "imageUrl": "/images/29-vestido-azul-off.jpg",
+      "rawText": "Vestido 499,99\n\nNas cores: azul e off ",
+      "title": "Vestido",
+      "pieces": [
+        {
+          "name": "Vestido",
+          "price": 499.99,
+          "priceInCents": 49999,
+          "formattedPrice": "R$ 499,99",
+          "colors": [
+            "Azul",
+            "Off"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 49999,
+      "formattedTotalPrice": "R$ 499,99"
+    },
+    {
+      "id": "look-30",
+      "index": 30,
+      "imageFile": "30-saia-transpassada-marrom-natural.jpg",
+      "imageUrl": "/images/30-saia-transpassada-marrom-natural.jpg",
+      "rawText": "Saia transpassada 299,99\n\nNas cores: marrom e natural \n\nLinho e viscose na composição ",
+      "title": "Saia transpassada",
+      "pieces": [
+        {
+          "name": "Saia transpassada",
+          "price": 299.99,
+          "priceInCents": 29999,
+          "formattedPrice": "R$ 299,99",
+          "colors": [
+            "Marrom",
+            "Natural"
+          ]
+        }
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "totalPriceInCents": 29999,
+      "formattedTotalPrice": "R$ 299,99"
+    },
+    {
+      "id": "look-31",
+      "index": 31,
+      "imageFile": "31-vestido-marrom-natural.jpg",
+      "imageUrl": "/images/31-vestido-marrom-natural.jpg",
+      "rawText": "Vestido 459,99\n\nNas cores: Marrom e natural\n\nLinho e viscose na composição ",
+      "title": "Vestido",
+      "pieces": [
+        {
+          "name": "Vestido",
+          "price": 459.99,
+          "priceInCents": 45999,
+          "formattedPrice": "R$ 459,99",
+          "colors": [
+            "Marrom",
+            "Natural"
+          ]
+        }
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "totalPriceInCents": 45999,
+      "formattedTotalPrice": "R$ 459,99"
+    },
+    {
+      "id": "look-32",
+      "index": 32,
+      "imageFile": "32-macacao-khaki-preto.jpg",
+      "imageUrl": "/images/32-macacao-khaki-preto.jpg",
+      "rawText": "Macacão 499,99\n\nNas cores: Khaki e preto ",
+      "title": "Macacão",
+      "pieces": [
+        {
+          "name": "Macacão",
+          "price": 499.99,
+          "priceInCents": 49999,
+          "formattedPrice": "R$ 499,99",
+          "colors": [
+            "Khaki",
+            "Preto"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 49999,
+      "formattedTotalPrice": "R$ 499,99"
+    },
+    {
+      "id": "look-33",
+      "index": 33,
+      "imageFile": "33-camisa-manga-curta-rosa-off-white.jpg",
+      "imageUrl": "/images/33-camisa-manga-curta-rosa-off-white.jpg",
+      "rawText": "Camisa manga curta 289,99\n\nNas cores: rosa e off white\n\nEm algodão ",
+      "title": "Camisa manga curta",
+      "pieces": [
+        {
+          "name": "Camisa manga curta",
+          "price": 289.99,
+          "priceInCents": 28999,
+          "formattedPrice": "R$ 289,99",
+          "colors": [
+            "Rosa",
+            "Off white"
+          ]
+        }
+      ],
+      "composition": "Em algodão",
+      "details": [],
+      "totalPriceInCents": 28999,
+      "formattedTotalPrice": "R$ 289,99"
+    },
+    {
+      "id": "look-34",
+      "index": 34,
+      "imageFile": "34-camisa-e-shorts-natural-verde.jpg",
+      "imageUrl": "/images/34-camisa-e-shorts-natural-verde.jpg",
+      "rawText": "Camisa 299,99\nNas cores: Natural, verde  e khaki\n\nShorts 299,99\nNas cores: Natural e Verde\n\nAlgodão e linho na composição ",
+      "title": "Camisa e Shorts",
+      "pieces": [
+        {
+          "name": "Camisa",
+          "price": 299.99,
+          "priceInCents": 29999,
+          "formattedPrice": "R$ 299,99",
+          "colors": [
+            "Natural",
+            "Verde",
+            "Khaki"
+          ]
+        },
+        {
+          "name": "Shorts",
+          "price": 299.99,
+          "priceInCents": 29999,
+          "formattedPrice": "R$ 299,99",
+          "colors": [
+            "Natural",
+            "Verde"
+          ]
+        }
+      ],
+      "composition": "Algodão e linho na composição",
+      "details": [],
+      "totalPriceInCents": 59998,
+      "formattedTotalPrice": "R$ 599,98"
+    },
+    {
+      "id": "look-35",
+      "index": 35,
+      "imageFile": "35-camisa-e-shorts-azul-bege.jpg",
+      "imageUrl": "/images/35-camisa-e-shorts-azul-bege.jpg",
+      "rawText": "Camisa 329,99\nShorts 329,99\n\nNas cores: azul e bege ",
+      "title": "Camisa e Shorts",
+      "pieces": [
+        {
+          "name": "Camisa",
+          "price": 329.99,
+          "priceInCents": 32999,
+          "formattedPrice": "R$ 329,99",
+          "colors": [
+            "Azul",
+            "Bege"
+          ]
+        },
+        {
+          "name": "Shorts",
+          "price": 329.99,
+          "priceInCents": 32999,
+          "formattedPrice": "R$ 329,99",
+          "colors": [
+            "Azul",
+            "Bege"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 65998,
+      "formattedTotalPrice": "R$ 659,98"
+    },
+    {
+      "id": "look-36",
+      "index": 36,
+      "imageFile": "36-vestido-verde.jpg",
+      "imageUrl": "/images/36-vestido-verde.jpg",
+      "rawText": "Vestido 499,99\n\nNa cor verde\n\nEm linho e algodão ",
+      "title": "Vestido",
+      "pieces": [
+        {
+          "name": "Vestido",
+          "price": 499.99,
+          "priceInCents": 49999,
+          "formattedPrice": "R$ 499,99",
+          "colors": [
+            "Verde"
+          ]
+        }
+      ],
+      "composition": "Em linho e algodão",
+      "details": [],
+      "totalPriceInCents": 49999,
+      "formattedTotalPrice": "R$ 499,99"
+    },
+    {
+      "id": "look-37",
+      "index": 37,
+      "imageFile": "37-blusa-com-gola-khaki-off.jpg",
+      "imageUrl": "/images/37-blusa-com-gola-khaki-off.jpg",
+      "rawText": "Blusa com gola 289,99\n\nNas cores: khaki e off\n\nEm linho e algodão ",
+      "title": "Blusa com gola",
+      "pieces": [
+        {
+          "name": "Blusa com gola",
+          "price": 289.99,
+          "priceInCents": 28999,
+          "formattedPrice": "R$ 289,99",
+          "colors": [
+            "Khaki",
+            "Off"
+          ]
+        }
+      ],
+      "composition": "Em linho e algodão",
+      "details": [],
+      "totalPriceInCents": 28999,
+      "formattedTotalPrice": "R$ 289,99"
+    },
+    {
+      "id": "look-38",
+      "index": 38,
+      "imageFile": "38-camisa-em-viscose-verde-bege.jpg",
+      "imageUrl": "/images/38-camisa-em-viscose-verde-bege.jpg",
+      "rawText": "Camisa em viscose 399,99\n\nNas cores: verde e bege ",
+      "title": "Camisa em viscose",
+      "pieces": [
+        {
+          "name": "Camisa em viscose",
+          "price": 399.99,
+          "priceInCents": 39999,
+          "formattedPrice": "R$ 399,99",
+          "colors": [
+            "Verde",
+            "Bege"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 39999,
+      "formattedTotalPrice": "R$ 399,99"
+    },
+    {
+      "id": "look-39",
+      "index": 39,
+      "imageFile": "39-camisa-em-viscose-fluida-caramelo-bege.jpg",
+      "imageUrl": "/images/39-camisa-em-viscose-fluida-caramelo-bege.jpg",
+      "rawText": "Camisa em viscose fluída\n289,99\n\nNas cores: caramelo e bege ",
+      "title": "Camisa em viscose fluída",
+      "pieces": [
+        {
+          "name": "Camisa em viscose fluída",
+          "price": 289.99,
+          "priceInCents": 28999,
+          "formattedPrice": "R$ 289,99",
+          "colors": [
+            "Caramelo",
+            "Bege"
+          ]
+        }
+      ],
+      "composition": null,
+      "details": [],
+      "totalPriceInCents": 28999,
+      "formattedTotalPrice": "R$ 289,99"
+    },
+    {
+      "id": "look-40",
+      "index": 40,
+      "imageFile": "40-camisa-e-shorts-bege.jpg",
+      "imageUrl": "/images/40-camisa-e-shorts-bege.jpg",
+      "rawText": "Camisa 329,99\nShorts 329,99\n\nCor bege\n\nEm viscose ",
+      "title": "Camisa e Shorts",
+      "pieces": [
+        {
+          "name": "Camisa",
+          "price": 329.99,
+          "priceInCents": 32999,
+          "formattedPrice": "R$ 329,99",
+          "colors": [
+            "Bege"
+          ]
+        },
+        {
+          "name": "Shorts",
+          "price": 329.99,
+          "priceInCents": 32999,
+          "formattedPrice": "R$ 329,99",
+          "colors": [
+            "Bege"
+          ]
+        }
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "totalPriceInCents": 65998,
+      "formattedTotalPrice": "R$ 659,98"
+    },
+    {
+      "id": "look-41",
+      "index": 41,
+      "imageFile": "41-blusa-e-calca-verde-bege.jpg",
+      "imageUrl": "/images/41-blusa-e-calca-verde-bege.jpg",
+      "rawText": "Blusa 359,99\nCalça 429,99\n\nNas cores: verde e bege\n\nEm viscose ",
+      "title": "Blusa e Calça",
+      "pieces": [
+        {
+          "name": "Blusa",
+          "price": 359.99,
+          "priceInCents": 35999,
+          "formattedPrice": "R$ 359,99",
+          "colors": [
+            "Verde",
+            "Bege"
+          ]
+        },
+        {
+          "name": "Calça",
+          "price": 429.99,
+          "priceInCents": 42999,
+          "formattedPrice": "R$ 429,99",
+          "colors": [
+            "Verde",
+            "Bege"
+          ]
+        }
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "totalPriceInCents": 78998,
+      "formattedTotalPrice": "R$ 789,98"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-001",
+      "name": "Blusa (Caramelo, Bege)",
+      "pieceName": "Blusa",
+      "priceInCents": 27999,
+      "formattedPrice": "R$ 279,99",
+      "imageUrl": "/images/01-blusa-e-saia-caramelo-bege.jpg",
+      "imageFile": "01-blusa-e-saia-caramelo-bege.jpg",
+      "lookId": "look-01",
+      "colors": [
+        "Caramelo",
+        "Bege"
+      ],
+      "composition": "Peças em viscose e com forro",
+      "details": [
+        "Com forro"
+      ],
+      "active": true,
+      "sortOrder": 1
+    },
+    {
+      "id": "prod-002",
+      "name": "Saia (Caramelo, Bege)",
+      "pieceName": "Saia",
+      "priceInCents": 32999,
+      "formattedPrice": "R$ 329,99",
+      "imageUrl": "/images/01-blusa-e-saia-caramelo-bege.jpg",
+      "imageFile": "01-blusa-e-saia-caramelo-bege.jpg",
+      "lookId": "look-01",
+      "colors": [
+        "Caramelo",
+        "Bege"
+      ],
+      "composition": "Peças em viscose e com forro",
+      "details": [
+        "Com forro"
+      ],
+      "active": true,
+      "sortOrder": 2
+    },
+    {
+      "id": "prod-003",
+      "name": "Blusa (Caramelo, Onça, Bege)",
+      "pieceName": "Blusa",
+      "priceInCents": 27999,
+      "formattedPrice": "R$ 279,99",
+      "imageUrl": "/images/02-blusa-e-calca-caramelo-onca.jpg",
+      "imageFile": "02-blusa-e-calca-caramelo-onca.jpg",
+      "lookId": "look-02",
+      "colors": [
+        "Caramelo",
+        "Onça",
+        "Bege"
+      ],
+      "composition": "Em Viscose",
+      "details": [
+        "Calça com forro estilo shortinho"
+      ],
+      "active": true,
+      "sortOrder": 3
+    },
+    {
+      "id": "prod-004",
+      "name": "Calça (Caramelo, Marinho, Bege)",
+      "pieceName": "Calça",
+      "priceInCents": 39999,
+      "formattedPrice": "R$ 399,99",
+      "imageUrl": "/images/02-blusa-e-calca-caramelo-onca.jpg",
+      "imageFile": "02-blusa-e-calca-caramelo-onca.jpg",
+      "lookId": "look-02",
+      "colors": [
+        "Caramelo",
+        "Marinho",
+        "Bege"
+      ],
+      "composition": "Em Viscose",
+      "details": [
+        "Calça com forro estilo shortinho"
+      ],
+      "active": true,
+      "sortOrder": 4
+    },
+    {
+      "id": "prod-005",
+      "name": "Camisa (Marinho, Bege)",
+      "pieceName": "Camisa",
+      "priceInCents": 31999,
+      "formattedPrice": "R$ 319,99",
+      "imageUrl": "/images/03-camisa-e-shorts-marinho-bege.jpg",
+      "imageFile": "03-camisa-e-shorts-marinho-bege.jpg",
+      "lookId": "look-03",
+      "colors": [
+        "Marinho",
+        "Bege"
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "active": true,
+      "sortOrder": 5
+    },
+    {
+      "id": "prod-006",
+      "name": "Shorts (Marinho, Caramelo)",
+      "pieceName": "Shorts",
+      "priceInCents": 31999,
+      "formattedPrice": "R$ 319,99",
+      "imageUrl": "/images/03-camisa-e-shorts-marinho-bege.jpg",
+      "imageFile": "03-camisa-e-shorts-marinho-bege.jpg",
+      "lookId": "look-03",
+      "colors": [
+        "Marinho",
+        "Caramelo"
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "active": true,
+      "sortOrder": 6
+    },
+    {
+      "id": "prod-007",
+      "name": "Vestido (Marinho, Bege)",
+      "pieceName": "Vestido",
+      "priceInCents": 47999,
+      "formattedPrice": "R$ 479,99",
+      "imageUrl": "/images/04-vestido-marinho-bege.jpg",
+      "imageFile": "04-vestido-marinho-bege.jpg",
+      "lookId": "look-04",
+      "colors": [
+        "Marinho",
+        "Bege"
+      ],
+      "composition": "Em viscose e com forro",
+      "details": [
+        "Com forro"
+      ],
+      "active": true,
+      "sortOrder": 7
+    },
+    {
+      "id": "prod-008",
+      "name": "Blazer (Marinho, Bege)",
+      "pieceName": "Blazer",
+      "priceInCents": 56999,
+      "formattedPrice": "R$ 569,99",
+      "imageUrl": "/images/05-blazer-shorts-e-calca-marinho-bege.jpg",
+      "imageFile": "05-blazer-shorts-e-calca-marinho-bege.jpg",
+      "lookId": "look-05",
+      "colors": [
+        "Marinho",
+        "Bege"
+      ],
+      "composition": "Tem algodão na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 8
+    },
+    {
+      "id": "prod-009",
+      "name": "Shorts (Marinho, Bege)",
+      "pieceName": "Shorts",
+      "priceInCents": 32999,
+      "formattedPrice": "R$ 329,99",
+      "imageUrl": "/images/05-blazer-shorts-e-calca-marinho-bege.jpg",
+      "imageFile": "05-blazer-shorts-e-calca-marinho-bege.jpg",
+      "lookId": "look-05",
+      "colors": [
+        "Marinho",
+        "Bege"
+      ],
+      "composition": "Tem algodão na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 9
+    },
+    {
+      "id": "prod-010",
+      "name": "Calça (Marinho, Bege)",
+      "pieceName": "Calça",
+      "priceInCents": 39999,
+      "formattedPrice": "R$ 399,99",
+      "imageUrl": "/images/05-blazer-shorts-e-calca-marinho-bege.jpg",
+      "imageFile": "05-blazer-shorts-e-calca-marinho-bege.jpg",
+      "lookId": "look-05",
+      "colors": [
+        "Marinho",
+        "Bege"
+      ],
+      "composition": "Tem algodão na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 10
+    },
+    {
+      "id": "prod-011",
+      "name": "Blazer (Listrado natural)",
+      "pieceName": "Blazer",
+      "priceInCents": 59999,
+      "formattedPrice": "R$ 599,99",
+      "imageUrl": "/images/06-blazer-e-shorts-listrado-natural.jpg",
+      "imageFile": "06-blazer-e-shorts-listrado-natural.jpg",
+      "lookId": "look-06",
+      "colors": [
+        "Listrado natural"
+      ],
+      "composition": "Em linho e liocel",
+      "details": [],
+      "active": true,
+      "sortOrder": 11
+    },
+    {
+      "id": "prod-012",
+      "name": "Shorts (Listrado natural)",
+      "pieceName": "Shorts",
+      "priceInCents": 35999,
+      "formattedPrice": "R$ 359,99",
+      "imageUrl": "/images/06-blazer-e-shorts-listrado-natural.jpg",
+      "imageFile": "06-blazer-e-shorts-listrado-natural.jpg",
+      "lookId": "look-06",
+      "colors": [
+        "Listrado natural"
+      ],
+      "composition": "Em linho e liocel",
+      "details": [],
+      "active": true,
+      "sortOrder": 12
+    },
+    {
+      "id": "prod-013",
+      "name": "Blazer (Khaki, Natural)",
+      "pieceName": "Blazer",
+      "priceInCents": 49999,
+      "formattedPrice": "R$ 499,99",
+      "imageUrl": "/images/07-blazer-e-shorts-khaki-natural.jpg",
+      "imageFile": "07-blazer-e-shorts-khaki-natural.jpg",
+      "lookId": "look-07",
+      "colors": [
+        "Khaki",
+        "Natural"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 13
+    },
+    {
+      "id": "prod-014",
+      "name": "Shorts (Khaki, Natural)",
+      "pieceName": "Shorts",
+      "priceInCents": 35999,
+      "formattedPrice": "R$ 359,99",
+      "imageUrl": "/images/07-blazer-e-shorts-khaki-natural.jpg",
+      "imageFile": "07-blazer-e-shorts-khaki-natural.jpg",
+      "lookId": "look-07",
+      "colors": [
+        "Khaki",
+        "Natural"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 14
+    },
+    {
+      "id": "prod-015",
+      "name": "Camisa (Marrom, Off)",
+      "pieceName": "Camisa",
+      "priceInCents": 37999,
+      "formattedPrice": "R$ 379,99",
+      "imageUrl": "/images/08-camisa-e-calca-marrom-off.jpg",
+      "imageFile": "08-camisa-e-calca-marrom-off.jpg",
+      "lookId": "look-08",
+      "colors": [
+        "Marrom",
+        "Off"
+      ],
+      "composition": "Algodão e linho na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 15
+    },
+    {
+      "id": "prod-016",
+      "name": "Calça (Marrom, Off)",
+      "pieceName": "Calça",
+      "priceInCents": 42999,
+      "formattedPrice": "R$ 429,99",
+      "imageUrl": "/images/08-camisa-e-calca-marrom-off.jpg",
+      "imageFile": "08-camisa-e-calca-marrom-off.jpg",
+      "lookId": "look-08",
+      "colors": [
+        "Marrom",
+        "Off"
+      ],
+      "composition": "Algodão e linho na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 16
+    },
+    {
+      "id": "prod-017",
+      "name": "Vestido (Marrom, Off)",
+      "pieceName": "Vestido",
+      "priceInCents": 45999,
+      "formattedPrice": "R$ 459,99",
+      "imageUrl": "/images/09-vestido-marrom-off.jpg",
+      "imageFile": "09-vestido-marrom-off.jpg",
+      "lookId": "look-09",
+      "colors": [
+        "Marrom",
+        "Off"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 17
+    },
+    {
+      "id": "prod-018",
+      "name": "Blusa (Marrom, Off)",
+      "pieceName": "Blusa",
+      "priceInCents": 29999,
+      "formattedPrice": "R$ 299,99",
+      "imageUrl": "/images/10-blusa-e-calca-marrom-off.jpg",
+      "imageFile": "10-blusa-e-calca-marrom-off.jpg",
+      "lookId": "look-10",
+      "colors": [
+        "Marrom",
+        "Off"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 18
+    },
+    {
+      "id": "prod-019",
+      "name": "Calça (Marrom, Off)",
+      "pieceName": "Calça",
+      "priceInCents": 39999,
+      "formattedPrice": "R$ 399,99",
+      "imageUrl": "/images/10-blusa-e-calca-marrom-off.jpg",
+      "imageFile": "10-blusa-e-calca-marrom-off.jpg",
+      "lookId": "look-10",
+      "colors": [
+        "Marrom",
+        "Off"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 19
+    },
+    {
+      "id": "prod-020",
+      "name": "Macaquinho (Khaki, Verde)",
+      "pieceName": "Macaquinho",
+      "priceInCents": 45999,
+      "formattedPrice": "R$ 459,99",
+      "imageUrl": "/images/11-macaquinho-khaki-verde.jpg",
+      "imageFile": "11-macaquinho-khaki-verde.jpg",
+      "lookId": "look-11",
+      "colors": [
+        "Khaki",
+        "Verde"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 20
+    },
+    {
+      "id": "prod-021",
+      "name": "Vestido (Bege)",
+      "pieceName": "Vestido",
+      "priceInCents": 49999,
+      "formattedPrice": "R$ 499,99",
+      "imageUrl": "/images/12-vestido-bege.jpg",
+      "imageFile": "12-vestido-bege.jpg",
+      "lookId": "look-12",
+      "colors": [
+        "Bege"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 21
+    },
+    {
+      "id": "prod-022",
+      "name": "Camisa (Khaki)",
+      "pieceName": "Camisa",
+      "priceInCents": 31999,
+      "formattedPrice": "R$ 319,99",
+      "imageUrl": "/images/13-camisa-e-bermuda-khaki.jpg",
+      "imageFile": "13-camisa-e-bermuda-khaki.jpg",
+      "lookId": "look-13",
+      "colors": [
+        "Khaki"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 22
+    },
+    {
+      "id": "prod-023",
+      "name": "Bermuda (Khaki, Verde)",
+      "pieceName": "Bermuda",
+      "priceInCents": 35999,
+      "formattedPrice": "R$ 359,99",
+      "imageUrl": "/images/13-camisa-e-bermuda-khaki.jpg",
+      "imageFile": "13-camisa-e-bermuda-khaki.jpg",
+      "lookId": "look-13",
+      "colors": [
+        "Khaki",
+        "Verde"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 23
+    },
+    {
+      "id": "prod-024",
+      "name": "Top (Off, Khaki)",
+      "pieceName": "Top",
+      "priceInCents": 26999,
+      "formattedPrice": "R$ 269,99",
+      "imageUrl": "/images/14-top-e-calca-off-khaki.jpg",
+      "imageFile": "14-top-e-calca-off-khaki.jpg",
+      "lookId": "look-14",
+      "colors": [
+        "Off",
+        "Khaki"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 24
+    },
+    {
+      "id": "prod-025",
+      "name": "Calça (Off, Khaki)",
+      "pieceName": "Calça",
+      "priceInCents": 39999,
+      "formattedPrice": "R$ 399,99",
+      "imageUrl": "/images/14-top-e-calca-off-khaki.jpg",
+      "imageFile": "14-top-e-calca-off-khaki.jpg",
+      "lookId": "look-14",
+      "colors": [
+        "Off",
+        "Khaki"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 25
+    },
+    {
+      "id": "prod-026",
+      "name": "Camisa (Amarelo, Off)",
+      "pieceName": "Camisa",
+      "priceInCents": 35999,
+      "formattedPrice": "R$ 359,99",
+      "imageUrl": "/images/15-camisa-e-shorts-amarelo-off.jpg",
+      "imageFile": "15-camisa-e-shorts-amarelo-off.jpg",
+      "lookId": "look-15",
+      "colors": [
+        "Amarelo",
+        "Off"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 26
+    },
+    {
+      "id": "prod-027",
+      "name": "Shorts (Natural, Khaki)",
+      "pieceName": "Shorts",
+      "priceInCents": 35999,
+      "formattedPrice": "R$ 359,99",
+      "imageUrl": "/images/15-camisa-e-shorts-amarelo-off.jpg",
+      "imageFile": "15-camisa-e-shorts-amarelo-off.jpg",
+      "lookId": "look-15",
+      "colors": [
+        "Natural",
+        "Khaki"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 27
+    },
+    {
+      "id": "prod-028",
+      "name": "Vestido longo (Amarelo, Off)",
+      "pieceName": "Vestido longo",
+      "priceInCents": 49999,
+      "formattedPrice": "R$ 499,99",
+      "imageUrl": "/images/16-vestido-longo-amarelo-off.jpg",
+      "imageFile": "16-vestido-longo-amarelo-off.jpg",
+      "lookId": "look-16",
+      "colors": [
+        "Amarelo",
+        "Off"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 28
+    },
+    {
+      "id": "prod-029",
+      "name": "Vestido (Off, Amarelo)",
+      "pieceName": "Vestido",
+      "priceInCents": 47999,
+      "formattedPrice": "R$ 479,99",
+      "imageUrl": "/images/17-vestido-off-amarelo.jpg",
+      "imageFile": "17-vestido-off-amarelo.jpg",
+      "lookId": "look-17",
+      "colors": [
+        "Off",
+        "Amarelo"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 29
+    },
+    {
+      "id": "prod-030",
+      "name": "Macaquinho (Khaki, Preto)",
+      "pieceName": "Macaquinho",
+      "priceInCents": 45999,
+      "formattedPrice": "R$ 459,99",
+      "imageUrl": "/images/18-macaquinho-khaki-preto.jpg",
+      "imageFile": "18-macaquinho-khaki-preto.jpg",
+      "lookId": "look-18",
+      "colors": [
+        "Khaki",
+        "Preto"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 30
+    },
+    {
+      "id": "prod-031",
+      "name": "Camisa (Verde)",
+      "pieceName": "Camisa",
+      "priceInCents": 32999,
+      "formattedPrice": "R$ 329,99",
+      "imageUrl": "/images/19-camisa-e-saia-verde.jpg",
+      "imageFile": "19-camisa-e-saia-verde.jpg",
+      "lookId": "look-19",
+      "colors": [
+        "Verde"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 31
+    },
+    {
+      "id": "prod-032",
+      "name": "Saia (Verde, Khaki)",
+      "pieceName": "Saia",
+      "priceInCents": 42999,
+      "formattedPrice": "R$ 429,99",
+      "imageUrl": "/images/19-camisa-e-saia-verde.jpg",
+      "imageFile": "19-camisa-e-saia-verde.jpg",
+      "lookId": "look-19",
+      "colors": [
+        "Verde",
+        "Khaki"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 32
+    },
+    {
+      "id": "prod-033",
+      "name": "Camisa (Khaki, Areia)",
+      "pieceName": "Camisa",
+      "priceInCents": 31999,
+      "formattedPrice": "R$ 319,99",
+      "imageUrl": "/images/20-camisa-e-calca-khaki-areia.jpg",
+      "imageFile": "20-camisa-e-calca-khaki-areia.jpg",
+      "lookId": "look-20",
+      "colors": [
+        "Khaki",
+        "Areia"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 33
+    },
+    {
+      "id": "prod-034",
+      "name": "Calça (Khaki, Areia)",
+      "pieceName": "Calça",
+      "priceInCents": 39999,
+      "formattedPrice": "R$ 399,99",
+      "imageUrl": "/images/20-camisa-e-calca-khaki-areia.jpg",
+      "imageFile": "20-camisa-e-calca-khaki-areia.jpg",
+      "lookId": "look-20",
+      "colors": [
+        "Khaki",
+        "Areia"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 34
+    },
+    {
+      "id": "prod-035",
+      "name": "Blazer (Natural, Khaki)",
+      "pieceName": "Blazer",
+      "priceInCents": 49999,
+      "formattedPrice": "R$ 499,99",
+      "imageUrl": "/images/21-blazer-e-calca-natural-khaki.jpg",
+      "imageFile": "21-blazer-e-calca-natural-khaki.jpg",
+      "lookId": "look-21",
+      "colors": [
+        "Natural",
+        "Khaki"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 35
+    },
+    {
+      "id": "prod-036",
+      "name": "Calça (Natural, Khaki)",
+      "pieceName": "Calça",
+      "priceInCents": 42999,
+      "formattedPrice": "R$ 429,99",
+      "imageUrl": "/images/21-blazer-e-calca-natural-khaki.jpg",
+      "imageFile": "21-blazer-e-calca-natural-khaki.jpg",
+      "lookId": "look-21",
+      "colors": [
+        "Natural",
+        "Khaki"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 36
+    },
+    {
+      "id": "prod-037",
+      "name": "Regata (Verde, Preto)",
+      "pieceName": "Regata",
+      "priceInCents": 21999,
+      "formattedPrice": "R$ 219,99",
+      "imageUrl": "/images/22-regata-e-calca-aladin-verde-preto.jpg",
+      "imageFile": "22-regata-e-calca-aladin-verde-preto.jpg",
+      "lookId": "look-22",
+      "colors": [
+        "Verde",
+        "Preto"
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "active": true,
+      "sortOrder": 37
+    },
+    {
+      "id": "prod-038",
+      "name": "Calça Aladin (Verde, Preto)",
+      "pieceName": "Calça Aladin",
+      "priceInCents": 43999,
+      "formattedPrice": "R$ 439,99",
+      "imageUrl": "/images/22-regata-e-calca-aladin-verde-preto.jpg",
+      "imageFile": "22-regata-e-calca-aladin-verde-preto.jpg",
+      "lookId": "look-22",
+      "colors": [
+        "Verde",
+        "Preto"
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "active": true,
+      "sortOrder": 38
+    },
+    {
+      "id": "prod-039",
+      "name": "Vestido (Onça, Marinho, Bege)",
+      "pieceName": "Vestido",
+      "priceInCents": 52999,
+      "formattedPrice": "R$ 529,99",
+      "imageUrl": "/images/23-vestido-onca-marinho.jpg",
+      "imageFile": "23-vestido-onca-marinho.jpg",
+      "lookId": "look-23",
+      "colors": [
+        "Onça",
+        "Marinho",
+        "Bege"
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "active": true,
+      "sortOrder": 39
+    },
+    {
+      "id": "prod-040",
+      "name": "Regata (Onça)",
+      "pieceName": "Regata",
+      "priceInCents": 19999,
+      "formattedPrice": "R$ 199,99",
+      "imageUrl": "/images/24-regata-e-saia-onca.jpg",
+      "imageFile": "24-regata-e-saia-onca.jpg",
+      "lookId": "look-24",
+      "colors": [
+        "Onça"
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "active": true,
+      "sortOrder": 40
+    },
+    {
+      "id": "prod-041",
+      "name": "Saia (Onça)",
+      "pieceName": "Saia",
+      "priceInCents": 32999,
+      "formattedPrice": "R$ 329,99",
+      "imageUrl": "/images/24-regata-e-saia-onca.jpg",
+      "imageFile": "24-regata-e-saia-onca.jpg",
+      "lookId": "look-24",
+      "colors": [
+        "Onça"
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "active": true,
+      "sortOrder": 41
+    },
+    {
+      "id": "prod-042",
+      "name": "Blusa (Cinza)",
+      "pieceName": "Blusa",
+      "priceInCents": 35999,
+      "formattedPrice": "R$ 359,99",
+      "imageUrl": "/images/25-blusa-e-saia-cinza.jpg",
+      "imageFile": "25-blusa-e-saia-cinza.jpg",
+      "lookId": "look-25",
+      "colors": [
+        "Cinza"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 42
+    },
+    {
+      "id": "prod-043",
+      "name": "Saia (Cinza)",
+      "pieceName": "Saia",
+      "priceInCents": 39999,
+      "formattedPrice": "R$ 399,99",
+      "imageUrl": "/images/25-blusa-e-saia-cinza.jpg",
+      "imageFile": "25-blusa-e-saia-cinza.jpg",
+      "lookId": "look-25",
+      "colors": [
+        "Cinza"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 43
+    },
+    {
+      "id": "prod-044",
+      "name": "Colete (Cinza)",
+      "pieceName": "Colete",
+      "priceInCents": 49999,
+      "formattedPrice": "R$ 499,99",
+      "imageUrl": "/images/26-colete-e-shorts-cinza.jpg",
+      "imageFile": "26-colete-e-shorts-cinza.jpg",
+      "lookId": "look-26",
+      "colors": [
+        "Cinza"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 44
+    },
+    {
+      "id": "prod-045",
+      "name": "Shorts (Cinza)",
+      "pieceName": "Shorts",
+      "priceInCents": 35999,
+      "formattedPrice": "R$ 359,99",
+      "imageUrl": "/images/26-colete-e-shorts-cinza.jpg",
+      "imageFile": "26-colete-e-shorts-cinza.jpg",
+      "lookId": "look-26",
+      "colors": [
+        "Cinza"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 45
+    },
+    {
+      "id": "prod-046",
+      "name": "Colete (Cinza)",
+      "pieceName": "Colete",
+      "priceInCents": 49999,
+      "formattedPrice": "R$ 499,99",
+      "imageUrl": "/images/27-colete-e-calca-cinza.jpg",
+      "imageFile": "27-colete-e-calca-cinza.jpg",
+      "lookId": "look-27",
+      "colors": [
+        "Cinza"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 46
+    },
+    {
+      "id": "prod-047",
+      "name": "Calça (Cinza)",
+      "pieceName": "Calça",
+      "priceInCents": 49999,
+      "formattedPrice": "R$ 499,99",
+      "imageUrl": "/images/27-colete-e-calca-cinza.jpg",
+      "imageFile": "27-colete-e-calca-cinza.jpg",
+      "lookId": "look-27",
+      "colors": [
+        "Cinza"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 47
+    },
+    {
+      "id": "prod-048",
+      "name": "Blusa (Marrom, Off)",
+      "pieceName": "Blusa",
+      "priceInCents": 31999,
+      "formattedPrice": "R$ 319,99",
+      "imageUrl": "/images/28-blusa-e-shorts-marrom-off.jpg",
+      "imageFile": "28-blusa-e-shorts-marrom-off.jpg",
+      "lookId": "look-28",
+      "colors": [
+        "Marrom",
+        "Off"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 48
+    },
+    {
+      "id": "prod-049",
+      "name": "Shorts (Marrom, Off)",
+      "pieceName": "Shorts",
+      "priceInCents": 32999,
+      "formattedPrice": "R$ 329,99",
+      "imageUrl": "/images/28-blusa-e-shorts-marrom-off.jpg",
+      "imageFile": "28-blusa-e-shorts-marrom-off.jpg",
+      "lookId": "look-28",
+      "colors": [
+        "Marrom",
+        "Off"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 49
+    },
+    {
+      "id": "prod-050",
+      "name": "Vestido (Azul, Off)",
+      "pieceName": "Vestido",
+      "priceInCents": 49999,
+      "formattedPrice": "R$ 499,99",
+      "imageUrl": "/images/29-vestido-azul-off.jpg",
+      "imageFile": "29-vestido-azul-off.jpg",
+      "lookId": "look-29",
+      "colors": [
+        "Azul",
+        "Off"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 50
+    },
+    {
+      "id": "prod-051",
+      "name": "Saia transpassada (Marrom, Natural)",
+      "pieceName": "Saia transpassada",
+      "priceInCents": 29999,
+      "formattedPrice": "R$ 299,99",
+      "imageUrl": "/images/30-saia-transpassada-marrom-natural.jpg",
+      "imageFile": "30-saia-transpassada-marrom-natural.jpg",
+      "lookId": "look-30",
+      "colors": [
+        "Marrom",
+        "Natural"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 51
+    },
+    {
+      "id": "prod-052",
+      "name": "Vestido (Marrom, Natural)",
+      "pieceName": "Vestido",
+      "priceInCents": 45999,
+      "formattedPrice": "R$ 459,99",
+      "imageUrl": "/images/31-vestido-marrom-natural.jpg",
+      "imageFile": "31-vestido-marrom-natural.jpg",
+      "lookId": "look-31",
+      "colors": [
+        "Marrom",
+        "Natural"
+      ],
+      "composition": "Linho e viscose na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 52
+    },
+    {
+      "id": "prod-053",
+      "name": "Macacão (Khaki, Preto)",
+      "pieceName": "Macacão",
+      "priceInCents": 49999,
+      "formattedPrice": "R$ 499,99",
+      "imageUrl": "/images/32-macacao-khaki-preto.jpg",
+      "imageFile": "32-macacao-khaki-preto.jpg",
+      "lookId": "look-32",
+      "colors": [
+        "Khaki",
+        "Preto"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 53
+    },
+    {
+      "id": "prod-054",
+      "name": "Camisa manga curta (Rosa, Off white)",
+      "pieceName": "Camisa manga curta",
+      "priceInCents": 28999,
+      "formattedPrice": "R$ 289,99",
+      "imageUrl": "/images/33-camisa-manga-curta-rosa-off-white.jpg",
+      "imageFile": "33-camisa-manga-curta-rosa-off-white.jpg",
+      "lookId": "look-33",
+      "colors": [
+        "Rosa",
+        "Off white"
+      ],
+      "composition": "Em algodão",
+      "details": [],
+      "active": true,
+      "sortOrder": 54
+    },
+    {
+      "id": "prod-055",
+      "name": "Camisa (Natural, Verde, Khaki)",
+      "pieceName": "Camisa",
+      "priceInCents": 29999,
+      "formattedPrice": "R$ 299,99",
+      "imageUrl": "/images/34-camisa-e-shorts-natural-verde.jpg",
+      "imageFile": "34-camisa-e-shorts-natural-verde.jpg",
+      "lookId": "look-34",
+      "colors": [
+        "Natural",
+        "Verde",
+        "Khaki"
+      ],
+      "composition": "Algodão e linho na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 55
+    },
+    {
+      "id": "prod-056",
+      "name": "Shorts (Natural, Verde)",
+      "pieceName": "Shorts",
+      "priceInCents": 29999,
+      "formattedPrice": "R$ 299,99",
+      "imageUrl": "/images/34-camisa-e-shorts-natural-verde.jpg",
+      "imageFile": "34-camisa-e-shorts-natural-verde.jpg",
+      "lookId": "look-34",
+      "colors": [
+        "Natural",
+        "Verde"
+      ],
+      "composition": "Algodão e linho na composição",
+      "details": [],
+      "active": true,
+      "sortOrder": 56
+    },
+    {
+      "id": "prod-057",
+      "name": "Camisa (Azul, Bege)",
+      "pieceName": "Camisa",
+      "priceInCents": 32999,
+      "formattedPrice": "R$ 329,99",
+      "imageUrl": "/images/35-camisa-e-shorts-azul-bege.jpg",
+      "imageFile": "35-camisa-e-shorts-azul-bege.jpg",
+      "lookId": "look-35",
+      "colors": [
+        "Azul",
+        "Bege"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 57
+    },
+    {
+      "id": "prod-058",
+      "name": "Shorts (Azul, Bege)",
+      "pieceName": "Shorts",
+      "priceInCents": 32999,
+      "formattedPrice": "R$ 329,99",
+      "imageUrl": "/images/35-camisa-e-shorts-azul-bege.jpg",
+      "imageFile": "35-camisa-e-shorts-azul-bege.jpg",
+      "lookId": "look-35",
+      "colors": [
+        "Azul",
+        "Bege"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 58
+    },
+    {
+      "id": "prod-059",
+      "name": "Vestido (Verde)",
+      "pieceName": "Vestido",
+      "priceInCents": 49999,
+      "formattedPrice": "R$ 499,99",
+      "imageUrl": "/images/36-vestido-verde.jpg",
+      "imageFile": "36-vestido-verde.jpg",
+      "lookId": "look-36",
+      "colors": [
+        "Verde"
+      ],
+      "composition": "Em linho e algodão",
+      "details": [],
+      "active": true,
+      "sortOrder": 59
+    },
+    {
+      "id": "prod-060",
+      "name": "Blusa com gola (Khaki, Off)",
+      "pieceName": "Blusa com gola",
+      "priceInCents": 28999,
+      "formattedPrice": "R$ 289,99",
+      "imageUrl": "/images/37-blusa-com-gola-khaki-off.jpg",
+      "imageFile": "37-blusa-com-gola-khaki-off.jpg",
+      "lookId": "look-37",
+      "colors": [
+        "Khaki",
+        "Off"
+      ],
+      "composition": "Em linho e algodão",
+      "details": [],
+      "active": true,
+      "sortOrder": 60
+    },
+    {
+      "id": "prod-061",
+      "name": "Camisa em viscose (Verde, Bege)",
+      "pieceName": "Camisa em viscose",
+      "priceInCents": 39999,
+      "formattedPrice": "R$ 399,99",
+      "imageUrl": "/images/38-camisa-em-viscose-verde-bege.jpg",
+      "imageFile": "38-camisa-em-viscose-verde-bege.jpg",
+      "lookId": "look-38",
+      "colors": [
+        "Verde",
+        "Bege"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 61
+    },
+    {
+      "id": "prod-062",
+      "name": "Camisa em viscose fluída (Caramelo, Bege)",
+      "pieceName": "Camisa em viscose fluída",
+      "priceInCents": 28999,
+      "formattedPrice": "R$ 289,99",
+      "imageUrl": "/images/39-camisa-em-viscose-fluida-caramelo-bege.jpg",
+      "imageFile": "39-camisa-em-viscose-fluida-caramelo-bege.jpg",
+      "lookId": "look-39",
+      "colors": [
+        "Caramelo",
+        "Bege"
+      ],
+      "composition": null,
+      "details": [],
+      "active": true,
+      "sortOrder": 62
+    },
+    {
+      "id": "prod-063",
+      "name": "Camisa (Bege)",
+      "pieceName": "Camisa",
+      "priceInCents": 32999,
+      "formattedPrice": "R$ 329,99",
+      "imageUrl": "/images/40-camisa-e-shorts-bege.jpg",
+      "imageFile": "40-camisa-e-shorts-bege.jpg",
+      "lookId": "look-40",
+      "colors": [
+        "Bege"
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "active": true,
+      "sortOrder": 63
+    },
+    {
+      "id": "prod-064",
+      "name": "Shorts (Bege)",
+      "pieceName": "Shorts",
+      "priceInCents": 32999,
+      "formattedPrice": "R$ 329,99",
+      "imageUrl": "/images/40-camisa-e-shorts-bege.jpg",
+      "imageFile": "40-camisa-e-shorts-bege.jpg",
+      "lookId": "look-40",
+      "colors": [
+        "Bege"
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "active": true,
+      "sortOrder": 64
+    },
+    {
+      "id": "prod-065",
+      "name": "Blusa (Verde, Bege)",
+      "pieceName": "Blusa",
+      "priceInCents": 35999,
+      "formattedPrice": "R$ 359,99",
+      "imageUrl": "/images/41-blusa-e-calca-verde-bege.jpg",
+      "imageFile": "41-blusa-e-calca-verde-bege.jpg",
+      "lookId": "look-41",
+      "colors": [
+        "Verde",
+        "Bege"
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "active": true,
+      "sortOrder": 65
+    },
+    {
+      "id": "prod-066",
+      "name": "Calça (Verde, Bege)",
+      "pieceName": "Calça",
+      "priceInCents": 42999,
+      "formattedPrice": "R$ 429,99",
+      "imageUrl": "/images/41-blusa-e-calca-verde-bege.jpg",
+      "imageFile": "41-blusa-e-calca-verde-bege.jpg",
+      "lookId": "look-41",
+      "colors": [
+        "Verde",
+        "Bege"
+      ],
+      "composition": "Em viscose",
+      "details": [],
+      "active": true,
+      "sortOrder": 66
+    }
+  ]
+}
