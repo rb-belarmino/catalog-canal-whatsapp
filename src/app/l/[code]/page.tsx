@@ -80,7 +80,6 @@ export default async function ShortWishlistPage({ params }: ShortWishlistPagePro
         {/* Products List / Grid */}
         <div className="space-y-4">
           {products.map((product) => {
-            const installmentValue = Math.floor(product.priceInCents / 10)
             return (
               <div
                 key={product.id}
@@ -109,12 +108,9 @@ export default async function ShortWishlistPage({ params }: ShortWishlistPagePro
                   <h3 className="text-sm sm:text-base font-normal tracking-[0.5px] uppercase text-black leading-tight">
                     {product.name}
                   </h3>
-                  <div className="mt-2 flex flex-wrap items-baseline gap-2">
+                  <div className="mt-2">
                     <span className="text-base sm:text-lg font-bold text-black tracking-tight">
                       {formatCurrencyBRL(product.priceInCents)}
-                    </span>
-                    <span className="text-[11px] text-neutral-500 uppercase tracking-wider">
-                      • até 10x de {formatCurrencyBRL(installmentValue)} s/ juros
                     </span>
                   </div>
                 </div>
