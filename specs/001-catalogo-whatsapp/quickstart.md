@@ -2,7 +2,7 @@
 
 **Feature**: `001-catalogo-whatsapp`  
 **Date**: 2026-09-12  
-**Status**: Ready  
+**Status**: Ready
 
 This guide describes how to run and validate the application end-to-end, including local setup, database provisioning, Playwright test suite execution, and manual verification scenarios.
 
@@ -50,6 +50,7 @@ npm run dev
 ```
 
 The app will be available at:
+
 - Public Catalog: `http://localhost:3000`
 - Admin Login: `http://localhost:3000/admin/login`
 - Admin Dashboard: `http://localhost:3000/admin`
@@ -79,6 +80,7 @@ npx playwright test --project="Mobile Safari"
 ## 5. Manual End-to-End Validation Scenarios
 
 ### Scenario 1: Initial Empty State & Admin Configuration
+
 1. Open `http://localhost:3000`.
 2. **Expected**: Friendly empty state message ("Nosso catálogo está sendo preparado..."). No crash, clean 375px mobile responsive layout without horizontal scrolling.
 3. Navigate to `http://localhost:3000/admin`.
@@ -89,6 +91,7 @@ npx playwright test --project="Mobile Safari"
 8. **Expected**: Toast feedback showing configuration saved.
 
 ### Scenario 2: Product Creation & Image Upload
+
 1. In the admin dashboard, click "Nova Peça".
 2. Enter Name: `Vestido Floral Midi`, Price: `189,90`, and upload a sample photo.
 3. Click "Salvar Produto".
@@ -98,11 +101,13 @@ npx playwright test --project="Mobile Safari"
 7. **Expected**: Both pieces displayed in the grid with photo, name, and formatted BRL price.
 
 ### Scenario 3: Admin Drag-and-Drop Reordering
+
 1. In admin dashboard `/admin`, drag `Blusa de Linho Bege` to the top position ahead of `Vestido Floral Midi`.
 2. Open `http://localhost:3000` in another browser tab.
 3. **Expected**: Public catalog immediately shows `Blusa de Linho Bege` first, followed by `Vestido Floral Midi`.
 
 ### Scenario 4: Customer Wishlist & WhatsApp Redirection
+
 1. On `http://localhost:3000`, click "Adicionar à Lista de Desejos" on `Blusa de Linho Bege`.
 2. **Expected**: Counter badge updates to 1.
 3. Click "Adicionar" again on the same product.

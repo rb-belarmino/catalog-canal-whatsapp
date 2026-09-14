@@ -37,9 +37,9 @@ export default async function ShortWishlistPage({
   const totalCount = products.length
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F7F7F7]">
+    <div className="min-h-screen flex flex-col bg-canal-bg">
       {/* Minimalist Header */}
-      <header className="sticky top-0 z-40 w-full bg-white border-b border-[#E2E2E2]">
+      <header className="sticky top-0 z-40 w-full bg-white border-b border-canal-border">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
           <CanalLogo />
           <Link
@@ -68,7 +68,7 @@ export default async function ShortWishlistPage({
         </div>
 
         {/* Summary Card */}
-        <div className="bg-white border border-[#E2E2E2] p-4 sm:p-5 mb-8 flex items-center justify-between">
+        <div className="bg-white border border-canal-border p-4 sm:p-5 mb-8 flex items-center justify-between">
           <div>
             <span className="text-[10px] uppercase tracking-[2px] text-neutral-400 font-medium">
               Resumo da Seleção
@@ -86,10 +86,10 @@ export default async function ShortWishlistPage({
             return (
               <div
                 key={product.id}
-                className="bg-white border border-[#E2E2E2] p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 hover:border-black transition-colors"
+                className="bg-white border border-canal-border p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 hover:border-black transition-colors"
               >
                 {/* 3:4 Aspect Image */}
-                <div className="relative w-28 sm:w-24 aspect-3/4 bg-[#F2F2F2] overflow-hidden shrink-0 border border-[#E2E2E2]">
+                <div className="relative w-28 sm:w-24 aspect-3/4 bg-canal-bg overflow-hidden shrink-0 border border-canal-border">
                   {product.imageUrl ? (
                     <Image
                       src={product.imageUrl}
@@ -137,7 +137,7 @@ export default async function ShortWishlistPage({
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[#E2E2E2] bg-white py-8 text-center text-xs text-neutral-500 tracking-[1.5px] uppercase mt-auto">
+      <footer className="border-t border-canal-border bg-white py-8 text-center text-xs text-neutral-500 tracking-[1.5px] uppercase mt-auto">
         <p>
           © {new Date().getFullYear()} Canal Concept. Todos os direitos
           reservados.

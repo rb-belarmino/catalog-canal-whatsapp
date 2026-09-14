@@ -214,8 +214,6 @@ usa esse número.
 - Q: A vendedora consegue definir a ordem de exibição das peças no catálogo, ou os produtos aparecem sempre na ordem em que foram cadastrados? → A: Reordenação manual — a vendedora pode arrastar e soltar as peças no admin para definir a ordem de exibição no catálogo público.
 - Q: Quando a mensagem para o WhatsApp é gerada, as imagens dos produtos são incluídas como links individuais por item, ou a mensagem contém apenas nomes e preços? → A: Link de imagem por item — cada peça na mensagem inclui nome, preço e a URL da foto individualmente.
 
-
-
 ---
 
 ## Requirements _(mandatory)_
@@ -273,7 +271,6 @@ usa esse número.
   preço (valor numérico em BRL), URL da imagem, status (ativo/inativo), ordem de exibição
   (número inteiro definido pela vendedora via reordenação manual), data de criação e data
   de atualização.
-
 
 - **Lista de Desejos**: Seleção temporária de produtos feita pela cliente. Atributos: lista de
   produtos selecionados, total acumulado. Não está associada a um usuário autenticado — persiste

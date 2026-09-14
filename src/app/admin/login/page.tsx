@@ -1,16 +1,16 @@
-import { redirect } from "next/navigation";
-import { Shield } from "lucide-react";
-import { isAuthenticatedAdmin } from "@/modules/admin/auth";
-import { LoginForm } from "@/modules/admin/components/login-form";
+import { redirect } from 'next/navigation'
+import { Shield } from 'lucide-react'
+import { isAuthenticatedAdmin } from '@/modules/admin/auth'
+import { LoginForm } from '@/modules/admin/components/login-form'
 
 export const metadata = {
-  title: "Acesso Administrativo | Catálogo",
-};
+  title: 'Acesso Administrativo | Catálogo'
+}
 
 export default async function AdminLoginPage() {
-  const isAuth = await isAuthenticatedAdmin();
+  const isAuth = await isAuthenticatedAdmin()
   if (isAuth) {
-    redirect("/admin");
+    redirect('/admin')
   }
 
   return (
@@ -31,5 +31,5 @@ export default async function AdminLoginPage() {
         <LoginForm />
       </div>
     </div>
-  );
+  )
 }

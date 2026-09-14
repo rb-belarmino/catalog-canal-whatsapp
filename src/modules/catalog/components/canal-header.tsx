@@ -1,31 +1,31 @@
-"use client";
+'use client'
 
-import * as React from "react";
-import { Search, Heart, X } from "lucide-react";
-import { CanalLogo } from "./canal-logo";
-import { useSearch } from "../search-context";
-import { useWishlist } from "@/modules/wishlist/context";
+import * as React from 'react'
+import { Search, Heart, X } from 'lucide-react'
+import { CanalLogo } from './canal-logo'
+import { useSearch } from '../search-context'
+import { useWishlist } from '@/modules/wishlist/context'
 
 export function CanalHeader() {
-  const { searchQuery, setSearchQuery } = useSearch();
-  const { totalCount, setIsDrawerOpen } = useWishlist();
-  const [isSearchOpen, setIsSearchOpen] = React.useState(false);
-  const searchInputRef = React.useRef<HTMLInputElement>(null);
+  const { searchQuery, setSearchQuery } = useSearch()
+  const { totalCount, setIsDrawerOpen } = useWishlist()
+  const [isSearchOpen, setIsSearchOpen] = React.useState(false)
+  const searchInputRef = React.useRef<HTMLInputElement>(null)
 
   function handleOpenSearch() {
-    setIsSearchOpen(true);
+    setIsSearchOpen(true)
     setTimeout(() => {
-      searchInputRef.current?.focus();
-    }, 50);
+      searchInputRef.current?.focus()
+    }, 50)
   }
 
   function handleClearSearch() {
-    setSearchQuery("");
-    setIsSearchOpen(false);
+    setSearchQuery('')
+    setIsSearchOpen(false)
   }
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white border-b border-[#E2E2E2]">
+    <header className="sticky top-0 z-40 w-full bg-white border-b border-canal-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-4">
         {/* Left: Brand Logo */}
         <div className="flex items-center">
@@ -39,14 +39,14 @@ export function CanalHeader() {
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={e => setSearchQuery(e.target.value)}
               placeholder="BUSCAR NO CATÁLOGO..."
-              className="w-full bg-transparent border-b border-[#E2E2E2] focus:border-black pl-6 pr-6 py-1.5 text-[11px] tracking-[2px] uppercase text-black placeholder:text-neutral-400 focus:outline-none transition-colors"
+              className="w-full bg-transparent border-b border-canal-border focus:border-black pl-6 pr-6 py-1.5 text-[11px] tracking-[2px] uppercase text-black placeholder:text-neutral-400 focus:outline-none transition-colors"
             />
             {searchQuery && (
               <button
                 type="button"
-                onClick={() => setSearchQuery("")}
+                onClick={() => setSearchQuery('')}
                 className="absolute right-0 top-1/2 -translate-y-1/2 p-1 text-neutral-400 hover:text-black cursor-pointer"
                 aria-label="Limpar busca"
               >
@@ -77,7 +77,10 @@ export function CanalHeader() {
             aria-label={`Abrir Lista de Desejos com ${totalCount} itens`}
           >
             <div className="relative">
-              <Heart className="w-5 h-5 sm:w-5 sm:h-5 text-black" strokeWidth={1.75} />
+              <Heart
+                className="w-5 h-5 sm:w-5 sm:h-5 text-black"
+                strokeWidth={1.75}
+              />
               {totalCount > 0 && (
                 <span className="absolute -top-1.5 -right-2 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                   {totalCount}
@@ -93,13 +96,13 @@ export function CanalHeader() {
 
       {/* Mobile Search Full-Width Overlay */}
       {isSearchOpen && (
-        <div className="md:hidden border-t border-[#E2E2E2] bg-white px-4 py-3 flex items-center gap-2 animate-in fade-in slide-in-from-top-1">
+        <div className="md:hidden border-t border-canal-border bg-white px-4 py-3 flex items-center gap-2 animate-in fade-in slide-in-from-top-1">
           <Search className="w-4 h-4 text-neutral-400 shrink-0" />
           <input
             ref={searchInputRef}
             type="text"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={e => setSearchQuery(e.target.value)}
             placeholder="BUSCAR NO CATÁLOGO..."
             className="flex-1 bg-transparent border-none text-[12px] tracking-[1.8px] uppercase text-black placeholder:text-neutral-400 focus:outline-none"
           />
@@ -114,5 +117,5 @@ export function CanalHeader() {
         </div>
       )}
     </header>
-  );
+  )
 }

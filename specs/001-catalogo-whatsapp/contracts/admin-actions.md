@@ -19,9 +19,9 @@
   - Emits structured log event `ADMIN_LOGIN_SUCCESS`.
 - **Response**:
   ```typescript
-  type ActionResult<T = void> = 
+  type ActionResult<T = void> =
     | { success: true; data?: T }
-    | { success: false; error: string };
+    | { success: false; error: string }
   ```
 - **Error Cases**:
   - Invalid password: `{ success: false, error: "Senha incorreta. Tente novamente." }`
@@ -45,9 +45,9 @@ All product actions require a valid `admin_session` cookie; unauthenticated requ
 - **Input Schema**:
   ```typescript
   interface CreateProductInput {
-    name: string;          // min 2, max 120
-    priceInCents: number;  // > 0
-    imageUrl: string;      // valid uploadthing URL
+    name: string // min 2, max 120
+    priceInCents: number // > 0
+    imageUrl: string // valid uploadthing URL
   }
   ```
 - **Execution**:
@@ -63,11 +63,11 @@ All product actions require a valid `admin_session` cookie; unauthenticated requ
 - **Input Schema**:
   ```typescript
   interface UpdateProductInput {
-    id: string;
-    name?: string;
-    priceInCents?: number;
-    imageUrl?: string;
-    active?: boolean;
+    id: string
+    name?: string
+    priceInCents?: number
+    imageUrl?: string
+    active?: boolean
   }
   ```
 - **Execution**:
@@ -105,8 +105,8 @@ All product actions require a valid `admin_session` cookie; unauthenticated requ
 - **Input Schema**:
   ```typescript
   interface UpdateShopConfigInput {
-    storeName?: string;
-    whatsappNumber?: string; // Digits only, international format (e.g. 5511999999999)
+    storeName?: string
+    whatsappNumber?: string // Digits only, international format (e.g. 5511999999999)
   }
   ```
 - **Execution**:

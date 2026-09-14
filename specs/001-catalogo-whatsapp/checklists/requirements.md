@@ -41,4 +41,3 @@
 - Edge case de duplicata resolvido definitivamente (ignorar silenciosamente, ícone visual preenchido).
 - Entidade Produto atualizada com atributo `ordem de exibição`.
 - ✅ Ready to proceed to `/speckit-plan`.
-

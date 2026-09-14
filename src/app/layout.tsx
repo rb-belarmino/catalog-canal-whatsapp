@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-screen bg-[#F7F7F7] text-[#111111] font-sans antialiased selection:bg-black selection:text-white">
+      <body className="min-h-screen bg-canal-bg text-canal-dark font-sans antialiased selection:bg-black selection:text-white">
         <WishlistProvider>{children}</WishlistProvider>
       </body>
     </html>

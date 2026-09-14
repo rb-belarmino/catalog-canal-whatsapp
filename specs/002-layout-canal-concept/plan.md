@@ -9,11 +9,12 @@
 ## Summary
 
 O objetivo desta funcionalidade é transformar a interface e a experiência da vitrine digital em uma experiência de alta costura contemporânea, alinhada com a identidade visual da marca **Canal Concept** (https://www.canal.com.br/). A implementação utiliza **Tailwind CSS v4** e componentes modulares no padrão **shadcn/ui** (Button, Input, Badge, Sheet/Drawer), apresentando:
+
 - Fundo claro neutro minimalista (`#F7F7F7`) e tipografia geométrica em caixa alta com espaçamento ampliado (`tracking`).
 - Barra superior de avisos/benefícios institucionais (frete, parcelamento em até 10x, PIX e WhatsApp).
 - Cabeçalho minimalista com logotipo oficial em vetor SVG da Canal Concept, busca rápida e sacola com contador.
 - Grade contínua de produtos em proporção vertical editorial (3:4), sem categorias (vitrine única e direta).
-- Adição à Sacola de Desejos com um clique (sem grade de tamanho no catálogo) e painel lateral deslizante (*Sheet*) com fechamento direto e formatado para o WhatsApp da vendedora.
+- Adição à Sacola de Desejos com um clique (sem grade de tamanho no catálogo) e painel lateral deslizante (_Sheet_) com fechamento direto e formatado para o WhatsApp da vendedora.
 
 ---
 
@@ -41,17 +42,17 @@ O objetivo desta funcionalidade é transformar a interface e a experiência da v
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
-| Princípio Constitucional | Avaliação no Plano | Status |
-| :--- | :--- | :---: |
-| **I. Clean Code (NON-NEGOTIABLE)** | Componentes pequenos (≤ 40 linhas preferencialmente), responsabilidade única, nomenclatura expressiva e clara. | ✅ PASS |
-| **II. Modular Monolith Architecture** | Separação estrita em módulos (`catalog`, `wishlist`, `admin`, `shared`), sem acoplamento indevido ou importações circulares. | ✅ PASS |
-| **III. Excellent User Experience** | Layout fluido, responsivo, sem cliques desnecessários (adição com um clique), feedback visual e estética editorial refinada. | ✅ PASS |
-| **IV. Security by Design** | Credenciais exclusivamente em `.env`, sem segredos expostos no front-end ou versionamento. | ✅ PASS |
-| **V. Test-Driven Quality** | Validação E2E com Playwright cobrindo visualização da vitrine Canal Concept, busca textual e fluxo WhatsApp. | ✅ PASS |
-| **VI. Observability & Logging** | Logs estruturados via `logger.ts` para requisições e eventos do catálogo. | ✅ PASS |
-| **VII. Simplicity & YAGNI** | Rejeição de taxonomias desnecessárias (sem categorias na vitrine), sem modais de tamanho desnecessários, apenas o essencial de alto impacto. | ✅ PASS |
+| Princípio Constitucional              | Avaliação no Plano                                                                                                                           | Status  |
+| :------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------- | :-----: |
+| **I. Clean Code (NON-NEGOTIABLE)**    | Componentes pequenos (≤ 40 linhas preferencialmente), responsabilidade única, nomenclatura expressiva e clara.                               | ✅ PASS |
+| **II. Modular Monolith Architecture** | Separação estrita em módulos (`catalog`, `wishlist`, `admin`, `shared`), sem acoplamento indevido ou importações circulares.                 | ✅ PASS |
+| **III. Excellent User Experience**    | Layout fluido, responsivo, sem cliques desnecessários (adição com um clique), feedback visual e estética editorial refinada.                 | ✅ PASS |
+| **IV. Security by Design**            | Credenciais exclusivamente em `.env`, sem segredos expostos no front-end ou versionamento.                                                   | ✅ PASS |
+| **V. Test-Driven Quality**            | Validação E2E com Playwright cobrindo visualização da vitrine Canal Concept, busca textual e fluxo WhatsApp.                                 | ✅ PASS |
+| **VI. Observability & Logging**       | Logs estruturados via `logger.ts` para requisições e eventos do catálogo.                                                                    | ✅ PASS |
+| **VII. Simplicity & YAGNI**           | Rejeição de taxonomias desnecessárias (sem categorias na vitrine), sem modais de tamanho desnecessários, apenas o essencial de alto impacto. | ✅ PASS |
 
 ---
 
@@ -113,4 +114,4 @@ src/
 
 ## Complexity Tracking
 
-*Nenhuma violação aos princípios constitucionais. O escopo foi simplificado (sem categorias e sem grade de tamanhos na vitrine).*
+_Nenhuma violação aos princípios constitucionais. O escopo foi simplificado (sem categorias e sem grade de tamanhos na vitrine)._

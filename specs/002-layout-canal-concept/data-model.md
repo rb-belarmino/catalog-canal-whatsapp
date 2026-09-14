@@ -10,6 +10,7 @@ Este documento descreve as entidades, modelos de dados e regras de validação p
 ## 1. Entidades do Domínio
 
 ### 1.1 Product (Peça de Vestuário)
+
 Representa a peça de roupa exibida na vitrine da Canal Concept.
 
 ```prisma
@@ -29,6 +30,7 @@ model Product {
 ```
 
 #### Regras de Validação & Atributos:
+
 - `name`: String não vazia, min 2 caracteres, max 120 caracteres. Exibida em caixa alta ou estilo editorial nos cartões.
 - `priceInCents`: Inteiro positivo representando centavos de BRL (ex.: R$ 399,90 = `39990`).
 - `imageUrl`: URL válida de imagem pública (Cloudinary, UploadThing ou URL HTTPS externa).
@@ -38,6 +40,7 @@ model Product {
 ---
 
 ### 1.2 ShopConfig (Configurações da Loja & Barra de Avisos)
+
 Configurações operacionais associadas à vitrine Canal Concept.
 
 ```prisma
@@ -53,6 +56,7 @@ model ShopConfig {
 ```
 
 #### Regras de Validação & Atributos:
+
 - `storeName`: Fixado como `"Canal Concept"` na interface pública.
 - `whatsappNumber`: String contendo apenas dígitos do DDI + DDD + número (ex.: `"5511999999999"`). Usado para gerar o link do WhatsApp.
 - `topAnnouncement`: Texto exibido na barra superior de avisos (máx. 255 caracteres).
@@ -60,19 +64,21 @@ model ShopConfig {
 ---
 
 ### 1.3 WishlistItem (Item da Sacola de Desejos — Client State)
+
 Estado local persistido na sessão da cliente (armazenado via `localStorage` e gerenciado no navegador).
 
 ```typescript
 export interface WishlistItem {
-  productId: string;
-  name: string;
-  priceInCents: number;
-  imageUrl: string;
-  quantity: number;
+  productId: string
+  name: string
+  priceInCents: number
+  imageUrl: string
+  quantity: number
 }
 ```
 
 #### Regras de Comportamento:
+
 - A cliente pode adicionar o mesmo item múltiplas vezes (incrementa `quantity`) ou remover itens.
 - Não há seleção de tamanho prévia (o alinhamento de tamanho ocorre na conversa do WhatsApp).
 - O cálculo do subtotal geral é a soma de `(priceInCents * quantity)` de todos os itens.

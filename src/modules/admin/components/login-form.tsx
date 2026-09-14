@@ -1,37 +1,37 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Lock, ArrowRight, Loader2 } from "lucide-react";
-import { loginAdminAction } from "../actions";
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { Lock, ArrowRight, Loader2 } from 'lucide-react'
+import { loginAdminAction } from '../actions'
 
 export function LoginForm() {
-  const router = useRouter();
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+  const router = useRouter()
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setError(null);
-    setLoading(true);
+    e.preventDefault()
+    setError(null)
+    setLoading(true)
 
     try {
-      const formData = new FormData();
-      formData.set("password", password);
+      const formData = new FormData()
+      formData.set('password', password)
 
-      const res = await loginAdminAction(formData);
+      const res = await loginAdminAction(formData)
       if (!res.success) {
-        setError(res.error);
-        setLoading(false);
-        return;
+        setError(res.error)
+        setLoading(false)
+        return
       }
 
-      router.push("/admin");
-      router.refresh();
+      router.push('/admin')
+      router.refresh()
     } catch {
-      setError("Erro inesperado. Tente novamente.");
-      setLoading(false);
+      setError('Erro inesperado. Tente novamente.')
+      setLoading(false)
     }
   }
 
@@ -58,7 +58,7 @@ export function LoginForm() {
             id="password"
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={e => setPassword(e.target.value)}
             required
             placeholder="Digite a senha administrativa..."
             className="w-full pl-10 pr-4 py-2.5 bg-white border border-stone-200 rounded-xl text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-900 transition-colors text-sm"
@@ -84,5 +84,5 @@ export function LoginForm() {
         )}
       </button>
     </form>
-  );
+  )
 }

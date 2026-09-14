@@ -1,73 +1,75 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import { X, Upload, Loader2, CheckCircle2, ImageIcon } from "lucide-react";
-import { UploadDropzone } from "@/lib/uploadthing-client";
-import { parseBRLToCents, formatCurrencyBRL } from "@/shared/utils";
-import { createProductAction, updateProductAction } from "../actions";
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import { X, Upload, Loader2, CheckCircle2, ImageIcon } from 'lucide-react'
+import { UploadDropzone } from '@/lib/uploadthing-client'
+import { parseBRLToCents, formatCurrencyBRL } from '@/shared/utils'
+import { createProductAction, updateProductAction } from '../actions'
 
 export interface EditableProduct {
-  id: string;
-  name: string;
-  priceInCents: number;
-  imageUrl: string;
-  active: boolean;
+  id: string
+  name: string
+  priceInCents: number
+  imageUrl: string
+  active: boolean
 }
 
 interface ProductFormModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  productToEdit?: EditableProduct | null;
-  onSaved: () => void;
+  isOpen: boolean
+  onClose: () => void
+  productToEdit?: EditableProduct | null
+  onSaved: () => void
 }
 
 export function ProductFormModal({
   isOpen,
   onClose,
   productToEdit,
-  onSaved,
+  onSaved
 }: ProductFormModalProps) {
-  const [name, setName] = useState("");
-  const [priceStr, setPriceStr] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [active, setActive] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [isSaving, setIsSaving] = useState(false);
+  const [name, setName] = useState('')
+  const [priceStr, setPriceStr] = useState('')
+  const [imageUrl, setImageUrl] = useState('')
+  const [active, setActive] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [isSaving, setIsSaving] = useState(false)
 
   useEffect(() => {
     if (productToEdit) {
-      setName(productToEdit.name);
-      setPriceStr(formatCurrencyBRL(productToEdit.priceInCents).replace("R$", "").trim());
-      setImageUrl(productToEdit.imageUrl);
-      setActive(productToEdit.active);
+      setName(productToEdit.name)
+      setPriceStr(
+        formatCurrencyBRL(productToEdit.priceInCents).replace('R$', '').trim()
+      )
+      setImageUrl(productToEdit.imageUrl)
+      setActive(productToEdit.active)
     } else {
-      setName("");
-      setPriceStr("");
-      setImageUrl("");
-      setActive(true);
+      setName('')
+      setPriceStr('')
+      setImageUrl('')
+      setActive(true)
     }
-    setError(null);
-  }, [productToEdit, isOpen]);
+    setError(null)
+  }, [productToEdit, isOpen])
 
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setError(null);
+    e.preventDefault()
+    setError(null)
 
-    const priceInCents = parseBRLToCents(priceStr);
+    const priceInCents = parseBRLToCents(priceStr)
     if (!priceInCents) {
-      setError("Por favor, digite um preço válido em reais (ex: 89,90).");
-      return;
+      setError('Por favor, digite um preço válido em reais (ex: 89,90).')
+      return
     }
 
     if (!imageUrl) {
-      setError("Por favor, faça o upload de uma foto da peça.");
-      return;
+      setError('Por favor, faça o upload de uma foto da peça.')
+      return
     }
 
-    setIsSaving(true);
+    setIsSaving(true)
     try {
       if (productToEdit) {
         const res = await updateProductAction({
@@ -75,32 +77,32 @@ export function ProductFormModal({
           name,
           priceInCents,
           imageUrl,
-          active,
-        });
+          active
+        })
         if (!res.success) {
-          setError(res.error);
-          setIsSaving(false);
-          return;
+          setError(res.error)
+          setIsSaving(false)
+          return
         }
       } else {
         const res = await createProductAction({
           name,
           priceInCents,
-          imageUrl,
-        });
+          imageUrl
+        })
         if (!res.success) {
-          setError(res.error);
-          setIsSaving(false);
-          return;
+          setError(res.error)
+          setIsSaving(false)
+          return
         }
       }
 
-      onSaved();
-      onClose();
+      onSaved()
+      onClose()
     } catch {
-      setError("Ocorreu um erro ao salvar o produto.");
+      setError('Ocorreu um erro ao salvar o produto.')
     } finally {
-      setIsSaving(false);
+      setIsSaving(false)
     }
   }
 
@@ -109,7 +111,7 @@ export function ProductFormModal({
       <div className="w-full max-w-lg bg-white rounded-2xl border border-stone-200 shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
         <div className="flex items-center justify-between px-6 py-4 border-b border-stone-100">
           <h2 className="text-base font-semibold text-stone-900">
-            {productToEdit ? "Editar Peça do Catálogo" : "Cadastrar Nova Peça"}
+            {productToEdit ? 'Editar Peça do Catálogo' : 'Cadastrar Nova Peça'}
           </h2>
           <button
             onClick={onClose}
@@ -119,7 +121,10 @@ export function ProductFormModal({
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 space-y-4 max-h-[80vh] overflow-y-auto">
+        <form
+          onSubmit={handleSubmit}
+          className="p-6 space-y-4 max-h-[80vh] overflow-y-auto"
+        >
           {error && (
             <div className="p-3 text-sm text-rose-600 bg-rose-50 border border-rose-200 rounded-xl">
               {error}
@@ -143,7 +148,7 @@ export function ProductFormModal({
                 />
                 <button
                   type="button"
-                  onClick={() => setImageUrl("")}
+                  onClick={() => setImageUrl('')}
                   className="absolute top-2 right-2 p-1.5 bg-black/60 hover:bg-black text-white rounded-full transition-colors shadow"
                   title="Trocar imagem"
                 >
@@ -157,32 +162,35 @@ export function ProductFormModal({
               <div className="border-2 border-dashed border-stone-200 hover:border-stone-400 rounded-xl p-4 text-center transition-colors">
                 <UploadDropzone
                   endpoint="imageUploader"
-                  onClientUploadComplete={(res) => {
+                  onClientUploadComplete={res => {
                     if (res?.[0]?.url) {
-                      setImageUrl(res[0].url);
+                      setImageUrl(res[0].url)
                     }
                   }}
                   onUploadError={(err: Error) => {
-                    setError(`Falha no upload: ${err.message}`);
+                    setError(`Falha no upload: ${err.message}`)
                   }}
                   appearance={{
-                    button: "bg-stone-900 text-white text-xs px-4 py-2 rounded-lg font-medium",
-                    container: "py-4",
-                    label: "text-stone-600 text-sm",
-                    allowedContent: "text-stone-400 text-xs",
+                    button:
+                      'bg-stone-900 text-white text-xs px-4 py-2 rounded-lg font-medium',
+                    container: 'py-4',
+                    label: 'text-stone-600 text-sm',
+                    allowedContent: 'text-stone-400 text-xs'
                   }}
                   content={{
-                    label: "Arraste uma foto aqui ou clique para selecionar",
-                    allowedContent: "Imagens até 8MB (JPEG, PNG, WEBP)",
-                    button: "Escolher Foto",
+                    label: 'Arraste uma foto aqui ou clique para selecionar',
+                    allowedContent: 'Imagens até 8MB (JPEG, PNG, WEBP)',
+                    button: 'Escolher Foto'
                   }}
                 />
                 <div className="mt-2 text-center">
-                  <span className="text-xs text-stone-400">ou use URL direta da imagem:</span>
+                  <span className="text-xs text-stone-400">
+                    ou use URL direta da imagem:
+                  </span>
                   <input
                     type="url"
                     value={imageUrl}
-                    onChange={(e) => setImageUrl(e.target.value)}
+                    onChange={e => setImageUrl(e.target.value)}
                     placeholder="https://..."
                     className="mt-1 w-full text-xs px-3 py-1.5 border border-stone-200 rounded-lg text-stone-700 placeholder:text-stone-400"
                   />
@@ -199,7 +207,7 @@ export function ProductFormModal({
             <input
               type="text"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={e => setName(e.target.value)}
               required
               minLength={2}
               maxLength={120}
@@ -220,7 +228,7 @@ export function ProductFormModal({
               <input
                 type="text"
                 value={priceStr}
-                onChange={(e) => setPriceStr(e.target.value)}
+                onChange={e => setPriceStr(e.target.value)}
                 required
                 placeholder="189,90"
                 className="w-full pl-10 pr-4 py-2.5 bg-white border border-stone-200 rounded-xl text-stone-900 placeholder:text-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-900"
@@ -235,10 +243,13 @@ export function ProductFormModal({
                 type="checkbox"
                 id="active"
                 checked={active}
-                onChange={(e) => setActive(e.target.checked)}
+                onChange={e => setActive(e.target.checked)}
                 className="w-4 h-4 rounded text-stone-900 focus:ring-stone-900"
               />
-              <label htmlFor="active" className="text-sm font-medium text-stone-700 cursor-pointer">
+              <label
+                htmlFor="active"
+                className="text-sm font-medium text-stone-700 cursor-pointer"
+              >
                 Exibir esta peça no catálogo público
               </label>
             </div>
@@ -263,12 +274,12 @@ export function ProductFormModal({
                   Salvando...
                 </>
               ) : (
-                "Salvar Peça"
+                'Salvar Peça'
               )}
             </button>
           </div>
         </form>
       </div>
     </div>
-  );
+  )
 }

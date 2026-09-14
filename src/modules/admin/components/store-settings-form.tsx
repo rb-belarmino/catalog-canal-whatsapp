@@ -11,7 +11,10 @@ interface StoreSettingsFormProps {
 
 function stripCountryCode55(phone: string): string {
   const digits = phone.replace(/\D/g, '')
-  if (digits.startsWith('55') && (digits.length === 12 || digits.length === 13)) {
+  if (
+    digits.startsWith('55') &&
+    (digits.length === 12 || digits.length === 13)
+  ) {
     return digits.slice(2)
   }
   return digits
@@ -54,7 +57,8 @@ export function StoreSettingsForm({
     // Auto-prefix Brazil DDI (55) if user provided DDD + number
     const finalPhone =
       rawDigits.length > 0
-        ? rawDigits.startsWith('55') && (rawDigits.length === 12 || rawDigits.length === 13)
+        ? rawDigits.startsWith('55') &&
+          (rawDigits.length === 12 || rawDigits.length === 13)
           ? rawDigits
           : `55${rawDigits}`
         : ''
@@ -81,9 +85,9 @@ export function StoreSettingsForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white border border-[#E2E2E2] p-5 sm:p-6 shadow-xs space-y-4"
+      className="bg-white border border-canal-border p-5 sm:p-6 shadow-xs space-y-4"
     >
-      <div className="flex items-center justify-between border-b border-[#E2E2E2] pb-3">
+      <div className="flex items-center justify-between border-b border-canal-border pb-3">
         <h3 className="text-xs font-semibold uppercase tracking-[2px] text-black flex items-center gap-2">
           <Store className="w-4 h-4 text-black" />
           Configurações da Loja
@@ -114,20 +118,22 @@ export function StoreSettingsForm({
             required
             maxLength={80}
             placeholder="Canal Concept"
-            className="w-full px-3 py-2 bg-neutral-50 border border-[#E2E2E2] text-black text-sm focus:outline-none focus:border-black transition-colors"
+            className="w-full px-3 py-2 bg-neutral-50 border border-canal-border text-black text-sm focus:outline-none focus:border-black transition-colors"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-neutral-700 uppercase tracking-wider mb-1.5 flex items-center justify-between">
+          <label className="text-xs font-medium text-neutral-700 uppercase tracking-wider mb-1.5 flex items-center justify-between">
             <span>WhatsApp de Contato</span>
             <span className="text-[10px] text-neutral-400 font-normal">
               Apenas DDD + Número
             </span>
           </label>
           <div className="relative flex items-center">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-neutral-500 gap-1 border-r border-[#E2E2E2] pr-2.5 my-1.5">
-              <span className="text-xs font-medium text-neutral-700">🇧🇷 +55</span>
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-neutral-500 gap-1 border-r border-canal-border pr-2.5 my-1.5">
+              <span className="text-xs font-medium text-neutral-700">
+                🇧🇷 +55
+              </span>
             </div>
             <input
               type="tel"
@@ -135,7 +141,7 @@ export function StoreSettingsForm({
               onChange={handlePhoneChange}
               maxLength={15}
               placeholder="(11) 99999-8888"
-              className="w-full pl-[78px] pr-3 py-2 bg-neutral-50 border border-[#E2E2E2] text-black text-sm focus:outline-none focus:border-black transition-colors"
+              className="w-full pl-19.5 pr-3 py-2 bg-neutral-50 border border-canal-border text-black text-sm focus:outline-none focus:border-black transition-colors"
             />
           </div>
           <p className="text-[10px] text-neutral-400 mt-1">

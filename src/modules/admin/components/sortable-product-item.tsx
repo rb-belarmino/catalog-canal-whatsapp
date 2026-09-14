@@ -1,22 +1,22 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
-import { GripVertical, Edit2, Trash2 } from "lucide-react";
-import { formatCurrencyBRL } from "@/shared/utils";
-import type { EditableProduct } from "./product-form-modal";
+import Image from 'next/image'
+import { useSortable } from '@dnd-kit/sortable'
+import { CSS } from '@dnd-kit/utilities'
+import { GripVertical, Edit2, Trash2 } from 'lucide-react'
+import { formatCurrencyBRL } from '@/shared/utils'
+import type { EditableProduct } from './product-form-modal'
 
 interface SortableProductItemProps {
-  product: EditableProduct;
-  onEdit: (product: EditableProduct) => void;
-  onDelete: (id: string, name: string) => void;
+  product: EditableProduct
+  onEdit: (product: EditableProduct) => void
+  onDelete: (id: string, name: string) => void
 }
 
 export function SortableProductItem({
   product,
   onEdit,
-  onDelete,
+  onDelete
 }: SortableProductItemProps) {
   const {
     attributes,
@@ -24,13 +24,13 @@ export function SortableProductItem({
     setNodeRef,
     transform,
     transition,
-    isDragging,
-  } = useSortable({ id: product.id });
+    isDragging
+  } = useSortable({ id: product.id })
 
   const style = {
     transform: CSS.Transform.toString(transform),
-    transition,
-  };
+    transition
+  }
 
   return (
     <div
@@ -38,8 +38,8 @@ export function SortableProductItem({
       style={style}
       className={`flex items-center justify-between p-3.5 bg-white border border-stone-200/80 rounded-xl transition-shadow ${
         isDragging
-          ? "opacity-50 shadow-lg ring-2 ring-stone-900/10 z-20"
-          : "hover:border-stone-300"
+          ? 'opacity-50 shadow-lg ring-2 ring-stone-900/10 z-20'
+          : 'hover:border-stone-300'
       }`}
     >
       <div className="flex items-center gap-3">
@@ -103,5 +103,5 @@ export function SortableProductItem({
         </button>
       </div>
     </div>
-  );
+  )
 }

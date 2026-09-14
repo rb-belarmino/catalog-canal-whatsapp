@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 import {
   DndContext,
   closestCenter,
@@ -8,88 +8,89 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
-  type DragEndEvent,
-} from "@dnd-kit/core";
+  type DragEndEvent
+} from '@dnd-kit/core'
 import {
   arrayMove,
   SortableContext,
   sortableKeyboardCoordinates,
-  verticalListSortingStrategy,
-} from "@dnd-kit/sortable";
-import { Plus, ArrowUpDown, Loader2, Sparkles } from "lucide-react";
-import { SortableProductItem } from "./sortable-product-item";
-import {
-  ProductFormModal,
-  type EditableProduct,
-} from "./product-form-modal";
-import { reorderProductsAction, deleteProductAction } from "../actions";
+  verticalListSortingStrategy
+} from '@dnd-kit/sortable'
+import { Plus, Loader2, Sparkles } from 'lucide-react'
+import { SortableProductItem } from './sortable-product-item'
+import { ProductFormModal, type EditableProduct } from './product-form-modal'
+import { reorderProductsAction, deleteProductAction } from '../actions'
 
 interface SortableProductListProps {
-  initialProducts: EditableProduct[];
+  initialProducts: EditableProduct[]
 }
 
-export function SortableProductList({ initialProducts }: SortableProductListProps) {
-  const [items, setItems] = useState<EditableProduct[]>(initialProducts);
-  const [isSavingOrder, setIsSavingOrder] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editingProduct, setEditingProduct] = useState<EditableProduct | null>(null);
+export function SortableProductList({
+  initialProducts
+}: SortableProductListProps) {
+  const [items, setItems] = useState<EditableProduct[]>(initialProducts)
+  const [isSavingOrder, setIsSavingOrder] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [editingProduct, setEditingProduct] = useState<EditableProduct | null>(
+    null
+  )
 
   useEffect(() => {
-    setItems(initialProducts);
-  }, [initialProducts]);
+    setItems(initialProducts)
+  }, [initialProducts])
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
-        distance: 5,
-      },
+        distance: 5
+      }
     }),
     useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates,
+      coordinateGetter: sortableKeyboardCoordinates
     })
-  );
+  )
 
   async function handleDragEnd(event: DragEndEvent) {
-    const { active, over } = event;
+    const { active, over } = event
 
     if (over && active.id !== over.id) {
-      const oldIndex = items.findIndex((item) => item.id === active.id);
-      const newIndex = items.findIndex((item) => item.id === over.id);
+      const oldIndex = items.findIndex(item => item.id === active.id)
+      const newIndex = items.findIndex(item => item.id === over.id)
 
-      const reordered = arrayMove(items, oldIndex, newIndex);
-      setItems(reordered);
+      const reordered = arrayMove(items, oldIndex, newIndex)
+      setItems(reordered)
 
       // Persist to database
-      setIsSavingOrder(true);
+      setIsSavingOrder(true)
       try {
-        const orderedIds = reordered.map((i) => i.id);
-        await reorderProductsAction(orderedIds);
+        const orderedIds = reordered.map(i => i.id)
+        await reorderProductsAction(orderedIds)
       } catch (err) {
-        console.error("Error saving new order:", err);
+        console.error('Error saving new order:', err)
       } finally {
-        setIsSavingOrder(false);
+        setIsSavingOrder(false)
       }
     }
   }
 
   function handleOpenCreate() {
-    setEditingProduct(null);
-    setIsModalOpen(true);
+    setEditingProduct(null)
+    setIsModalOpen(true)
   }
 
   function handleOpenEdit(product: EditableProduct) {
-    setEditingProduct(product);
-    setIsModalOpen(true);
+    setEditingProduct(product)
+    setIsModalOpen(true)
   }
 
   async function handleDelete(id: string, name: string) {
     const confirmed = window.confirm(
       `Deseja realmente remover a peça "${name}" do catálogo? Esta ação não pode ser desfeita.`
-    );
-    if (!confirmed) return;
+    )
+    if (!confirmed) return
 
-    setItems((prev) => prev.filter((item) => item.id !== id));
-    await deleteProductAction(id);
+    setItems(prev => prev.filter(item => item.id !== id))
+    await deleteProductAction(id)
   }
 
   return (
@@ -100,11 +101,12 @@ export function SortableProductList({ initialProducts }: SortableProductListProp
           <h2 className="text-lg font-semibold text-stone-900 flex items-center gap-2">
             Painel de Produtos
             <span className="text-xs font-medium px-2 py-0.5 bg-stone-100 text-stone-600 rounded-full">
-              {items.length} {items.length === 1 ? "peça" : "peças"}
+              {items.length} {items.length === 1 ? 'peça' : 'peças'}
             </span>
           </h2>
           <p className="text-xs text-stone-500 mt-0.5">
-            Arraste os itens para definir a ordem exata de exibição no catálogo público.
+            Arraste os itens para definir a ordem exata de exibição no catálogo
+            público.
           </p>
         </div>
 
@@ -135,7 +137,8 @@ export function SortableProductList({ initialProducts }: SortableProductListProp
             Nenhuma peça cadastrada ainda
           </h3>
           <p className="text-xs text-stone-500 mt-1 max-w-sm mx-auto">
-            Clique no botão &quot;Nova Peça&quot; acima para adicionar a primeira roupa com foto, nome e preço.
+            Clique no botão &quot;Nova Peça&quot; acima para adicionar a
+            primeira roupa com foto, nome e preço.
           </p>
           <button
             onClick={handleOpenCreate}
@@ -152,11 +155,11 @@ export function SortableProductList({ initialProducts }: SortableProductListProp
           onDragEnd={handleDragEnd}
         >
           <SortableContext
-            items={items.map((item) => item.id)}
+            items={items.map(item => item.id)}
             strategy={verticalListSortingStrategy}
           >
             <div className="space-y-2.5">
-              {items.map((product) => (
+              {items.map(product => (
                 <SortableProductItem
                   key={product.id}
                   product={product}
@@ -179,5 +182,5 @@ export function SortableProductList({ initialProducts }: SortableProductListProp
         }}
       />
     </div>
-  );
+  )
 }

@@ -1,19 +1,19 @@
-import { redirect } from "next/navigation";
-import Link from "next/link";
-import { LogOut, ExternalLink, Sparkles } from "lucide-react";
-import { isAuthenticatedAdmin } from "@/modules/admin/auth";
-import { logoutAdminAction } from "@/modules/admin/actions";
+import { redirect } from 'next/navigation'
+import Link from 'next/link'
+import { LogOut, ExternalLink, Sparkles } from 'lucide-react'
+import { isAuthenticatedAdmin } from '@/modules/admin/auth'
+import { logoutAdminAction } from '@/modules/admin/actions'
 
 export const metadata = {
-  title: "Painel Administrativo | Catálogo de Roupas",
-};
+  title: 'Painel Administrativo | Catálogo de Roupas'
+}
 
 export default async function AdminLayout({
-  children,
+  children
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  const isAuth = await isAuthenticatedAdmin();
+  const isAuth = await isAuthenticatedAdmin()
 
   // If on login page, let it render without wrapper
   // Note: App Router sub-route /admin/login handles its own layout, but since this is /admin/layout.tsx,
@@ -65,5 +65,5 @@ export default async function AdminLayout({
         {children}
       </main>
     </div>
-  );
+  )
 }

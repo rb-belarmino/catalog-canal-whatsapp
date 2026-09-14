@@ -72,7 +72,7 @@ export function WishlistListViewer({
   return (
     <div className="space-y-6">
       {/* Summary Card */}
-      <div className="bg-white border border-[#E2E2E2] p-4 sm:p-5 flex items-center justify-between">
+      <div className="bg-white border border-canal-border p-4 sm:p-5 flex items-center justify-between">
         <div>
           <span className="text-[10px] uppercase tracking-[2px] text-neutral-400 font-medium">
             Resumo da Seleção
@@ -92,10 +92,10 @@ export function WishlistListViewer({
           return (
             <div
               key={product.id}
-              className="bg-white border border-[#E2E2E2] p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 hover:border-black transition-colors"
+              className="bg-white border border-canal-border p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 hover:border-black transition-colors"
             >
               {/* 3:4 Aspect Image */}
-              <div className="relative w-28 sm:w-24 aspect-3/4 bg-[#F2F2F2] overflow-hidden shrink-0 border border-[#E2E2E2]">
+              <div className="relative w-28 sm:w-24 aspect-3/4 bg-canal-bg overflow-hidden shrink-0 border border-canal-border">
                 {product.imageUrl ? (
                   <Image
                     src={product.imageUrl}

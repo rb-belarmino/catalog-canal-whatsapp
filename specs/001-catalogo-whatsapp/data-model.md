@@ -2,7 +2,7 @@
 
 **Feature**: `001-catalogo-whatsapp` — Catálogo de Roupas com Canal WhatsApp  
 **Date**: 2026-09-12  
-**Status**: Ready  
+**Status**: Ready
 
 ---
 
@@ -119,11 +119,11 @@ model ShopConfig {
 - **Schema Format (JSON array)**:
   ```typescript
   interface WishlistItem {
-    id: string;          // Product id
-    name: string;        // Product name snapshot
-    priceInCents: number;// Product price in cents
-    imageUrl: string;    // Product image URL
-    addedAt: number;     // Date.now() timestamp
+    id: string // Product id
+    name: string // Product name snapshot
+    priceInCents: number // Product price in cents
+    imageUrl: string // Product image URL
+    addedAt: number // Date.now() timestamp
   }
   ```
 - **Validation & Rules**:
@@ -137,9 +137,9 @@ model ShopConfig {
 - **Payload**:
   ```typescript
   interface AdminSessionToken {
-    authenticated: true;
-    issuedAt: number;
-    sig: string; // HMAC-SHA256(ADMIN_SESSION_SECRET, `${issuedAt}`)
+    authenticated: true
+    issuedAt: number
+    sig: string // HMAC-SHA256(ADMIN_SESSION_SECRET, `${issuedAt}`)
   }
   ```
 - **Validity**:
@@ -152,6 +152,7 @@ model ShopConfig {
 ## 4. State Transitions
 
 ### Product Lifecycle
+
 ```
 [Draft in Admin Form]
        │

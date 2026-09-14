@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
-import { useEffect } from "react";
-import { RefreshCw, WifiOff } from "lucide-react";
-import { logger } from "@/shared/logger";
+import { useEffect } from 'react'
+import { RefreshCw, WifiOff } from 'lucide-react'
+import { logger } from '@/shared/logger'
 
 export default function GlobalError({
   error,
-  reset,
+  reset
 }: {
-  error: Error & { digest?: string };
-  reset: () => void;
+  error: Error & { digest?: string }
+  reset: () => void
 }) {
   useEffect(() => {
-    logger.error("ErrorBoundary", error.message, { digest: error.digest });
-  }, [error]);
+    logger.error('ErrorBoundary', error.message, { digest: error.digest })
+  }, [error])
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center bg-[#fcfbf9]">
@@ -24,7 +24,8 @@ export default function GlobalError({
         Ops! Tivemos uma falha de conexão
       </h2>
       <p className="text-stone-600 max-w-md text-sm mb-6 leading-relaxed">
-        Não foi possível carregar as peças do catálogo no momento. Por favor, verifique sua conexão com a internet e tente novamente.
+        Não foi possível carregar as peças do catálogo no momento. Por favor,
+        verifique sua conexão com a internet e tente novamente.
       </p>
       <button
         onClick={() => reset()}
@@ -34,5 +35,5 @@ export default function GlobalError({
         Tentar novamente
       </button>
     </div>
-  );
+  )
 }

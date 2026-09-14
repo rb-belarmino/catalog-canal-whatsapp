@@ -10,11 +10,13 @@ Este guia descreve os cenários de validação de ponta a ponta para verificar o
 ## 1. Pré-requisitos e Configuração
 
 1. Certifique-se de que as dependências estão instaladas:
+
    ```bash
    npm install
    ```
 
 2. Execute as migrações/atualização do banco de dados (se aplicável):
+
    ```bash
    npx prisma db push
    ```
@@ -29,6 +31,7 @@ Este guia descreve os cenários de validação de ponta a ponta para verificar o
 ## 2. Cenários de Validação Manual
 
 ### Cenário 1: Visualização da Vitrine Canal Concept (Desktop e Mobile)
+
 1. Acesse `http://localhost:3000` em um navegador.
 2. **Verifique**:
    - A barra superior de avisos está presente no topo exibindo mensagens institucionais/promocionais em caixa alta e espaçamento elegante.
@@ -39,6 +42,7 @@ Este guia descreve os cenários de validação de ponta a ponta para verificar o
    - Em viewport mobile (ex.: 375px de largura), a grade se ajusta em 2 colunas nítidas e legíveis.
 
 ### Cenário 2: Busca Textual Rápida
+
 1. Na vitrine, digite o nome de uma peça existente no campo de busca do cabeçalho (ex.: "Vestido" ou "Linho").
 2. **Verifique**:
    - A listagem filtra os produtos instantaneamente.
@@ -47,6 +51,7 @@ Este guia descreve os cenários de validação de ponta a ponta para verificar o
 4. Digite um termo inexistente (ex.: "XYZ999") e verifique a mensagem amigável com opção para restaurar a lista.
 
 ### Cenário 3: Adição à Sacola e Envio para o WhatsApp
+
 1. Clique em "Adicionar à Sacola" em 2 peças distintas.
 2. **Verifique**:
    - O item é adicionado diretamente sem solicitação de tamanho na vitrine.
@@ -62,6 +67,7 @@ Este guia descreve os cenários de validação de ponta a ponta para verificar o
 ## 3. Testes Automatizados
 
 Executar testes end-to-end com Playwright:
+
 ```bash
 npm run test:e2e
 ```

@@ -2,21 +2,21 @@
 
 **Feature**: `001-catalogo-whatsapp` — Catálogo de Roupas com Canal WhatsApp  
 **Date**: 2026-09-12  
-**Status**: Completed  
+**Status**: Completed
 
 ---
 
 ## 1. Web Framework & Architecture
 
 - **Decision**: Next.js 16.3.5 with App Router (`src/app`), Server Components (RSC) for initial page renders and Server Actions for data mutations.
-- **Rationale**: 
+- **Rationale**:
   - Fulfills the explicit user requirement (`Next.js 16.3.5 (App Router)`).
   - Aligns with Constitution Principle II (Modular Monolith): frontend and backend live within the same deployable unit without cross-boundary network latency for internal queries.
   - Server Components allow the public catalog page (`/`) to fetch products directly via Prisma on the server, streaming HTML with instant LCP and zero client-side fetch waterfalls.
   - Server Actions handle admin mutations (create/edit/delete/reorder products, update settings, login/logout) with built-in CSRF protection, typesafety, and standard revalidation (`revalidatePath('/')`).
 - **Alternatives considered**:
-  - *Separate Express/Fastify backend + Next.js frontend*: Rejected. Violates Constitution Principle VII (Simplicity & YAGNI) and Principle II (Modular Monolith); adds unnecessary operational overhead and deployment complexity.
-  - *Next.js Pages Router*: Rejected. App Router is the standard in modern Next.js with superior streaming, layout nesting, and native Server Actions.
+  - _Separate Express/Fastify backend + Next.js frontend_: Rejected. Violates Constitution Principle VII (Simplicity & YAGNI) and Principle II (Modular Monolith); adds unnecessary operational overhead and deployment complexity.
+  - _Next.js Pages Router_: Rejected. App Router is the standard in modern Next.js with superior streaming, layout nesting, and native Server Actions.
 
 ---
 
@@ -29,8 +29,8 @@
   - Prisma ORM 7 provides strong TypeScript typing, schema migrations (`prisma migrate`), declarative models, and clean data access layers satisfying Constitution Principle I (Clean Code).
   - Prisma client will be instantiated as a singleton (`src/shared/db.ts`) attached to `globalThis` in development to prevent exhausting database connections during Fast Refresh.
 - **Alternatives considered**:
-  - *Drizzle ORM*: Fast and lightweight, but user explicitly specified Prisma ORM 7.
-  - *Raw SQL (pg/postgres.js)*: Lacks declarative schema migration management and type generation, increasing risk of schema drift.
+  - _Drizzle ORM_: Fast and lightweight, but user explicitly specified Prisma ORM 7.
+  - _Raw SQL (pg/postgres.js)_: Lacks declarative schema migration management and type generation, increasing risk of schema drift.
 
 ---
 
@@ -42,7 +42,7 @@
   - Fulfills Success Criterion SC-005 (operable on 375px screens without horizontal scroll) and Constitution Principle III (Excellent UX).
   - Tailwind provides utility classes for skeleton loading screens (`animate-pulse bg-zinc-200 dark:bg-zinc-800`), accessible focus states, and quick layout adjustments.
 - **Alternatives considered**:
-  - *CSS Modules / Styled Components*: More boilerplate, slower iteration, harder to keep consistent utility tokens.
+  - _CSS Modules / Styled Components_: More boilerplate, slower iteration, harder to keep consistent utility tokens.
 
 ---
 
@@ -55,8 +55,8 @@
   - File router (`imageUploader`) configured with strict mime type (`image/*`), maximum size of 8MB (satisfying edge case for large file handling with client-side pre-validation), and admin session verification middleware.
   - Stores the permanent public CDN URL in the Prisma `Product.imageUrl` field.
 - **Alternatives considered**:
-  - *AWS S3 / Cloudflare R2 with custom presigned URLs*: Requires significant manual boilerplate for presigned URL generation, multipart uploads, and credential management. UploadThing simplifies this to a single declarative router.
-  - *Local filesystem storage*: Incompatible with serverless hosting platforms (e.g. Vercel, Railway ephemeral containers).
+  - _AWS S3 / Cloudflare R2 with custom presigned URLs_: Requires significant manual boilerplate for presigned URL generation, multipart uploads, and credential management. UploadThing simplifies this to a single declarative router.
+  - _Local filesystem storage_: Incompatible with serverless hosting platforms (e.g. Vercel, Railway ephemeral containers).
 
 ---
 
@@ -69,8 +69,8 @@
   - Fulfills Constitution Principle IV (Security by Design — Zero Secrets in Code): Password and secret are read strictly from `process.env.ADMIN_PASSWORD` and `process.env.ADMIN_SESSION_SECRET`.
   - Storing a signed token in an `httpOnly` cookie protects against XSS credential theft, while timing-safe comparison (`crypto.timingSafeEqual`) prevents timing attacks on password verification.
 - **Alternatives considered**:
-  - *NextAuth.js / Auth.js*: Unnecessary complexity for a single static admin password with permanent session; violates Principle VII (YAGNI).
-  - *Plain text cookie (`admin=true`)*: Insecure; easily forged by any client without knowing the secret password.
+  - _NextAuth.js / Auth.js_: Unnecessary complexity for a single static admin password with permanent session; violates Principle VII (YAGNI).
+  - _Plain text cookie (`admin=true`)_: Insecure; easily forged by any client without knowing the secret password.
 
 ---
 
@@ -83,7 +83,7 @@
   - Enforces single-item uniqueness (no duplicates, no quantity multiplier) as clarified in the spec ("Sem quantidade — cada peça aparece uma única vez; tentar adicionar novamente é ignorado silenciosamente").
   - Calculates total price dynamically using integer cents or standard float currency formatting in BRL (`Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })`).
 - **Alternatives considered**:
-  - *Storing wishlist in Postgres via anonymous session cookies*: Unnecessary database bloat and cookie size overhead for a simple transient shopping list.
+  - _Storing wishlist in Postgres via anonymous session cookies_: Unnecessary database bloat and cookie size overhead for a simple transient shopping list.
 
 ---
 
@@ -96,7 +96,7 @@
   - Safe URI encoding using `encodeURIComponent`.
   - Edge case truncation guard: If the total message exceeds WhatsApp URL limits (~2,000 characters), truncate gracefully with an ellipsis and display the total summary.
 - **Alternatives considered**:
-  - *WhatsApp Business Cloud API*: Unnecessary for this workflow; the user explicitly wants the client to be redirected directly to WhatsApp with the message ready to send.
+  - _WhatsApp Business Cloud API_: Unnecessary for this workflow; the user explicitly wants the client to be redirected directly to WhatsApp with the message ready to send.
 
 ---
 
@@ -108,8 +108,8 @@
   - `@dnd-kit` is accessible, modern, lightweight, touch-friendly on mobile devices, and well-maintained in the React ecosystem.
   - The public catalog fetches products ordered by `sortOrder ASC`.
 - **Alternatives considered**:
-  - *HTML5 native drag & drop API*: Poor mobile/touch support and accessibility.
-  - *Framer Motion*: Heavy bundle size overhead solely for list reordering.
+  - _HTML5 native drag & drop API_: Poor mobile/touch support and accessibility.
+  - _Framer Motion_: Heavy bundle size overhead solely for list reordering.
 
 ---
 
@@ -126,7 +126,7 @@
     5. Wishlist add, duplicate prevention, remove, and total calculation.
     6. "Enviar para a vendedora" WhatsApp URL verification (intercepting window navigation and validating the encoded payload).
 - **Alternatives considered**:
-  - *Cypress*: Slower, heavier configuration for mobile viewport testing, user explicitly requested Playwright.
+  - _Cypress_: Slower, heavier configuration for mobile viewport testing, user explicitly requested Playwright.
 
 ---
 
@@ -137,4 +137,4 @@
   - Mandated by Constitution Principle VI (Observability & Structured Logging).
   - Logs admin actions (login attempts, product mutations, settings updates) and client events without logging sensitive data (no passwords, no raw customer phone numbers).
 - **Alternatives considered**:
-  - *Heavy APM agents (Datadog, New Relic)*: Overkill for initial launch; simple structured logger to stdout is portable to Vercel/Railway/Docker.
+  - _Heavy APM agents (Datadog, New Relic)_: Overkill for initial launch; simple structured logger to stdout is portable to Vercel/Railway/Docker.

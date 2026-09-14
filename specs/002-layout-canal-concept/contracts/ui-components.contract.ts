@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 /**
  * Contract: shadcn/ui Design Primitives for Canal Concept
@@ -6,9 +6,9 @@ import React from "react";
  */
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "outline" | "ghost" | "secondary" | "link";
-  size?: "default" | "sm" | "lg" | "icon";
-  asChild?: boolean;
+  variant?: 'default' | 'outline' | 'ghost' | 'secondary' | 'link'
+  size?: 'default' | 'sm' | 'lg' | 'icon'
+  asChild?: boolean
 }
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -16,12 +16,12 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 }
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: "default" | "secondary" | "outline" | "destructive" | "sale";
+  variant?: 'default' | 'secondary' | 'outline' | 'destructive' | 'sale'
 }
 
 export interface SheetProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title: string;
-  children: React.ReactNode;
+  isOpen: boolean
+  onClose: () => void
+  title: string
+  children: React.ReactNode
 }

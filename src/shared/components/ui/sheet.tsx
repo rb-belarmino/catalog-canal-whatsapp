@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import * as React from "react";
-import { X } from "lucide-react";
-import { cn } from "@/shared/utils";
+import * as React from 'react'
+import { X } from 'lucide-react'
+import { cn } from '@/shared/utils'
 
 export interface SheetProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title: string;
-  description?: string;
-  children: React.ReactNode;
-  className?: string;
+  isOpen: boolean
+  onClose: () => void
+  title: string
+  description?: string
+  children: React.ReactNode
+  className?: string
 }
 
 export function Sheet({
@@ -19,27 +19,27 @@ export function Sheet({
   title,
   description,
   children,
-  className,
+  className
 }: SheetProps) {
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen) {
-        onClose();
+      if (e.key === 'Escape' && isOpen) {
+        onClose()
       }
-    };
+    }
     if (isOpen) {
-      document.body.style.overflow = "hidden";
-      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = 'hidden'
+      window.addEventListener('keydown', handleKeyDown)
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = ''
     }
     return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpen, onClose]);
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isOpen, onClose])
 
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   return (
     <div className="fixed inset-0 z-50 flex justify-end">
@@ -56,12 +56,12 @@ export function Sheet({
         aria-modal="true"
         aria-labelledby="sheet-title"
         className={cn(
-          "relative z-50 flex h-full w-full max-w-md flex-col bg-white shadow-2xl transition-transform duration-300 ease-in-out",
+          'relative z-50 flex h-full w-full max-w-md flex-col bg-white shadow-2xl transition-transform duration-300 ease-in-out',
           className
         )}
       >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-[#E2E2E2] px-6 py-5">
+        <div className="flex items-center justify-between border-b border-canal-border px-6 py-5">
           <div>
             <h2
               id="sheet-title"
@@ -87,5 +87,5 @@ export function Sheet({
         <div className="flex-1 overflow-y-auto px-6 py-4">{children}</div>
       </div>
     </div>
-  );
+  )
 }

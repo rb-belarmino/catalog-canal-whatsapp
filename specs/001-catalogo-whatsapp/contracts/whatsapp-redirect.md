@@ -9,19 +9,21 @@
 
 ```typescript
 function buildWhatsAppUrl(params: {
-  whatsappNumber: string;
-  items: Array<{ name: string; priceInCents: number; imageUrl: string }>;
-  totalInCents: number;
-  storeName?: string;
-  isMobile?: boolean;
+  whatsappNumber: string
+  items: Array<{ name: string; priceInCents: number; imageUrl: string }>
+  totalInCents: number
+  storeName?: string
+  isMobile?: boolean
 }): string
 ```
 
 ### Destination Number
+
 - `whatsappNumber`: Must contain only digits, e.g., `5511999999999`.
 - If `whatsappNumber` is empty, the function returns an empty string or throws `MissingWhatsAppNumberError`.
 
 ### Base URL
+
 - Universal link: `https://wa.me/${cleanNumber}?text=${encodeURIComponent(formattedText)}`
 
 ---
@@ -45,6 +47,7 @@ Gostaria de confirmar a disponibilidade dessas peças!
 ```
 
 ### Example Rendered Message
+
 ```text
 Olá! Vi o catálogo e montei minha lista de desejos:
 

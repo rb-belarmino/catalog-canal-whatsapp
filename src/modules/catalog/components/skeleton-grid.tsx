@@ -7,7 +7,7 @@ export function SkeletonGrid() {
       {Array.from({ length: 8 }).map((_, i) => (
         <div
           key={i}
-          className="bg-white border border-[#E2E2E2] overflow-hidden animate-pulse flex flex-col justify-between"
+          className="bg-white border border-canal-border overflow-hidden animate-pulse flex flex-col justify-between"
         >
           {/* Image skeleton (3:4 ratio) */}
           <div className="w-full aspect-3/4 bg-neutral-200" />
@@ -21,5 +21,5 @@ export function SkeletonGrid() {
         </div>
       ))}
     </div>
-  );
+  )
 }

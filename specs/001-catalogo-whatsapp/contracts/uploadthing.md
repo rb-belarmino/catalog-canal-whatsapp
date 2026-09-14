@@ -8,37 +8,37 @@
 ## 1. File Router Definition (`src/lib/uploadthing-server.ts`)
 
 ```typescript
-import { createUploadthing, type FileRouter } from "uploadthing/next";
-import { verifyAdminSessionToken } from "@/modules/admin/auth";
-import { cookies } from "next/headers";
+import { createUploadthing, type FileRouter } from 'uploadthing/next'
+import { verifyAdminSessionToken } from '@/modules/admin/auth'
+import { cookies } from 'next/headers'
 
-const f = createUploadthing();
+const f = createUploadthing()
 
 export const ourFileRouter = {
   imageUploader: f({
     image: {
-      maxFileSize: "8MB",
-      maxFileCount: 1,
-    },
+      maxFileSize: '8MB',
+      maxFileCount: 1
+    }
   })
     .middleware(async () => {
       // Must be authenticated as admin
-      const cookieStore = await cookies();
-      const token = cookieStore.get("admin_session")?.value;
-      const isValid = await verifyAdminSessionToken(token);
+      const cookieStore = await cookies()
+      const token = cookieStore.get('admin_session')?.value
+      const isValid = await verifyAdminSessionToken(token)
 
       if (!isValid) {
-        throw new Error("Não autorizado para envio de imagens");
+        throw new Error('Não autorizado para envio de imagens')
       }
 
-      return { admin: true };
+      return { admin: true }
     })
     .onUploadComplete(async ({ metadata, file }) => {
-      return { url: file.url, key: file.key };
-    }),
-} satisfies FileRouter;
+      return { url: file.url, key: file.key }
+    })
+} satisfies FileRouter
 
-export type OurFileRouter = typeof ourFileRouter;
+export type OurFileRouter = typeof ourFileRouter
 ```
 
 ---

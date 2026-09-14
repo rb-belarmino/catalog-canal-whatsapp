@@ -1,31 +1,30 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Image from "next/image";
-import { Heart, Check, ImageOff } from "lucide-react";
-import { formatCurrencyBRL } from "@/shared/utils";
-import { useWishlist } from "@/modules/wishlist/context";
-import { Button } from "@/shared/components/ui/button";
-import type { CatalogProduct } from "../queries";
+import { useState } from 'react'
+import Image from 'next/image'
+import { Heart, Check, ImageOff } from 'lucide-react'
+import { formatCurrencyBRL } from '@/shared/utils'
+import { useWishlist } from '@/modules/wishlist/context'
+import { Button } from '@/shared/components/ui/button'
+import type { CatalogProduct } from '../queries'
 
 interface ProductCardProps {
-  product: CatalogProduct;
+  product: CatalogProduct
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const { hasItem, toggleItem } = useWishlist();
-  const [imageError, setImageError] = useState(false);
-  const isSelected = hasItem(product.id);
+  const { hasItem, toggleItem } = useWishlist()
+  const [imageError, setImageError] = useState(false)
+  const isSelected = hasItem(product.id)
 
   function handleToggleWishlist() {
-    toggleItem(product);
+    toggleItem(product)
   }
 
-
   return (
-    <div className="group bg-white flex flex-col justify-between border border-[#E2E2E2] hover:border-black transition-all duration-300">
+    <div className="group bg-white flex flex-col justify-between border border-canal-border hover:border-black transition-all duration-300">
       {/* 3:4 Aspect Ratio Image Container */}
-      <div className="relative w-full aspect-3/4 bg-[#F2F2F2] overflow-hidden">
+      <div className="relative w-full aspect-3/4 bg-canal-bg overflow-hidden">
         {!imageError ? (
           <Image
             src={product.imageUrl}
@@ -39,7 +38,9 @@ export function ProductCard({ product }: ProductCardProps) {
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center text-neutral-400 bg-neutral-100">
             <ImageOff className="w-6 h-6 mb-1 opacity-40" />
-            <span className="text-[10px] uppercase tracking-wider">Foto em Breve</span>
+            <span className="text-[10px] uppercase tracking-wider">
+              Foto em Breve
+            </span>
           </div>
         )}
 
@@ -47,14 +48,18 @@ export function ProductCard({ product }: ProductCardProps) {
         <button
           type="button"
           onClick={handleToggleWishlist}
-          aria-label={isSelected ? "Remover da lista de desejos" : "Adicionar à lista de desejos"}
+          aria-label={
+            isSelected
+              ? 'Remover da lista de desejos'
+              : 'Adicionar à lista de desejos'
+          }
           className={`absolute top-2.5 right-2.5 p-2 transition-all duration-200 cursor-pointer ${
             isSelected
-              ? "bg-black text-white"
-              : "bg-white/80 text-black hover:bg-white hover:text-black"
+              ? 'bg-black text-white'
+              : 'bg-white/80 text-black hover:bg-white hover:text-black'
           }`}
         >
-          <Heart className={`w-3.5 h-3.5 ${isSelected ? "fill-white" : ""}`} />
+          <Heart className={`w-3.5 h-3.5 ${isSelected ? 'fill-white' : ''}`} />
         </button>
       </div>
 
@@ -69,7 +74,6 @@ export function ProductCard({ product }: ProductCardProps) {
             <p className="text-sm sm:text-base font-semibold text-black tracking-tight">
               {formatCurrencyBRL(product.priceInCents)}
             </p>
-
           </div>
         </div>
 
@@ -78,7 +82,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <Button
             type="button"
             onClick={handleToggleWishlist}
-            variant={isSelected ? "outline" : "default"}
+            variant={isSelected ? 'outline' : 'default'}
             size="sm"
             className="w-full h-9 text-[10px] sm:text-[11px] tracking-[1.5px] uppercase flex items-center justify-center gap-1.5"
           >
@@ -97,5 +101,5 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </div>
     </div>
-  );
+  )
 }

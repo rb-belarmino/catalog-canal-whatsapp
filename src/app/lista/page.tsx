@@ -8,14 +8,17 @@ export const revalidate = 60
 
 export const metadata: Metadata = {
   title: 'Lista de Desejos | Catálogo By Jéssica Lindsey - Canal Concept',
-  description: 'Confira as peças selecionadas na lista de desejos da Canal Concept.'
+  description:
+    'Confira as peças selecionadas na lista de desejos da Canal Concept.'
 }
 
 interface WishlistPageProps {
   searchParams: Promise<{ ids?: string }>
 }
 
-export default async function WishlistPage({ searchParams }: WishlistPageProps) {
+export default async function WishlistPage({
+  searchParams
+}: WishlistPageProps) {
   const resolvedParams = await searchParams
   let idsString = resolvedParams?.ids || ''
   try {
@@ -24,7 +27,7 @@ export default async function WishlistPage({ searchParams }: WishlistPageProps) 
 
   const ids = idsString
     .split(/[,;+\s]+/)
-    .map((id) => id.trim())
+    .map(id => id.trim())
     .filter(Boolean)
 
   const [products, config] = await Promise.all([
@@ -33,9 +36,9 @@ export default async function WishlistPage({ searchParams }: WishlistPageProps) 
   ])
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F7F7F7]">
+    <div className="min-h-screen flex flex-col bg-canal-bg">
       {/* Minimalist Header */}
-      <header className="sticky top-0 z-40 w-full bg-white border-b border-[#E2E2E2]">
+      <header className="sticky top-0 z-40 w-full bg-white border-b border-canal-border">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
           <CanalLogo />
           <Link
@@ -69,8 +72,11 @@ export default async function WishlistPage({ searchParams }: WishlistPageProps) 
       </main>
 
       {/* Minimalist Footer */}
-      <footer className="border-t border-[#E2E2E2] bg-white py-8 text-center text-xs text-neutral-500 tracking-[1.5px] uppercase mt-auto">
-        <p>© {new Date().getFullYear()} Canal Concept. Todos os direitos reservados.</p>
+      <footer className="border-t border-canal-border bg-white py-8 text-center text-xs text-neutral-500 tracking-[1.5px] uppercase mt-auto">
+        <p>
+          © {new Date().getFullYear()} Canal Concept. Todos os direitos
+          reservados.
+        </p>
       </footer>
     </div>
   )

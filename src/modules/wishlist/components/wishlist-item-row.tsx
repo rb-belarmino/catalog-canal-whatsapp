@@ -1,20 +1,20 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { Trash2 } from "lucide-react";
-import { formatCurrencyBRL } from "@/shared/utils";
-import type { WishlistItem } from "../context";
+import Image from 'next/image'
+import { Trash2 } from 'lucide-react'
+import { formatCurrencyBRL } from '@/shared/utils'
+import type { WishlistItem } from '../context'
 
 interface WishlistItemRowProps {
-  item: WishlistItem;
-  onRemove: (id: string) => void;
+  item: WishlistItem
+  onRemove: (id: string) => void
 }
 
 export function WishlistItemRow({ item, onRemove }: WishlistItemRowProps) {
   return (
-    <div className="flex items-center justify-between gap-3 p-3 bg-white border border-[#E2E2E2] hover:border-black transition-colors">
+    <div className="flex items-center justify-between gap-3 p-3 bg-white border border-canal-border hover:border-black transition-colors">
       <div className="flex items-center gap-3 min-w-0">
-        <div className="relative w-14 h-18 overflow-hidden bg-neutral-100 shrink-0 border border-[#E2E2E2]">
+        <div className="relative w-14 h-18 overflow-hidden bg-neutral-100 shrink-0 border border-canal-border">
           <Image
             src={item.imageUrl}
             alt={item.name}
@@ -42,5 +42,5 @@ export function WishlistItemRow({ item, onRemove }: WishlistItemRowProps) {
         <Trash2 className="w-4 h-4" />
       </button>
     </div>
-  );
+  )
 }

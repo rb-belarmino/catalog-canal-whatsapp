@@ -14,25 +14,22 @@
   ```typescript
   await prisma.product.findMany({
     where: { active: true },
-    orderBy: [
-      { sortOrder: 'asc' },
-      { createdAt: 'desc' }
-    ],
+    orderBy: [{ sortOrder: 'asc' }, { createdAt: 'desc' }],
     select: {
       id: true,
       name: true,
       priceInCents: true,
-      imageUrl: true,
+      imageUrl: true
     }
-  });
+  })
   ```
 - **Return Type**:
   ```typescript
   interface CatalogProduct {
-    id: string;
-    name: string;
-    priceInCents: number;
-    imageUrl: string;
+    id: string
+    name: string
+    priceInCents: number
+    imageUrl: string
   }
   ```
 - **Error/Empty Behavior**:
@@ -44,13 +41,13 @@
   ```typescript
   await prisma.shopConfig.findUnique({
     where: { id: 'default' }
-  });
+  })
   ```
 - **Return Type**:
   ```typescript
   interface PublicShopConfig {
-    storeName: string;
-    whatsappNumber: string;
+    storeName: string
+    whatsappNumber: string
   }
   ```
 
@@ -61,17 +58,18 @@
 - **Hook Signature**:
   ```typescript
   interface WishlistContextType {
-    items: WishlistItem[];
-    totalInCents: number;
-    totalCount: number;
-    hasItem: (productId: string) => boolean;
-    addItem: (product: CatalogProduct) => void;
-    removeItem: (productId: string) => void;
-    clearWishlist: () => void;
+    items: WishlistItem[]
+    totalInCents: number
+    totalCount: number
+    hasItem: (productId: string) => boolean
+    addItem: (product: CatalogProduct) => void
+    removeItem: (productId: string) => void
+    clearWishlist: () => void
   }
   ```
 
 ### Behaviors
+
 1. **`addItem(product)`**:
    - Checks if `items.some(i => i.id === product.id)`.
    - If already present: does NOT increment count or duplicate. Silently succeeds.

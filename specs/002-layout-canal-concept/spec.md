@@ -18,7 +18,7 @@
 
 ---
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 — Cliente visualiza a vitrine com estética visual oficial Canal Concept (Priority: P1)
 
@@ -122,7 +122,7 @@ No painel de gerenciamento, a vendedora ou administradora pode configurar os com
 
 ---
 
-## Requirements *(mandatory)*
+## Requirements _(mandatory)_
 
 ### Functional Requirements
 
@@ -139,7 +139,7 @@ No painel de gerenciamento, a vendedora ou administradora pode configurar os com
 - **FR-011**: O sistema DEVE exibir estados visuais de carregamento (skeleton loading) que espelham a estrutura minimalista da vitrine para assegurar transições fluidas.
 - **FR-012**: O painel administrativo DEVE permitir que a loja gerencie o número de WhatsApp de atendimento e personalize os comunicados da barra superior de avisos, mantendo a marca Canal Concept fixa na identidade visual da vitrine.
 
-### Key Entities *(include if feature involves data)*
+### Key Entities _(include if feature involves data)_
 
 - **Produto (Product)**: Representa a peça de vestuário no catálogo. Atributos: Nome, Preço, Preço Promocional (opcional), URL da Imagem Principal, Status de Disponibilidade e Data de Criação (tamanhos são alinhados diretamente via atendimento humano).
 - **Aviso de Barra de Topo (Top Announcement)**: Mensagens institucionais e promocionais exibidas no topo da página (ex.: "FRETE GRÁTIS ACIMA DE R$ 599,00", "DESCONTO DE 5% NO PIX").
@@ -148,7 +148,7 @@ No painel de gerenciamento, a vendedora ou administradora pode configurar os com
 
 ---
 
-## Success Criteria *(mandatory)*
+## Success Criteria _(mandatory)_
 
 ### Measurable Outcomes
 

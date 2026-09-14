@@ -41,7 +41,7 @@ export function WishlistDrawer({
     setIsGenerating(true)
     try {
       const origin = typeof window !== 'undefined' ? window.location.origin : ''
-      const ids = items.map((i) => i.id).filter(Boolean)
+      const ids = items.map(i => i.id).filter(Boolean)
 
       let shareUrl: string | undefined
 
@@ -51,7 +51,10 @@ export function WishlistDrawer({
           shareUrl = `${origin}/lista/${res.code}`
         }
       } catch (err) {
-        console.error('Failed to create short wishlist link, using fallback', err)
+        console.error(
+          'Failed to create short wishlist link, using fallback',
+          err
+        )
       }
 
       // Fallback if shortener failed or origin is missing
@@ -74,7 +77,6 @@ export function WishlistDrawer({
       setIsGenerating(false)
     }
   }
-
 
   return (
     <Sheet
@@ -126,7 +128,6 @@ export function WishlistDrawer({
         {/* Footer with Subtotal & WhatsApp CTA */}
         {!isEmpty && (
           <div className="pt-4 border-t border-canal-border bg-white space-y-3 mt-auto">
-
             {!isConfigured && (
               <div className="p-2.5 bg-amber-50 border border-amber-200 flex items-center gap-2 text-amber-800 text-xs">
                 <AlertCircle className="w-4 h-4 shrink-0 text-amber-600" />
@@ -140,7 +141,7 @@ export function WishlistDrawer({
               type="button"
               onClick={handleSendToWhatsApp}
               disabled={isEmpty || !isConfigured || isGenerating}
-              className="w-full min-h-[48px] h-auto py-3 px-4 bg-black hover:bg-neutral-800 text-white font-medium text-xs tracking-[1.5px] uppercase flex items-center justify-center gap-2 text-center disabled:opacity-50 cursor-pointer"
+              className="w-full min-h-12 h-auto py-3 px-4 bg-black hover:bg-neutral-800 text-white font-medium text-xs tracking-[1.5px] uppercase flex items-center justify-center gap-2 text-center disabled:opacity-50 cursor-pointer"
             >
               {isGenerating ? (
                 <>

@@ -4,21 +4,21 @@
  */
 
 export interface WishlistProductPayload {
-  name: string;
-  priceInCents: number;
-  quantity: number;
+  name: string
+  priceInCents: number
+  quantity: number
 }
 
 export interface WhatsAppOrderRequest {
-  whatsappNumber: string; // E.164 without '+' or digits with country code: e.g. "5511999999999"
-  storeName: string;      // "Canal Concept"
-  items: WishlistProductPayload[];
-  totalInCents: number;
+  whatsappNumber: string // E.164 without '+' or digits with country code: e.g. "5511999999999"
+  storeName: string // "Canal Concept"
+  items: WishlistProductPayload[]
+  totalInCents: number
 }
 
 export interface WhatsAppOrderResponse {
-  rawMessage: string;
-  whatsappUrl: string; // e.g. "https://wa.me/5511999999999?text=..."
+  rawMessage: string
+  whatsappUrl: string // e.g. "https://wa.me/5511999999999?text=..."
 }
 
 /**

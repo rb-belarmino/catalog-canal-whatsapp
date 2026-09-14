@@ -22,25 +22,25 @@ Build a mobile-first online clothing catalog where a shopkeeper manages products
 **Project Type**: Next.js Modular Monolith Web Application  
 **Performance Goals**: Public catalog LCP < 2.5s on 4G mobile; sub-100ms client interactions for wishlist; zero layout shifts during image loading via skeleton screens  
 **Constraints**: Operable on screens down to 375px width without horizontal scroll; strictly zero secrets in code or git; single admin password session permanent until explicit logout  
-**Scale/Scope**: Single-tenant shop catalog (~50-500 products), high mobile traffic via direct WhatsApp referral links  
+**Scale/Scope**: Single-tenant shop catalog (~50-500 products), high mobile traffic via direct WhatsApp referral links
 
 ---
 
 ## Constitution Check
 
-*GATE: Evaluated before Phase 0 research and verified post Phase 1 design.*
+_GATE: Evaluated before Phase 0 research and verified post Phase 1 design._
 
-| Principle | Requirement / Standard | Plan Alignment | Status |
-|-----------|------------------------|----------------|:------:|
-| **I. Clean Code** | Single responsibility, descriptive naming, functions ≤ 40 lines (≤ 20 preferred). | Pure helper functions for currency, validation, and URL builders; clear modular file boundaries. | **PASS** |
-| **II. Modular Monolith** | Single deployable unit; cohesive modules (`catalog`, `wishlist`, `admin`, `shared`). | App router routes delegate to module domains without circular dependencies. | **PASS** |
-| **III. Excellent UX** | Fast, forgiving, human error messages, mobile-first (375px), skeleton loaders, direct WhatsApp redirect. | Mobile-first Tailwind design, pulse skeletons, empty states, zero zoom needed on mobile. | **PASS** |
-| **IV. Security by Design** | Zero secrets in source code, `.env` in `.gitignore`, `.env.example` with placeholders, timing-safe auth comparison. | `ADMIN_PASSWORD` & `DATABASE_URL` strictly in `.env`; timing-safe password comparison; secure httpOnly cookie. | **PASS** |
-| **V. Test-Driven Quality** | Critical user journeys covered by automated tests. | Comprehensive Playwright test suite for Catalog, Wishlist, Admin CRUD, Reordering, and WhatsApp redirect. | **PASS** |
-| **VI. Observability** | Structured JSON logging for business and administrative events. | Centralized JSON logger in `src/shared/logger.ts` for logins, mutations, and config changes. | **PASS** |
-| **VII. Simplicity & YAGNI** | Simplest solution satisfying requirements, no speculative generalization. | Minimalist stack; single admin password; no external auth service overhead; client-side wishlist. | **PASS** |
+| Principle                   | Requirement / Standard                                                                                              | Plan Alignment                                                                                                 |  Status  |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | :------: |
+| **I. Clean Code**           | Single responsibility, descriptive naming, functions ≤ 40 lines (≤ 20 preferred).                                   | Pure helper functions for currency, validation, and URL builders; clear modular file boundaries.               | **PASS** |
+| **II. Modular Monolith**    | Single deployable unit; cohesive modules (`catalog`, `wishlist`, `admin`, `shared`).                                | App router routes delegate to module domains without circular dependencies.                                    | **PASS** |
+| **III. Excellent UX**       | Fast, forgiving, human error messages, mobile-first (375px), skeleton loaders, direct WhatsApp redirect.            | Mobile-first Tailwind design, pulse skeletons, empty states, zero zoom needed on mobile.                       | **PASS** |
+| **IV. Security by Design**  | Zero secrets in source code, `.env` in `.gitignore`, `.env.example` with placeholders, timing-safe auth comparison. | `ADMIN_PASSWORD` & `DATABASE_URL` strictly in `.env`; timing-safe password comparison; secure httpOnly cookie. | **PASS** |
+| **V. Test-Driven Quality**  | Critical user journeys covered by automated tests.                                                                  | Comprehensive Playwright test suite for Catalog, Wishlist, Admin CRUD, Reordering, and WhatsApp redirect.      | **PASS** |
+| **VI. Observability**       | Structured JSON logging for business and administrative events.                                                     | Centralized JSON logger in `src/shared/logger.ts` for logins, mutations, and config changes.                   | **PASS** |
+| **VII. Simplicity & YAGNI** | Simplest solution satisfying requirements, no speculative generalization.                                           | Minimalist stack; single admin password; no external auth service overhead; client-side wishlist.              | **PASS** |
 
-*Result: All gates PASS. No constitutional violations.*
+_Result: All gates PASS. No constitutional violations._
 
 ---
 
