@@ -19,7 +19,8 @@ export function formatWhatsAppMessage({
   storeName?: string
   shareUrl?: string
 }): string {
-  const greeting = 'Olá, Jéssica! Separei essas peças da minha lista de desejos da *Canal*:'
+  const greeting =
+    'Olá, Jéssica! Separei essas peças da minha lista de desejos da *Canal*:'
 
   if (shareUrl) {
     return `${greeting}\n\n${shareUrl}`
@@ -29,7 +30,9 @@ export function formatWhatsAppMessage({
   return [
     greeting,
     '',
-    ...items.map(item => `• *${item.name}* - ${formatCurrencyBRL(item.priceInCents)}`)
+    ...items.map(
+      item => `• *${item.name}* - ${formatCurrencyBRL(item.priceInCents)}`
+    )
   ].join('\n')
 }
 
@@ -45,7 +48,10 @@ export function buildWhatsAppUrl(
       options.origin ||
       (typeof window !== 'undefined' ? window.location.origin : '')
     if (origin && options.items.length > 0) {
-      const ids = options.items.map(i => i.id).filter(Boolean).join(',')
+      const ids = options.items
+        .map(i => i.id)
+        .filter(Boolean)
+        .join(',')
       shareUrl = `${origin}/lista?ids=${ids}`
     }
   }

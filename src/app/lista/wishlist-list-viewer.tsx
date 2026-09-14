@@ -53,7 +53,8 @@ export function WishlistListViewer({
           Nenhuma Peça Selecionada
         </h2>
         <p className="text-xs text-neutral-500 mt-2 max-w-sm leading-relaxed">
-          Navegue pelas peças da Canal Concept e selecione seus itens favoritos para criar sua lista de desejos.
+          Navegue pelas peças da Canal Concept e selecione seus itens favoritos
+          para criar sua lista de desejos.
         </p>
         <div className="mt-6">
           <Link
@@ -77,14 +78,17 @@ export function WishlistListViewer({
             Resumo da Seleção
           </span>
           <p className="text-sm font-semibold uppercase tracking-[1.5px] text-black mt-0.5">
-            {displayItems.length} {displayItems.length === 1 ? 'peça selecionada' : 'peças selecionadas'}
+            {displayItems.length}{' '}
+            {displayItems.length === 1
+              ? 'peça selecionada'
+              : 'peças selecionadas'}
           </p>
         </div>
       </div>
 
       {/* Products List */}
       <div className="space-y-4">
-        {displayItems.map((product) => {
+        {displayItems.map(product => {
           return (
             <div
               key={product.id}
@@ -103,7 +107,9 @@ export function WishlistListViewer({
                 ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center text-neutral-400 bg-neutral-100">
                     <ImageOff className="w-5 h-5 mb-1 opacity-40" />
-                    <span className="text-[9px] uppercase tracking-wider">Sem foto</span>
+                    <span className="text-[9px] uppercase tracking-wider">
+                      Sem foto
+                    </span>
                   </div>
                 )}
               </div>
