@@ -23,25 +23,37 @@ export default async function AdminDashboardPage() {
   let dbError = false;
 
   try {
-    const [fetchedProducts, fetchedConfig] = await Promise.all([
-      prisma.product.findMany({
-        orderBy: [{ sortOrder: "asc" }, { createdAt: "desc" }],
-        select: {
-          id: true,
-          name: true,
-          priceInCents: true,
-          imageUrl: true,
-          active: true,
-        },
-      }),
-      prisma.shopConfig.findUnique({
-        where: { id: "default" },
-      }),
-    ]);
-    products = fetchedProducts;
-    config = fetchedConfig;
+    products = await prisma.product.findMany({
+      orderBy: [{ sortOrder: "asc" }, { createdAt: "desc" }],
+      select: {
+        id: true,
+        name: true,
+        priceInCents: true,
+        imageUrl: true,
+        active: true,
+      },
+    });
   } catch {
     dbError = true;
+  }
+
+  try {
+    const rawConfig = await prisma.shopConfig.findUnique({
+      where: { id: "default" },
+    });
+    if (rawConfig) {
+      config = {
+        storeName: rawConfig.storeName || "Canal Concept",
+        whatsappNumber: rawConfig.whatsappNumber || "",
+        topAnnouncement: rawConfig.topAnnouncement || "FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX",
+      };
+    }
+  } catch {
+    config = {
+      storeName: "Canal Concept",
+      whatsappNumber: "",
+      topAnnouncement: "FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX",
+    };
   }
 
   return (
