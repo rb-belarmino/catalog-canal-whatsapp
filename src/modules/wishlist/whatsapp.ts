@@ -46,7 +46,7 @@ export function buildWhatsAppUrl(
       (typeof window !== 'undefined' ? window.location.origin : '')
     if (origin && options.items.length > 0) {
       const ids = options.items.map(i => i.id).filter(Boolean).join(',')
-      shareUrl = `${origin}/lista?ids=${encodeURIComponent(ids)}`
+      shareUrl = `${origin}/lista?ids=${ids}`
     }
   }
 

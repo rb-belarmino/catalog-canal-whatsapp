@@ -3,11 +3,9 @@
 import * as React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Heart, MessageCircle, ArrowLeft, ImageOff } from 'lucide-react'
+import { Heart, ArrowLeft, ImageOff } from 'lucide-react'
 import { formatCurrencyBRL } from '@/shared/utils'
 import { useWishlist } from '@/modules/wishlist/context'
-import { buildWhatsAppUrl, dispatchToWhatsApp } from '@/modules/wishlist/whatsapp'
-import { createShortWishlistAction } from '@/modules/wishlist/actions'
 import type { CatalogProduct } from '@/modules/catalog/queries'
 
 interface WishlistListViewerProps {
@@ -17,9 +15,7 @@ interface WishlistListViewerProps {
 }
 
 export function WishlistListViewer({
-  initialProducts,
-  whatsappNumber,
-  storeName = 'Canal Concept'
+  initialProducts
 }: WishlistListViewerProps) {
   const { items: localItems } = useWishlist()
   const [isClient, setIsClient] = React.useState(false)
@@ -51,39 +47,6 @@ export function WishlistListViewer({
 
   const isEmpty = isClient && displayItems.length === 0
 
-  async function handleSendToWhatsApp() {
-    if (displayItems.length === 0) return
-
-    const origin = typeof window !== 'undefined' ? window.location.origin : ''
-    const ids = displayItems.map(i => i.id).filter(Boolean)
-    let shareUrl: string | undefined = undefined
-
-    if (origin && ids.length > 0) {
-      try {
-        const res = await createShortWishlistAction(ids)
-        if (res.success && res.code) {
-          shareUrl = `${origin}/l/${res.code}`
-        } else {
-          shareUrl = `${origin}/lista?ids=${encodeURIComponent(ids.join(','))}`
-        }
-      } catch {
-        shareUrl = `${origin}/lista?ids=${encodeURIComponent(ids.join(','))}`
-      }
-    }
-
-    const url = buildWhatsAppUrl({
-      items: displayItems.map(i => ({ ...i, addedAt: Date.now() })),
-      totalInCents,
-      whatsappNumber,
-      storeName,
-      shareUrl
-    })
-
-    if (url) {
-      dispatchToWhatsApp(url)
-    }
-  }
-
   if (isEmpty) {
     return (
       <div className="py-20 flex flex-col items-center justify-center text-center px-4">
@@ -110,82 +73,70 @@ export function WishlistListViewer({
   }
 
   return (
-    <div className="space-y-8">
-      {/* Top action / Counter bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E2E2E2] pb-4">
+    <div className="space-y-6">
+      {/* Summary Card */}
+      <div className="bg-white border border-[#E2E2E2] p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="text-[11px] uppercase tracking-[2px] text-neutral-500 font-medium">
-            {displayItems.length} {displayItems.length === 1 ? 'peça selecionada' : 'peças selecionadas'}
+          <span className="text-[11px] uppercase tracking-[2px] text-neutral-400 font-medium">
+            Resumo da Seleção
           </span>
-          <p className="text-lg font-bold tracking-tight text-black mt-0.5">
-            Subtotal: {formatCurrencyBRL(totalInCents)}
+          <p className="text-sm font-semibold uppercase tracking-[1px] text-black mt-0.5">
+            {displayItems.length} {displayItems.length === 1 ? 'peça selecionada' : 'peças selecionadas'}
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 border border-[#E2E2E2] hover:border-black text-black text-xs uppercase tracking-[1.5px] transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Catálogo Completo</span>
-          </Link>
-
-          {whatsappNumber && (
-            <button
-              type="button"
-              onClick={handleSendToWhatsApp}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-black hover:bg-neutral-800 text-white text-xs uppercase tracking-[1.5px] transition-colors cursor-pointer"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>Falar com a Consultora</span>
-            </button>
-          )}
+        <div className="sm:text-right border-t sm:border-t-0 pt-3 sm:pt-0 border-neutral-100">
+          <span className="text-[10px] uppercase tracking-[2px] text-neutral-400">
+            Valor Total Estimado
+          </span>
+          <p className="text-xl sm:text-2xl font-bold tracking-tight text-black">
+            {formatCurrencyBRL(totalInCents)}
+          </p>
+          <p className="text-[10px] text-neutral-500 uppercase tracking-wider mt-0.5">
+            ou até 10x de {formatCurrencyBRL(Math.floor(totalInCents / 10))} sem juros
+          </p>
         </div>
       </div>
 
-      {/* Grid of Wishlist Products */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+      {/* Products List */}
+      <div className="space-y-4">
         {displayItems.map((product) => {
           const installmentValue = Math.floor(product.priceInCents / 10)
           return (
             <div
               key={product.id}
-              className="group bg-white flex flex-col justify-between border border-[#E2E2E2] hover:border-black transition-all duration-300"
+              className="bg-white border border-[#E2E2E2] p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 hover:border-black transition-colors"
             >
-              {/* 3:4 Aspect Ratio Image */}
-              <div className="relative w-full aspect-3/4 bg-[#F2F2F2] overflow-hidden">
+              {/* 3:4 Aspect Image */}
+              <div className="relative w-28 sm:w-24 aspect-3/4 bg-[#F2F2F2] overflow-hidden shrink-0 border border-[#E2E2E2]">
                 {product.imageUrl ? (
                   <Image
                     src={product.imageUrl}
                     alt={product.name}
                     fill
-                    className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover"
+                    sizes="112px"
                   />
                 ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center text-neutral-400 bg-neutral-100">
-                    <ImageOff className="w-6 h-6 mb-1 opacity-40" />
-                    <span className="text-[10px] uppercase tracking-wider">Foto em Breve</span>
+                    <ImageOff className="w-5 h-5 mb-1 opacity-40" />
+                    <span className="text-[9px] uppercase tracking-wider">Sem foto</span>
                   </div>
                 )}
               </div>
 
-              {/* Product Info */}
-              <div className="p-3 sm:p-4 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-xs sm:text-[13px] font-normal tracking-[0.5px] uppercase text-black line-clamp-2 leading-tight">
-                    {product.name}
-                  </h3>
-
-                  <div className="mt-2.5">
-                    <p className="text-sm sm:text-base font-semibold text-black tracking-tight">
-                      {formatCurrencyBRL(product.priceInCents)}
-                    </p>
-                    <p className="text-[10px] text-neutral-500 uppercase tracking-wider mt-0.5">
-                      ou até 10x de {formatCurrencyBRL(installmentValue)} sem juros
-                    </p>
-                  </div>
+              {/* Info */}
+              <div className="flex-1 min-w-0">
+                <h3 className="text-sm sm:text-base font-normal tracking-[0.5px] uppercase text-black leading-tight">
+                  {product.name}
+                </h3>
+                <div className="mt-2 flex flex-wrap items-baseline gap-2">
+                  <span className="text-base sm:text-lg font-bold text-black tracking-tight">
+                    {formatCurrencyBRL(product.priceInCents)}
+                  </span>
+                  <span className="text-[11px] text-neutral-500 uppercase tracking-wider">
+                    • até 10x de {formatCurrencyBRL(installmentValue)} s/ juros
+                  </span>
                 </div>
               </div>
             </div>
@@ -193,32 +144,15 @@ export function WishlistListViewer({
         })}
       </div>
 
-      {/* Bottom Summary & WhatsApp CTA */}
-      <div className="bg-white border border-[#E2E2E2] p-6 text-center space-y-4 max-w-xl mx-auto mt-10">
-        <h3 className="text-xs font-semibold uppercase tracking-[2px] text-black">
-          Atendimento Personalizado
-        </h3>
-        <p className="text-xs text-neutral-500 leading-relaxed">
-          Tire dúvidas sobre tecidos, caimento e disponibilidade de tamanhos com a Consultora Canal Concept.
-        </p>
-        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-          {whatsappNumber && (
-            <button
-              type="button"
-              onClick={handleSendToWhatsApp}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-black hover:bg-neutral-800 text-white text-xs uppercase tracking-[2px] transition-colors cursor-pointer"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>Enviar Lista no WhatsApp</span>
-            </button>
-          )}
-          <Link
-            href="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 border border-[#E2E2E2] hover:border-black text-black text-xs uppercase tracking-[2px] transition-colors"
-          >
-            <span>Ver Mais Peças</span>
-          </Link>
-        </div>
+      {/* Bottom CTA */}
+      <div className="mt-10 text-center pt-4">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 px-8 py-3.5 bg-black hover:bg-neutral-800 text-white text-xs uppercase tracking-[2px] transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Explorar Coleção Completa</span>
+        </Link>
       </div>
     </div>
   )

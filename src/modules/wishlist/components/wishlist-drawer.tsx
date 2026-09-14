@@ -1,11 +1,9 @@
 'use client'
 
-import { useState } from 'react'
 import { MessageCircle, AlertCircle, Heart } from 'lucide-react'
 import { useWishlist } from '../context'
 import { WishlistItemRow } from './wishlist-item-row'
 import { buildWhatsAppUrl, dispatchToWhatsApp } from '../whatsapp'
-import { createShortWishlistAction } from '../actions'
 import { Sheet } from '@/shared/components/ui/sheet'
 import { Button } from '@/shared/components/ui/button'
 
@@ -32,43 +30,23 @@ export function WishlistDrawer({
     whatsappNumber && whatsappNumber.replace(/\D/g, '')
   )
   const isEmpty = items.length === 0
-  const [isGeneratingLink, setIsGeneratingLink] = useState(false)
+  function handleSendToWhatsApp() {
+    if (isEmpty || !isConfigured) return
 
-  async function handleSendToWhatsApp() {
-    if (isEmpty || !isConfigured || isGeneratingLink) return
+    const origin = typeof window !== 'undefined' ? window.location.origin : ''
+    const ids = items.map((i) => i.id).filter(Boolean).join(',')
+    const shareUrl = origin && ids ? `${origin}/lista?ids=${ids}` : undefined
 
-    setIsGeneratingLink(true)
-    try {
-      const origin = typeof window !== 'undefined' ? window.location.origin : ''
-      const ids = items.map(i => i.id).filter(Boolean)
-      let shareUrl: string | undefined = undefined
+    const url = buildWhatsAppUrl({
+      items,
+      totalInCents,
+      whatsappNumber,
+      storeName,
+      shareUrl
+    })
 
-      if (origin && ids.length > 0) {
-        try {
-          const res = await createShortWishlistAction(ids)
-          if (res.success && res.code) {
-            shareUrl = `${origin}/l/${res.code}`
-          } else {
-            shareUrl = `${origin}/lista?ids=${encodeURIComponent(ids.join(','))}`
-          }
-        } catch {
-          shareUrl = `${origin}/lista?ids=${encodeURIComponent(ids.join(','))}`
-        }
-      }
-
-      const url = buildWhatsAppUrl({
-        items,
-        totalInCents,
-        whatsappNumber,
-        storeName,
-        shareUrl
-      })
-
-      if (url) {
-        dispatchToWhatsApp(url)
-      }
-    } finally {
-      setIsGeneratingLink(false)
+    if (url) {
+      dispatchToWhatsApp(url)
     }
   }
 
