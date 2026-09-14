@@ -9,8 +9,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Catálogo de Roupas",
-  description: "Escolha suas peças favoritas e envie sua lista diretamente pelo WhatsApp.",
+  title: "Canal Concept | Catálogo Oficial de Moda Feminina",
+  description: "Descubra a coleção exclusiva da Canal Concept. Selecione suas peças favoritas e finalize seu atendimento diretamente pelo WhatsApp.",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-screen bg-[#fcfbf9] text-stone-900 font-sans antialiased selection:bg-stone-900 selection:text-white">
+      <body className="min-h-screen bg-[#F7F7F7] text-[#111111] font-sans antialiased selection:bg-black selection:text-white">
         <WishlistProvider>
           {children}
         </WishlistProvider>

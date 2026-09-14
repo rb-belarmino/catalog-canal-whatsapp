@@ -211,6 +211,7 @@ export async function reorderProductsAction(orderedIds: string[]): Promise<Actio
 export async function updateShopConfigAction(input: {
   storeName?: string;
   whatsappNumber?: string;
+  topAnnouncement?: string;
 }): Promise<ActionResult> {
   try {
     await requireAuth();
@@ -236,12 +237,21 @@ export async function updateShopConfigAction(input: {
       data.whatsappNumber = cleanPhone;
     }
 
+    if (input.topAnnouncement !== undefined) {
+      const trimmed = input.topAnnouncement.trim();
+      if (trimmed.length > 255) {
+        return { success: false, error: "O comunicado da barra de topo deve ter no máximo 255 caracteres." };
+      }
+      data.topAnnouncement = trimmed;
+    }
+
     await prisma.shopConfig.upsert({
       where: { id: "default" },
       create: {
         id: "default",
-        storeName: data.storeName ?? "Catálogo de Roupas",
+        storeName: data.storeName ?? "Canal Concept",
         whatsappNumber: data.whatsappNumber ?? "",
+        topAnnouncement: data.topAnnouncement ?? "FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX",
       },
       update: data,
     });

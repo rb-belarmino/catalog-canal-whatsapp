@@ -2,21 +2,22 @@ export function SkeletonGrid() {
   return (
     <div
       aria-label="Carregando produtos"
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+      className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6"
     >
-      {Array.from({ length: 6 }).map((_, i) => (
+      {Array.from({ length: 8 }).map((_, i) => (
         <div
           key={i}
-          className="bg-white rounded-2xl border border-stone-200/60 overflow-hidden shadow-xs animate-pulse flex flex-col"
+          className="bg-white border border-[#E2E2E2] overflow-hidden animate-pulse flex flex-col justify-between"
         >
-          {/* Image skeleton */}
-          <div className="w-full aspect-3/4 bg-stone-200/70" />
+          {/* Image skeleton (3:4 ratio) */}
+          <div className="w-full aspect-3/4 bg-neutral-200" />
 
           {/* Details skeleton */}
-          <div className="p-4 space-y-3">
-            <div className="h-4 bg-stone-200 rounded-md w-4/5" />
-            <div className="h-4 bg-stone-200 rounded-md w-2/5" />
-            <div className="h-9 bg-stone-200/80 rounded-xl w-full mt-2" />
+          <div className="p-3 sm:p-4 space-y-2.5">
+            <div className="h-3 bg-neutral-200 w-4/5" />
+            <div className="h-4 bg-neutral-200 w-1/2" />
+            <div className="h-2.5 bg-neutral-100 w-2/3" />
+            <div className="h-8 bg-neutral-200 w-full mt-3" />
           </div>
         </div>
       ))}

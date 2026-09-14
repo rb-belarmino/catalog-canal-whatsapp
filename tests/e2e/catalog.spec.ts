@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("User Story 2: Public Catalog Browsing", () => {
   test("loads public catalog without authentication", async ({ page }) => {
     await page.goto("/");
-    await expect(page).toHaveTitle(/Catálogo de Roupas/i);
+    await expect(page).toHaveTitle(/Canal Concept/i);
 
     // Verify header exists
     await expect(page.locator("header")).toBeVisible();
@@ -25,7 +25,7 @@ test.describe("User Story 2: Public Catalog Browsing", () => {
     await page.goto("/");
 
     // Either the empty state message or product grid must be present
-    const emptyNotice = page.getByText(/Nosso catálogo está sendo preparado/i);
+    const emptyNotice = page.getByText(/Coleção em Preparação/i);
     const productGrid = page.locator('[data-testid="product-grid"]');
 
     const hasEmptyNotice = await emptyNotice.isVisible().catch(() => false);

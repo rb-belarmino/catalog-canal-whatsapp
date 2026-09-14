@@ -11,8 +11,12 @@ export interface CatalogProduct {
 export interface PublicShopConfig {
   storeName: string;
   whatsappNumber: string;
+  topAnnouncement: string;
   dbError?: boolean;
 }
+
+const DEFAULT_ANNOUNCEMENT =
+  "FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX";
 
 /**
  * Fetches all active products ordered manually by the shopkeeper (sortOrder ASC)
@@ -50,8 +54,9 @@ export async function getShopConfig(): Promise<PublicShopConfig> {
       where: { id: "default" },
     });
     return {
-      storeName: config?.storeName || "Catálogo de Roupas",
+      storeName: config?.storeName || "Canal Concept",
       whatsappNumber: config?.whatsappNumber || "",
+      topAnnouncement: config?.topAnnouncement || DEFAULT_ANNOUNCEMENT,
       dbError: false,
     };
   } catch (err) {
@@ -59,8 +64,9 @@ export async function getShopConfig(): Promise<PublicShopConfig> {
       reason: err instanceof Error ? err.message : String(err),
     });
     return {
-      storeName: "Catálogo de Roupas",
+      storeName: "Canal Concept",
       whatsappNumber: "",
+      topAnnouncement: DEFAULT_ANNOUNCEMENT,
       dbError: true,
     };
   }

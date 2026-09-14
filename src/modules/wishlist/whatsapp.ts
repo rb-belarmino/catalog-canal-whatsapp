@@ -11,9 +11,8 @@ export interface BuildWhatsAppMessageOptions {
 function formatItemLine(item: WishlistItem): string[] {
   return [
     `• *${item.name}* - ${formatCurrencyBRL(item.priceInCents)}`,
-    `  Foto: ${item.imageUrl}`,
-    "",
-  ];
+    item.imageUrl ? `  Foto: ${item.imageUrl}` : "",
+  ].filter(Boolean);
 }
 
 function truncateIfLong(
@@ -36,7 +35,7 @@ function truncateIfLong(
     "",
     `*Total: ${totalFormatted}*`,
     "",
-    "Gostaria de confirmar a disponibilidade dessas peças!",
+    "Gostaria de verificar os tamanhos disponíveis e finalizar o pedido com você!",
   ];
 
   return truncated.join("\n");
@@ -45,25 +44,23 @@ function truncateIfLong(
 export function formatWhatsAppMessage({
   items,
   totalInCents,
-  storeName,
+  storeName = "Canal Concept",
 }: {
   items: WishlistItem[];
   totalInCents: number;
   storeName?: string;
 }): string {
-  const greeting = storeName
-    ? `Olá, equipe da *${storeName}*! Vi o catálogo e montei minha lista de desejos:`
-    : `Olá! Vi o catálogo e montei minha lista de desejos:`;
-
+  const greeting = `Olá! Gostei dessas peças da *${storeName}*:`;
   const totalFormatted = formatCurrencyBRL(totalInCents);
 
   const lines: string[] = [
     greeting,
     "",
     ...items.flatMap(formatItemLine),
-    `*Total: ${totalFormatted}*`,
     "",
-    "Gostaria de confirmar a disponibilidade dessas peças!",
+    `*Total Estimado: ${totalFormatted}*`,
+    "",
+    "Gostaria de verificar os tamanhos disponíveis e finalizar o pedido com você!",
   ];
 
   return truncateIfLong(lines, items, greeting, totalFormatted);

@@ -22,10 +22,11 @@ model Product {
 }
 
 model ShopConfig {
-  id             String   @id @default("default")
-  storeName      String   @default("Catálogo de Roupas")
-  whatsappNumber String   @default("")
-  updatedAt      DateTime @updatedAt
+  id              String   @id @default("default")
+  storeName       String   @default("Canal Concept")
+  whatsappNumber  String   @default("")
+  topAnnouncement String   @default("FRETE GRÁTIS ACIMA DE R$ 599,00 | PARCELE EM ATÉ 10X SEM JUROS | 5% OFF NO PIX")
+  updatedAt       DateTime @updatedAt
 
   @@map("shop_configs")
 }

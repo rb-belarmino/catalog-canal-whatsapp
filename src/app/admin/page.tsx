@@ -19,7 +19,7 @@ export default async function AdminDashboardPage() {
     imageUrl: string;
     active: boolean;
   }> = [];
-  let config: { storeName: string; whatsappNumber: string } | null = null;
+  let config: { storeName: string; whatsappNumber: string; topAnnouncement?: string } | null = null;
   let dbError = false;
 
   try {
@@ -60,8 +60,9 @@ export default async function AdminDashboardPage() {
       {/* Store Settings Section */}
       <section>
         <StoreSettingsForm
-          initialStoreName={config?.storeName ?? "Catálogo de Roupas"}
+          initialStoreName={config?.storeName ?? "Canal Concept"}
           initialWhatsappNumber={config?.whatsappNumber ?? ""}
+          initialTopAnnouncement={config?.topAnnouncement}
         />
       </section>
 

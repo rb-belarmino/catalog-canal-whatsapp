@@ -12,9 +12,9 @@ interface WishlistItemRowProps {
 
 export function WishlistItemRow({ item, onRemove }: WishlistItemRowProps) {
   return (
-    <div className="flex items-center justify-between gap-3 p-3 bg-stone-50 border border-stone-200/70 rounded-2xl">
+    <div className="flex items-center justify-between gap-3 p-3 bg-white border border-[#E2E2E2] hover:border-black transition-colors">
       <div className="flex items-center gap-3 min-w-0">
-        <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-stone-200/60 shrink-0 border border-stone-200/50">
+        <div className="relative w-14 h-18 overflow-hidden bg-neutral-100 shrink-0 border border-[#E2E2E2]">
           <Image
             src={item.imageUrl}
             alt={item.name}
@@ -24,10 +24,10 @@ export function WishlistItemRow({ item, onRemove }: WishlistItemRowProps) {
           />
         </div>
         <div className="min-w-0">
-          <h4 className="text-xs font-semibold text-stone-900 truncate leading-snug">
+          <h4 className="text-xs font-normal tracking-[0.5px] uppercase text-black truncate leading-tight">
             {item.name}
           </h4>
-          <p className="text-xs font-bold text-stone-900 mt-1">
+          <p className="text-xs font-semibold text-black mt-1">
             {formatCurrencyBRL(item.priceInCents)}
           </p>
         </div>
@@ -36,8 +36,8 @@ export function WishlistItemRow({ item, onRemove }: WishlistItemRowProps) {
       <button
         type="button"
         onClick={() => onRemove(item.id)}
-        aria-label={`Remover ${item.name} da lista`}
-        className="p-2 text-stone-400 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition-colors"
+        aria-label={`Remover ${item.name} da sacola`}
+        className="p-2 text-neutral-400 hover:text-black transition-colors cursor-pointer"
       >
         <Trash2 className="w-4 h-4" />
       </button>

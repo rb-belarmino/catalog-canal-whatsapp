@@ -24,6 +24,7 @@ interface WishlistContextType {
   hasItem: (productId: string) => boolean;
   addItem: (product: { id: string; name: string; priceInCents: number; imageUrl: string }) => void;
   removeItem: (productId: string) => void;
+  toggleItem: (product: { id: string; name: string; priceInCents: number; imageUrl: string }) => void;
   clearWishlist: () => void;
   isDrawerOpen: boolean;
   setIsDrawerOpen: (open: boolean) => void;
@@ -86,6 +87,18 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
     setItems((prev) => prev.filter((item) => item.id !== productId));
   }, []);
 
+  const toggleItem = useCallback(
+    (product: { id: string; name: string; priceInCents: number; imageUrl: string }) => {
+      setItems((prev) => {
+        if (prev.some((item) => item.id === product.id)) {
+          return prev.filter((item) => item.id !== product.id);
+        }
+        return [...prev, { ...product, addedAt: Date.now() }];
+      });
+    },
+    []
+  );
+
   const clearWishlist = useCallback(() => {
     setItems([]);
   }, []);
@@ -106,6 +119,7 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
         hasItem,
         addItem,
         removeItem,
+        toggleItem,
         clearWishlist,
         isDrawerOpen,
         setIsDrawerOpen,
