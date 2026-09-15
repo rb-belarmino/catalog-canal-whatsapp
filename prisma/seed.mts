@@ -51,11 +51,16 @@ interface CatalogData {
 async function main() {
   console.log('🌱 Iniciando o seed do catálogo oficial Canal Concept...')
 
-  const catalogFilePath = path.join(process.cwd(), 'src/public/catalog-2026-09-14.json')
+  const catalogFilePath = path.join(
+    process.cwd(),
+    'src/public/catalog-2026-09-14.json'
+  )
   const catalogRaw = fs.readFileSync(catalogFilePath, 'utf-8')
   const catalogData: CatalogData = JSON.parse(catalogRaw)
 
-  console.log(`📁 Catálogo carregado: ${catalogData.looks.length} looks encontrados.`)
+  console.log(
+    `📁 Catálogo carregado: ${catalogData.looks.length} looks encontrados.`
+  )
 
   // Configuração padrão da loja
   console.log('⚙️  Configurando informações da loja (ShopConfig)...')
@@ -79,7 +84,9 @@ async function main() {
   await prisma.product.deleteMany({})
 
   // Inserção dos 41 looks com suas peças
-  console.log(`🚀 Inserindo ${catalogData.looks.length} looks com suas respectivas peças...`)
+  console.log(
+    `🚀 Inserindo ${catalogData.looks.length} looks com suas respectivas peças...`
+  )
   let totalPiecesCount = 0
 
   for (const look of catalogData.looks) {

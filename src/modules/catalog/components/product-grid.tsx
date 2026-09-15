@@ -13,6 +13,7 @@ interface ProductGridProps {
 
 export function ProductGrid({ products }: ProductGridProps) {
   const { searchQuery, setSearchQuery } = useSearch()
+  const [mobileColumns, setMobileColumns] = React.useState<1 | 2>(1)
 
   // Filter products by search query across look title, piece names, colors, and composition
   const filteredProducts = React.useMemo(() => {
@@ -98,10 +99,81 @@ export function ProductGrid({ products }: ProductGridProps) {
         </div>
       )}
 
-      {/* Responsive Editorial Product Grid: 2 cols mobile, 3 cols tablet, 4 cols desktop */}
+      {/* Mobile Grid Layout Selector */}
+      <div className="flex sm:hidden items-center justify-between mb-4 pb-2.5 border-b border-canal-border">
+        <span className="text-[11px] uppercase tracking-wider text-neutral-500 font-medium">
+          {filteredProducts.length} {filteredProducts.length === 1 ? 'Look disponível' : 'Looks disponíveis'}
+        </span>
+        <div className="flex items-center gap-1 bg-neutral-100 p-0.5 border border-canal-border">
+          <button
+            type="button"
+            onClick={() => setMobileColumns(1)}
+            aria-label="Visualização 1 coluna (detalhada)"
+            className={`flex items-center gap-1 px-2.5 py-1 text-[10px] tracking-wider uppercase transition-all cursor-pointer ${
+              mobileColumns === 1
+                ? 'bg-black text-white font-semibold shadow-xs'
+                : 'text-neutral-600 hover:text-black'
+            }`}
+          >
+            <svg className="w-3.5 h-3.5" viewBox="0 0 16 16">
+              <rect
+                x="2"
+                y="2"
+                width="12"
+                height="12"
+                rx="1"
+                fill={mobileColumns === 1 ? 'currentColor' : 'none'}
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+            </svg>
+            <span>1 por linha</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setMobileColumns(2)}
+            aria-label="Visualização 2 colunas (grade compacta)"
+            className={`flex items-center gap-1 px-2.5 py-1 text-[10px] tracking-wider uppercase transition-all cursor-pointer ${
+              mobileColumns === 2
+                ? 'bg-black text-white font-semibold shadow-xs'
+                : 'text-neutral-600 hover:text-black'
+            }`}
+          >
+            <svg className="w-3.5 h-3.5" viewBox="0 0 16 16">
+              <rect
+                x="2"
+                y="2"
+                width="5"
+                height="12"
+                rx="1"
+                fill={mobileColumns === 2 ? 'currentColor' : 'none'}
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+              <rect
+                x="9"
+                y="2"
+                width="5"
+                height="12"
+                rx="1"
+                fill={mobileColumns === 2 ? 'currentColor' : 'none'}
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+            </svg>
+            <span>2 por linha</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Responsive Editorial Product Grid: 1 col on mobile by default, 2 cols when toggled, multi-col on desktop */}
       <div
         data-testid="product-grid"
-        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6"
+        className={
+          mobileColumns === 1
+            ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-lg mx-auto sm:max-w-none'
+            : 'grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6'
+        }
       >
         {filteredProducts.map(product => (
           <ProductCard key={product.id} product={product} />

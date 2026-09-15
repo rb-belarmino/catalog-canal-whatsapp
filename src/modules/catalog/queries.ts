@@ -44,15 +44,41 @@ export async function getCatalogProducts(): Promise<CatalogProduct[]> {
         pieces: true
       }
     })
-    return products as unknown as CatalogProduct[]
+    if (products && products.length > 0) {
+      return products as unknown as CatalogProduct[]
+    }
   } catch (err) {
     logger.warn(
       'CatalogQueries',
-      'Database not accessible, returning empty products list',
+      'Database not accessible, using static catalog fallback',
       {
         reason: err instanceof Error ? err.message : String(err)
       }
     )
+  }
+
+  // Fallback to static catalog dataset
+  try {
+    const catalogData = await import('@/data/catalog-2026-09-14.json')
+    return catalogData.looks.map(look => ({
+      id: look.id,
+      name: look.title,
+      priceInCents: look.pieces[0]?.priceInCents ?? look.totalPriceInCents,
+      imageUrl: look.imageUrl,
+      pieces: look.pieces.map((piece, idx) => ({
+        id: `${look.id}-p${idx + 1}`,
+        name: piece.name,
+        priceInCents: piece.priceInCents,
+        formattedPrice: piece.formattedPrice,
+        colors: piece.colors || [],
+        composition: look.composition || undefined,
+        details: look.details || []
+      }))
+    }))
+  } catch (fallbackErr) {
+    logger.error('CatalogQueries', 'Failed to load static catalog fallback', {
+      reason: fallbackErr instanceof Error ? fallbackErr.message : String(fallbackErr)
+    })
     return []
   }
 }
@@ -83,46 +109,91 @@ export async function getProductsByIds(
       }
     })
 
-    // Maintain a map of both the Look itself and each of its constituent pieces
-    const itemMap = new Map<string, CatalogProduct>()
-    for (const p of products) {
-      const piecesList = (p.pieces as unknown as CatalogPiece[]) || []
-      itemMap.set(p.id, {
-        id: p.id,
-        name: p.name,
-        priceInCents: p.priceInCents,
-        imageUrl: p.imageUrl,
-        pieces: piecesList
-      })
+    if (products.length > 0) {
+      // Maintain a map of both the Look itself and each of its constituent pieces
+      const itemMap = new Map<string, CatalogProduct>()
+      for (const p of products) {
+        const piecesList = (p.pieces as unknown as CatalogPiece[]) || []
+        itemMap.set(p.id, {
+          id: p.id,
+          name: p.name,
+          priceInCents: p.priceInCents,
+          imageUrl: p.imageUrl,
+          pieces: piecesList
+        })
 
-      for (const piece of piecesList) {
-        if (piece && piece.id) {
-          const colorsStr =
-            piece.colors && piece.colors.length > 0
-              ? ` (${piece.colors.join(', ')})`
-              : ''
-          itemMap.set(piece.id, {
-            id: piece.id,
-            name: `${piece.name}${colorsStr} - ${p.name}`,
-            priceInCents: piece.priceInCents,
-            imageUrl: p.imageUrl
-          })
+        for (const piece of piecesList) {
+          if (piece && piece.id) {
+            const colorsStr =
+              piece.colors && piece.colors.length > 0
+                ? ` (${piece.colors.join(', ')})`
+                : ''
+            itemMap.set(piece.id, {
+              id: piece.id,
+              name: `${piece.name}${colorsStr} - ${p.name}`,
+              priceInCents: piece.priceInCents,
+              imageUrl: p.imageUrl
+            })
+          }
         }
       }
-    }
 
-    // Maintain the order in which the IDs were requested
-    return ids
-      .map(id => itemMap.get(id))
-      .filter((p): p is CatalogProduct => Boolean(p))
+      return ids
+        .map(id => itemMap.get(id))
+        .filter((p): p is CatalogProduct => Boolean(p))
+    }
   } catch (err) {
     logger.warn(
       'CatalogQueries',
-      'Database not accessible in getProductsByIds',
+      'Database not accessible in getProductsByIds, trying static catalog',
       {
         reason: err instanceof Error ? err.message : String(err)
       }
     )
+  }
+
+  // Fallback to static catalog dataset
+  try {
+    const catalogData = await import('@/data/catalog-2026-09-14.json')
+    const itemMap = new Map<string, CatalogProduct>()
+
+    for (const look of catalogData.looks) {
+      const piecesList: CatalogPiece[] = look.pieces.map((piece, idx) => ({
+        id: `${look.id}-p${idx + 1}`,
+        name: piece.name,
+        priceInCents: piece.priceInCents,
+        formattedPrice: piece.formattedPrice,
+        colors: piece.colors || [],
+        composition: look.composition || undefined,
+        details: look.details || []
+      }))
+
+      itemMap.set(look.id, {
+        id: look.id,
+        name: look.title,
+        priceInCents: piecesList[0]?.priceInCents ?? look.totalPriceInCents,
+        imageUrl: look.imageUrl,
+        pieces: piecesList
+      })
+
+      for (const piece of piecesList) {
+        const colorsStr =
+          piece.colors && piece.colors.length > 0
+            ? ` (${piece.colors.join(', ')})`
+            : ''
+        itemMap.set(piece.id, {
+          id: piece.id,
+          name: `${piece.name}${colorsStr} - ${look.title}`,
+          priceInCents: piece.priceInCents,
+          imageUrl: look.imageUrl
+        })
+      }
+    }
+
+    return ids
+      .map(id => itemMap.get(id))
+      .filter((p): p is CatalogProduct => Boolean(p))
+  } catch {
     return []
   }
 }

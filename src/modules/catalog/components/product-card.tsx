@@ -65,8 +65,8 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <div className="group bg-white flex flex-col justify-between border border-canal-border hover:border-black transition-all duration-300">
-      {/* 3:4 Aspect Ratio Image Container */}
+    <div className="group bg-white flex flex-col border border-canal-border hover:border-black transition-all duration-300 shadow-xs">
+      {/* Pure 3:4 Aspect Ratio Image Container without badges */}
       <div className="relative w-full aspect-3/4 bg-canal-bg overflow-hidden select-none">
         {!imageError ? (
           <Image
@@ -74,7 +74,7 @@ export function ProductCard({ product }: ProductCardProps) {
             alt={product.name}
             fill
             className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             onError={() => setImageError(true)}
             loading="lazy"
           />
@@ -86,33 +86,37 @@ export function ProductCard({ product }: ProductCardProps) {
             </span>
           </div>
         )}
-
       </div>
 
       {/* Description Area */}
-      <div className="p-3 sm:p-4 flex-1 flex flex-col justify-between">
+      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
         {!hasMultiplePieces ? (
-          /* Single-piece layout (harmonious modern layout) */
-          <div>
-            <div className="min-w-0">
-              <h3 className="text-xs sm:text-[13px] font-medium tracking-[0.5px] uppercase text-black line-clamp-2 leading-tight">
-                {product.name}
-              </h3>
-
-              {singlePiece.colors && singlePiece.colors.length > 0 && (
-                <p className="text-[10px] text-neutral-500 tracking-wide mt-0.5 line-clamp-1">
-                  Cores: {singlePiece.colors.join(', ')}
-                </p>
-              )}
-            </div>
-
-            <div className="mt-3 pt-2.5 border-t border-canal-border/70 flex items-center justify-between gap-2">
-              <div>
-                <span className="text-sm sm:text-base font-semibold text-black tracking-tight">
-                  {formatCurrencyBRL(singlePiece.priceInCents)}
-                </span>
+          /* Single-piece layout: Title is displayed */
+          <div className="flex-1 flex flex-col justify-between">
+            <div>
+              <div className="mb-3 border-b border-canal-border/60 pb-2.5">
+                <h3 className="text-sm sm:text-base font-semibold tracking-[0.8px] uppercase text-black leading-snug break-words">
+                  {product.name}
+                </h3>
               </div>
 
+              <div className="space-y-1.5">
+                {singlePiece.colors && singlePiece.colors.length > 0 && (
+                  <div className="text-xs text-neutral-700">
+                    <span className="font-medium text-black">Cores disponíveis: </span>
+                    <span className="break-words">{singlePiece.colors.join(', ')}</span>
+                  </div>
+                )}
+
+                <div className="pt-2">
+                  <span className="text-base sm:text-lg font-bold text-black tracking-tight">
+                    {formatCurrencyBRL(singlePiece.priceInCents)}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-canal-border/60">
               <Button
                 type="button"
                 onClick={handleToggleSinglePiece}
@@ -122,82 +126,93 @@ export function ProductCard({ product }: ProductCardProps) {
                     : 'Adicionar aos desejos'
                 }
                 variant={isSingleSelected ? 'outline' : 'default'}
-                size="sm"
-                className="h-8 px-3 text-[10px] sm:text-[11px] tracking-[1.5px] uppercase flex items-center gap-1.5 cursor-pointer"
+                className={`w-full min-h-9 py-1.5 px-2 text-[10px] sm:text-[11px] tracking-[1.2px] uppercase flex items-center justify-center gap-1.5 cursor-pointer font-semibold transition-all leading-tight ${
+                  isSingleSelected
+                    ? 'bg-neutral-900 text-white hover:bg-neutral-800'
+                    : 'bg-black text-white hover:bg-neutral-800'
+                }`}
               >
                 {isSingleSelected ? (
                   <>
-                    <Check className="w-3.5 h-3.5" />
+                    <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                     <span>Na Lista</span>
                   </>
                 ) : (
                   <>
-                    <Heart className="w-3.5 h-3.5" />
-                    <span>Adicionar</span>
+                    <Heart className="w-3.5 h-3.5 shrink-0" />
+                    <span>Adicionar à Lista</span>
                   </>
                 )}
               </Button>
             </div>
           </div>
         ) : (
-          /* Composed look layout (compact horizontal rows without redundant look title) */
-          <div className="space-y-2.5 divide-y divide-canal-border/50">
-            {pieces.map((piece, idx) => {
-              const isSelected = hasItem(piece.id)
-                return (
-                  <div
-                    key={piece.id}
-                    className={`flex items-center justify-between gap-2 ${
-                      idx > 0 ? 'pt-2.5' : ''
-                    }`}
-                  >
-                    {/* Left: Name and Colors */}
-                    <div className="flex-1 min-w-0 pr-1">
-                      <p className="text-xs font-medium uppercase tracking-[0.5px] text-black truncate leading-tight">
-                        {piece.name}
-                      </p>
+          /* Composed look layout: No look title, pure pieces list */
+          <div className="flex-1 flex flex-col justify-between">
+            <div>
+              <div className="space-y-3.5 divide-y divide-canal-border/50">
+                {pieces.map((piece, idx) => {
+                  const isSelected = hasItem(piece.id)
+                  return (
+                    <div
+                      key={piece.id}
+                      className={`flex flex-col gap-1.5 ${idx > 0 ? 'pt-3.5' : ''}`}
+                    >
+                      {/* Top row: Piece Name and Price */}
+                      <div className="flex items-baseline justify-between gap-2">
+                        <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.5px] text-black break-words">
+                          {piece.name}
+                        </h4>
+                        <span className="text-xs sm:text-sm font-bold text-black tracking-tight shrink-0">
+                          {formatCurrencyBRL(piece.priceInCents)}
+                        </span>
+                      </div>
+
+                      {/* Colors row: Always 100% visible */}
                       {piece.colors && piece.colors.length > 0 && (
-                        <p className="text-[10px] text-neutral-500 tracking-wide truncate mt-0.5">
+                        <p className="text-[11px] sm:text-xs text-neutral-600 tracking-wide break-words">
+                          <span className="font-medium text-neutral-800">Cores: </span>
                           {piece.colors.join(', ')}
                         </p>
                       )}
-                    </div>
 
-                    {/* Right: Price & Inline Action Button */}
-                    <div className="flex items-center gap-2 shrink-0">
-                      <span className="text-xs sm:text-[13px] font-semibold text-black tracking-tight">
-                        {formatCurrencyBRL(piece.priceInCents)}
-                      </span>
-
-                      <Button
-                        type="button"
-                        onClick={() => handleTogglePiece(piece)}
-                        aria-label={
-                          isSelected
-                            ? `Remover ${piece.name} da lista de desejos`
-                            : `Adicionar ${piece.name} à lista de desejos`
-                        }
-                        variant={isSelected ? 'outline' : 'default'}
-                        size="sm"
-                        className="h-7 px-2.5 text-[9px] sm:text-[10px] tracking-wider uppercase flex items-center gap-1 cursor-pointer"
-                      >
-                        {isSelected ? (
-                          <>
-                            <Check className="w-3 h-3" />
-                            <span>Salvo</span>
-                          </>
-                        ) : (
-                          <>
-                            <Heart className="w-3 h-3" />
-                            <span>Adicionar</span>
-                          </>
-                        )}
-                      </Button>
+                      {/* Individual Piece Wishlist Button */}
+                      <div className="pt-1">
+                        <Button
+                          type="button"
+                          onClick={() => handleTogglePiece(piece)}
+                          aria-label={
+                            isSelected
+                              ? `Remover ${piece.name} da lista de desejos`
+                              : `Adicionar ${piece.name} à lista de desejos`
+                          }
+                          variant={isSelected ? 'outline' : 'default'}
+                          size="sm"
+                          className={`w-full h-8 text-[10px] sm:text-[11px] tracking-[1.2px] uppercase flex items-center justify-center gap-1.5 cursor-pointer font-medium transition-all ${
+                            isSelected
+                              ? 'bg-neutral-900 text-white hover:bg-neutral-800'
+                              : 'bg-black text-white hover:bg-neutral-800'
+                          }`}
+                        >
+                          {isSelected ? (
+                            <>
+                              <Check className="w-3.5 h-3.5 text-emerald-400" />
+                              <span>{piece.name} na Lista</span>
+                            </>
+                          ) : (
+                            <>
+                              <Heart className="w-3.5 h-3.5" />
+                              <span>Adicionar {piece.name}</span>
+                            </>
+                          )}
+                        </Button>
+                      </div>
                     </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
+          </div>
         )}
       </div>
     </div>

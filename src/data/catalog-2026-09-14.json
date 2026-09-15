@@ -19,26 +19,18 @@
           "price": 279.99,
           "priceInCents": 27999,
           "formattedPrice": "R$ 279,99",
-          "colors": [
-            "Caramelo",
-            "Bege"
-          ]
+          "colors": ["Caramelo", "Bege"]
         },
         {
           "name": "Saia",
           "price": 329.99,
           "priceInCents": 32999,
           "formattedPrice": "R$ 329,99",
-          "colors": [
-            "Caramelo",
-            "Bege"
-          ]
+          "colors": ["Caramelo", "Bege"]
         }
       ],
       "composition": "Peças em viscose e com forro",
-      "details": [
-        "Com forro"
-      ],
+      "details": ["Com forro"],
       "totalPriceInCents": 60998,
       "formattedTotalPrice": "R$ 609,98"
     },
@@ -55,28 +47,18 @@
           "price": 279.99,
           "priceInCents": 27999,
           "formattedPrice": "R$ 279,99",
-          "colors": [
-            "Caramelo",
-            "Onça",
-            "Bege"
-          ]
+          "colors": ["Caramelo", "Onça", "Bege"]
         },
         {
           "name": "Calça",
           "price": 399.99,
           "priceInCents": 39999,
           "formattedPrice": "R$ 399,99",
-          "colors": [
-            "Caramelo",
-            "Marinho",
-            "Bege"
-          ]
+          "colors": ["Caramelo", "Marinho", "Bege"]
         }
       ],
       "composition": "Em Viscose",
-      "details": [
-        "Calça com forro estilo shortinho"
-      ],
+      "details": ["Calça com forro estilo shortinho"],
       "totalPriceInCents": 67998,
       "formattedTotalPrice": "R$ 679,98"
     },
@@ -93,20 +75,14 @@
           "price": 319.99,
           "priceInCents": 31999,
           "formattedPrice": "R$ 319,99",
-          "colors": [
-            "Marinho",
-            "Bege"
-          ]
+          "colors": ["Marinho", "Bege"]
         },
         {
           "name": "Shorts",
           "price": 319.99,
           "priceInCents": 31999,
           "formattedPrice": "R$ 319,99",
-          "colors": [
-            "Marinho",
-            "Caramelo"
-          ]
+          "colors": ["Marinho", "Caramelo"]
         }
       ],
       "composition": "Em viscose",
@@ -127,16 +103,11 @@
           "price": 479.99,
           "priceInCents": 47999,
           "formattedPrice": "R$ 479,99",
-          "colors": [
-            "Marinho",
-            "Bege"
-          ]
+          "colors": ["Marinho", "Bege"]
         }
       ],
       "composition": "Em viscose e com forro",
-      "details": [
-        "Com forro"
-      ],
+      "details": ["Com forro"],
       "totalPriceInCents": 47999,
       "formattedTotalPrice": "R$ 479,99"
     },
@@ -153,30 +124,21 @@
           "price": 569.99,
           "priceInCents": 56999,
           "formattedPrice": "R$ 569,99",
-          "colors": [
-            "Marinho",
-            "Bege"
-          ]
+          "colors": ["Marinho", "Bege"]
         },
         {
           "name": "Shorts",
           "price": 329.99,
           "priceInCents": 32999,
           "formattedPrice": "R$ 329,99",
-          "colors": [
-            "Marinho",
-            "Bege"
-          ]
+          "colors": ["Marinho", "Bege"]
         },
         {
           "name": "Calça",
           "price": 399.99,
           "priceInCents": 39999,
           "formattedPrice": "R$ 399,99",
-          "colors": [
-            "Marinho",
-            "Bege"
-          ]
+          "colors": ["Marinho", "Bege"]
         }
       ],
       "composition": "Tem algodão na composição",
@@ -197,18 +159,14 @@
           "price": 599.99,
           "priceInCents": 59999,
           "formattedPrice": "R$ 599,99",
-          "colors": [
-            "Listrado natural"
-          ]
+          "colors": ["Listrado natural"]
         },
         {
           "name": "Shorts",
           "price": 359.99,
           "priceInCents": 35999,
           "formattedPrice": "R$ 359,99",
-          "colors": [
-            "Listrado natural"
-          ]
+          "colors": ["Listrado natural"]
         }
       ],
       "composition": "Em linho e liocel",
@@ -229,20 +187,14 @@
           "price": 499.99,
           "priceInCents": 49999,
           "formattedPrice": "R$ 499,99",
-          "colors": [
-            "Khaki",
-            "Natural"
-          ]
+          "colors": ["Khaki", "Natural"]
         },
         {
           "name": "Shorts",
           "price": 359.99,
           "priceInCents": 35999,
           "formattedPrice": "R$ 359,99",
-          "colors": [
-            "Khaki",
-            "Natural"
-          ]
+          "colors": ["Khaki", "Natural"]
         }
       ],
       "composition": "Linho e viscose na composição",
@@ -263,20 +215,14 @@
           "price": 379.99,
           "priceInCents": 37999,
           "formattedPrice": "R$ 379,99",
-          "colors": [
-            "Marrom",
-            "Off"
-          ]
+          "colors": ["Marrom", "Off"]
         },
         {
           "name": "Calça",
           "price": 429.99,
           "priceInCents": 42999,
           "formattedPrice": "R$ 429,99",
-          "colors": [
-            "Marrom",
-            "Off"
-          ]
+          "colors": ["Marrom", "Off"]
         }
       ],
       "composition": "Algodão e linho na composição",
@@ -297,10 +243,7 @@
           "price": 459.99,
           "priceInCents": 45999,
           "formattedPrice": "R$ 459,99",
-          "colors": [
-            "Marrom",
-            "Off"
-          ]
+          "colors": ["Marrom", "Off"]
         }
       ],
       "composition": null,
@@ -321,20 +264,14 @@
           "price": 299.99,
           "priceInCents": 29999,
           "formattedPrice": "R$ 299,99",
-          "colors": [
-            "Marrom",
-            "Off"
-          ]
+          "colors": ["Marrom", "Off"]
         },
         {
           "name": "Calça",
           "price": 399.99,
           "priceInCents": 39999,
           "formattedPrice": "R$ 399,99",
-          "colors": [
-            "Marrom",
-            "Off"
-          ]
+          "colors": ["Marrom", "Off"]
         }
       ],
       "composition": null,
@@ -355,10 +292,7 @@
           "price": 459.99,
           "priceInCents": 45999,
           "formattedPrice": "R$ 459,99",
-          "colors": [
-            "Khaki",
-            "Verde"
-          ]
+          "colors": ["Khaki", "Verde"]
         }
       ],
       "composition": null,
@@ -379,9 +313,7 @@
           "price": 499.99,
           "priceInCents": 49999,
           "formattedPrice": "R$ 499,99",
-          "colors": [
-            "Bege"
-          ]
+          "colors": ["Bege"]
         }
       ],
       "composition": null,
@@ -402,19 +334,14 @@
           "price": 319.99,
           "priceInCents": 31999,
           "formattedPrice": "R$ 319,99",
-          "colors": [
-            "Khaki"
-          ]
+          "colors": ["Khaki"]
         },
         {
           "name": "Bermuda",
           "price": 359.99,
           "priceInCents": 35999,
           "formattedPrice": "R$ 359,99",
-          "colors": [
-            "Khaki",
-            "Verde"
-          ]
+          "colors": ["Khaki", "Verde"]
         }
       ],
       "composition": null,
@@ -435,20 +362,14 @@
           "price": 269.99,
           "priceInCents": 26999,
           "formattedPrice": "R$ 269,99",
-          "colors": [
-            "Off",
-            "Khaki"
-          ]
+          "colors": ["Off", "Khaki"]
         },
         {
           "name": "Calça",
           "price": 399.99,
           "priceInCents": 39999,
           "formattedPrice": "R$ 399,99",
-          "colors": [
-            "Off",
-            "Khaki"
-          ]
+          "colors": ["Off", "Khaki"]
         }
       ],
       "composition": null,
@@ -469,20 +390,14 @@
           "price": 359.99,
           "priceInCents": 35999,
           "formattedPrice": "R$ 359,99",
-          "colors": [
-            "Amarelo",
-            "Off"
-          ]
+          "colors": ["Amarelo", "Off"]
         },
         {
           "name": "Shorts",
           "price": 359.99,
           "priceInCents": 35999,
           "formattedPrice": "R$ 359,99",
-          "colors": [
-            "Natural",
-            "Khaki"
-          ]
+          "colors": ["Natural", "Khaki"]
         }
       ],
       "composition": "Linho e viscose na composição",
@@ -503,10 +418,7 @@
           "price": 499.99,
           "priceInCents": 49999,
           "formattedPrice": "R$ 499,99",
-          "colors": [
-            "Amarelo",
-            "Off"
-          ]
+          "colors": ["Amarelo", "Off"]
         }
       ],
       "composition": "Linho e viscose na composição",
@@ -527,10 +439,7 @@
           "price": 479.99,
           "priceInCents": 47999,
           "formattedPrice": "R$ 479,99",
-          "colors": [
-            "Off",
-            "Amarelo"
-          ]
+          "colors": ["Off", "Amarelo"]
         }
       ],
       "composition": "Linho e viscose na composição",
@@ -551,10 +460,7 @@
           "price": 459.99,
           "priceInCents": 45999,
           "formattedPrice": "R$ 459,99",
-          "colors": [
-            "Khaki",
-            "Preto"
-          ]
+          "colors": ["Khaki", "Preto"]
         }
       ],
       "composition": null,
@@ -575,19 +481,14 @@
           "price": 329.99,
           "priceInCents": 32999,
           "formattedPrice": "R$ 329,99",
-          "colors": [
-            "Verde"
-          ]
+          "colors": ["Verde"]
         },
         {
           "name": "Saia",
           "price": 429.99,
           "priceInCents": 42999,
           "formattedPrice": "R$ 429,99",
-          "colors": [
-            "Verde",
-            "Khaki"
-          ]
+          "colors": ["Verde", "Khaki"]
         }
       ],
       "composition": null,
@@ -608,20 +509,14 @@
           "price": 319.99,
           "priceInCents": 31999,
           "formattedPrice": "R$ 319,99",
-          "colors": [
-            "Khaki",
-            "Areia"
-          ]
+          "colors": ["Khaki", "Areia"]
         },
         {
           "name": "Calça",
           "price": 399.99,
           "priceInCents": 39999,
           "formattedPrice": "R$ 399,99",
-          "colors": [
-            "Khaki",
-            "Areia"
-          ]
+          "colors": ["Khaki", "Areia"]
         }
       ],
       "composition": null,
@@ -642,20 +537,14 @@
           "price": 499.99,
           "priceInCents": 49999,
           "formattedPrice": "R$ 499,99",
-          "colors": [
-            "Natural",
-            "Khaki"
-          ]
+          "colors": ["Natural", "Khaki"]
         },
         {
           "name": "Calça",
           "price": 429.99,
           "priceInCents": 42999,
           "formattedPrice": "R$ 429,99",
-          "colors": [
-            "Natural",
-            "Khaki"
-          ]
+          "colors": ["Natural", "Khaki"]
         }
       ],
       "composition": "Linho e viscose na composição",
@@ -676,20 +565,14 @@
           "price": 219.99,
           "priceInCents": 21999,
           "formattedPrice": "R$ 219,99",
-          "colors": [
-            "Verde",
-            "Preto"
-          ]
+          "colors": ["Verde", "Preto"]
         },
         {
           "name": "Calça Aladin",
           "price": 439.99,
           "priceInCents": 43999,
           "formattedPrice": "R$ 439,99",
-          "colors": [
-            "Verde",
-            "Preto"
-          ]
+          "colors": ["Verde", "Preto"]
         }
       ],
       "composition": "Em viscose",
@@ -710,11 +593,7 @@
           "price": 529.99,
           "priceInCents": 52999,
           "formattedPrice": "R$ 529,99",
-          "colors": [
-            "Onça",
-            "Marinho",
-            "Bege"
-          ]
+          "colors": ["Onça", "Marinho", "Bege"]
         }
       ],
       "composition": "Em viscose",
@@ -735,18 +614,14 @@
           "price": 199.99,
           "priceInCents": 19999,
           "formattedPrice": "R$ 199,99",
-          "colors": [
-            "Onça"
-          ]
+          "colors": ["Onça"]
         },
         {
           "name": "Saia",
           "price": 329.99,
           "priceInCents": 32999,
           "formattedPrice": "R$ 329,99",
-          "colors": [
-            "Onça"
-          ]
+          "colors": ["Onça"]
         }
       ],
       "composition": "Em viscose",
@@ -767,18 +642,14 @@
           "price": 359.99,
           "priceInCents": 35999,
           "formattedPrice": "R$ 359,99",
-          "colors": [
-            "Cinza"
-          ]
+          "colors": ["Cinza"]
         },
         {
           "name": "Saia",
           "price": 399.99,
           "priceInCents": 39999,
           "formattedPrice": "R$ 399,99",
-          "colors": [
-            "Cinza"
-          ]
+          "colors": ["Cinza"]
         }
       ],
       "composition": null,
@@ -799,18 +670,14 @@
           "price": 499.99,
           "priceInCents": 49999,
           "formattedPrice": "R$ 499,99",
-          "colors": [
-            "Cinza"
-          ]
+          "colors": ["Cinza"]
         },
         {
           "name": "Shorts",
           "price": 359.99,
           "priceInCents": 35999,
           "formattedPrice": "R$ 359,99",
-          "colors": [
-            "Cinza"
-          ]
+          "colors": ["Cinza"]
         }
       ],
       "composition": null,
@@ -831,18 +698,14 @@
           "price": 499.99,
           "priceInCents": 49999,
           "formattedPrice": "R$ 499,99",
-          "colors": [
-            "Cinza"
-          ]
+          "colors": ["Cinza"]
         },
         {
           "name": "Calça",
           "price": 499.99,
           "priceInCents": 49999,
           "formattedPrice": "R$ 499,99",
-          "colors": [
-            "Cinza"
-          ]
+          "colors": ["Cinza"]
         }
       ],
       "composition": null,
@@ -863,20 +726,14 @@
           "price": 319.99,
           "priceInCents": 31999,
           "formattedPrice": "R$ 319,99",
-          "colors": [
-            "Marrom",
-            "Off"
-          ]
+          "colors": ["Marrom", "Off"]
         },
         {
           "name": "Shorts",
           "price": 329.99,
           "priceInCents": 32999,
           "formattedPrice": "R$ 329,99",
-          "colors": [
-            "Marrom",
-            "Off"
-          ]
+          "colors": ["Marrom", "Off"]
         }
       ],
       "composition": "Linho e viscose na composição",
@@ -897,10 +754,7 @@
           "price": 499.99,
           "priceInCents": 49999,
           "formattedPrice": "R$ 499,99",
-          "colors": [
-            "Azul",
-            "Off"
-          ]
+          "colors": ["Azul", "Off"]
         }
       ],
       "composition": null,
@@ -921,10 +775,7 @@
           "price": 299.99,
           "priceInCents": 29999,
           "formattedPrice": "R$ 299,99",
-          "colors": [
-            "Marrom",
-            "Natural"
-          ]
+          "colors": ["Marrom", "Natural"]
         }
       ],
       "composition": "Linho e viscose na composição",
@@ -945,10 +796,7 @@
           "price": 459.99,
           "priceInCents": 45999,
           "formattedPrice": "R$ 459,99",
-          "colors": [
-            "Marrom",
-            "Natural"
-          ]
+          "colors": ["Marrom", "Natural"]
         }
       ],
       "composition": "Linho e viscose na composição",
@@ -969,10 +817,7 @@
           "price": 499.99,
           "priceInCents": 49999,
           "formattedPrice": "R$ 499,99",
-          "colors": [
-            "Khaki",
-            "Preto"
-          ]
+          "colors": ["Khaki", "Preto"]
         }
       ],
       "composition": null,
@@ -993,10 +838,7 @@
           "price": 289.99,
           "priceInCents": 28999,
           "formattedPrice": "R$ 289,99",
-          "colors": [
-            "Rosa",
-            "Off white"
-          ]
+          "colors": ["Rosa", "Off white"]
         }
       ],
       "composition": "Em algodão",
@@ -1017,21 +859,14 @@
           "price": 299.99,
           "priceInCents": 29999,
           "formattedPrice": "R$ 299,99",
-          "colors": [
-            "Natural",
-            "Verde",
-            "Khaki"
-          ]
+          "colors": ["Natural", "Verde", "Khaki"]
         },
         {
           "name": "Shorts",
           "price": 299.99,
           "priceInCents": 29999,
           "formattedPrice": "R$ 299,99",
-          "colors": [
-            "Natural",
-            "Verde"
-          ]
+          "colors": ["Natural", "Verde"]
         }
       ],
       "composition": "Algodão e linho na composição",
@@ -1052,20 +887,14 @@
           "price": 329.99,
           "priceInCents": 32999,
           "formattedPrice": "R$ 329,99",
-          "colors": [
-            "Azul",
-            "Bege"
-          ]
+          "colors": ["Azul", "Bege"]
         },
         {
           "name": "Shorts",
           "price": 329.99,
           "priceInCents": 32999,
           "formattedPrice": "R$ 329,99",
-          "colors": [
-            "Azul",
-            "Bege"
-          ]
+          "colors": ["Azul", "Bege"]
         }
       ],
       "composition": null,
@@ -1086,9 +915,7 @@
           "price": 499.99,
           "priceInCents": 49999,
           "formattedPrice": "R$ 499,99",
-          "colors": [
-            "Verde"
-          ]
+          "colors": ["Verde"]
         }
       ],
       "composition": "Em linho e algodão",
@@ -1109,10 +936,7 @@
           "price": 289.99,
           "priceInCents": 28999,
           "formattedPrice": "R$ 289,99",
-          "colors": [
-            "Khaki",
-            "Off"
-          ]
+          "colors": ["Khaki", "Off"]
         }
       ],
       "composition": "Em linho e algodão",
@@ -1133,10 +957,7 @@
           "price": 399.99,
           "priceInCents": 39999,
           "formattedPrice": "R$ 399,99",
-          "colors": [
-            "Verde",
-            "Bege"
-          ]
+          "colors": ["Verde", "Bege"]
         }
       ],
       "composition": null,
@@ -1157,10 +978,7 @@
           "price": 289.99,
           "priceInCents": 28999,
           "formattedPrice": "R$ 289,99",
-          "colors": [
-            "Caramelo",
-            "Bege"
-          ]
+          "colors": ["Caramelo", "Bege"]
         }
       ],
       "composition": null,
@@ -1181,18 +999,14 @@
           "price": 329.99,
           "priceInCents": 32999,
           "formattedPrice": "R$ 329,99",
-          "colors": [
-            "Bege"
-          ]
+          "colors": ["Bege"]
         },
         {
           "name": "Shorts",
           "price": 329.99,
           "priceInCents": 32999,
           "formattedPrice": "R$ 329,99",
-          "colors": [
-            "Bege"
-          ]
+          "colors": ["Bege"]
         }
       ],
       "composition": "Em viscose",
@@ -1213,20 +1027,14 @@
           "price": 359.99,
           "priceInCents": 35999,
           "formattedPrice": "R$ 359,99",
-          "colors": [
-            "Verde",
-            "Bege"
-          ]
+          "colors": ["Verde", "Bege"]
         },
         {
           "name": "Calça",
           "price": 429.99,
           "priceInCents": 42999,
           "formattedPrice": "R$ 429,99",
-          "colors": [
-            "Verde",
-            "Bege"
-          ]
+          "colors": ["Verde", "Bege"]
         }
       ],
       "composition": "Em viscose",
@@ -1245,14 +1053,9 @@
       "imageUrl": "/images/01-blusa-e-saia-caramelo-bege.jpg",
       "imageFile": "01-blusa-e-saia-caramelo-bege.jpg",
       "lookId": "look-01",
-      "colors": [
-        "Caramelo",
-        "Bege"
-      ],
+      "colors": ["Caramelo", "Bege"],
       "composition": "Peças em viscose e com forro",
-      "details": [
-        "Com forro"
-      ],
+      "details": ["Com forro"],
       "active": true,
       "sortOrder": 1
     },
@@ -1265,14 +1068,9 @@
       "imageUrl": "/images/01-blusa-e-saia-caramelo-bege.jpg",
       "imageFile": "01-blusa-e-saia-caramelo-bege.jpg",
       "lookId": "look-01",
-      "colors": [
-        "Caramelo",
-        "Bege"
-      ],
+      "colors": ["Caramelo", "Bege"],
       "composition": "Peças em viscose e com forro",
-      "details": [
-        "Com forro"
-      ],
+      "details": ["Com forro"],
       "active": true,
       "sortOrder": 2
     },
@@ -1285,15 +1083,9 @@
       "imageUrl": "/images/02-blusa-e-calca-caramelo-onca.jpg",
       "imageFile": "02-blusa-e-calca-caramelo-onca.jpg",
       "lookId": "look-02",
-      "colors": [
-        "Caramelo",
-        "Onça",
-        "Bege"
-      ],
+      "colors": ["Caramelo", "Onça", "Bege"],
       "composition": "Em Viscose",
-      "details": [
-        "Calça com forro estilo shortinho"
-      ],
+      "details": ["Calça com forro estilo shortinho"],
       "active": true,
       "sortOrder": 3
     },
@@ -1306,15 +1098,9 @@
       "imageUrl": "/images/02-blusa-e-calca-caramelo-onca.jpg",
       "imageFile": "02-blusa-e-calca-caramelo-onca.jpg",
       "lookId": "look-02",
-      "colors": [
-        "Caramelo",
-        "Marinho",
-        "Bege"
-      ],
+      "colors": ["Caramelo", "Marinho", "Bege"],
       "composition": "Em Viscose",
-      "details": [
-        "Calça com forro estilo shortinho"
-      ],
+      "details": ["Calça com forro estilo shortinho"],
       "active": true,
       "sortOrder": 4
     },
@@ -1327,10 +1113,7 @@
       "imageUrl": "/images/03-camisa-e-shorts-marinho-bege.jpg",
       "imageFile": "03-camisa-e-shorts-marinho-bege.jpg",
       "lookId": "look-03",
-      "colors": [
-        "Marinho",
-        "Bege"
-      ],
+      "colors": ["Marinho", "Bege"],
       "composition": "Em viscose",
       "details": [],
       "active": true,
@@ -1345,10 +1128,7 @@
       "imageUrl": "/images/03-camisa-e-shorts-marinho-bege.jpg",
       "imageFile": "03-camisa-e-shorts-marinho-bege.jpg",
       "lookId": "look-03",
-      "colors": [
-        "Marinho",
-        "Caramelo"
-      ],
+      "colors": ["Marinho", "Caramelo"],
       "composition": "Em viscose",
       "details": [],
       "active": true,
@@ -1363,14 +1143,9 @@
       "imageUrl": "/images/04-vestido-marinho-bege.jpg",
       "imageFile": "04-vestido-marinho-bege.jpg",
       "lookId": "look-04",
-      "colors": [
-        "Marinho",
-        "Bege"
-      ],
+      "colors": ["Marinho", "Bege"],
       "composition": "Em viscose e com forro",
-      "details": [
-        "Com forro"
-      ],
+      "details": ["Com forro"],
       "active": true,
       "sortOrder": 7
     },
@@ -1383,10 +1158,7 @@
       "imageUrl": "/images/05-blazer-shorts-e-calca-marinho-bege.jpg",
       "imageFile": "05-blazer-shorts-e-calca-marinho-bege.jpg",
       "lookId": "look-05",
-      "colors": [
-        "Marinho",
-        "Bege"
-      ],
+      "colors": ["Marinho", "Bege"],
       "composition": "Tem algodão na composição",
       "details": [],
       "active": true,
@@ -1401,10 +1173,7 @@
       "imageUrl": "/images/05-blazer-shorts-e-calca-marinho-bege.jpg",
       "imageFile": "05-blazer-shorts-e-calca-marinho-bege.jpg",
       "lookId": "look-05",
-      "colors": [
-        "Marinho",
-        "Bege"
-      ],
+      "colors": ["Marinho", "Bege"],
       "composition": "Tem algodão na composição",
       "details": [],
       "active": true,
@@ -1419,10 +1188,7 @@
       "imageUrl": "/images/05-blazer-shorts-e-calca-marinho-bege.jpg",
       "imageFile": "05-blazer-shorts-e-calca-marinho-bege.jpg",
       "lookId": "look-05",
-      "colors": [
-        "Marinho",
-        "Bege"
-      ],
+      "colors": ["Marinho", "Bege"],
       "composition": "Tem algodão na composição",
       "details": [],
       "active": true,
@@ -1437,9 +1203,7 @@
       "imageUrl": "/images/06-blazer-e-shorts-listrado-natural.jpg",
       "imageFile": "06-blazer-e-shorts-listrado-natural.jpg",
       "lookId": "look-06",
-      "colors": [
-        "Listrado natural"
-      ],
+      "colors": ["Listrado natural"],
       "composition": "Em linho e liocel",
       "details": [],
       "active": true,
@@ -1454,9 +1218,7 @@
       "imageUrl": "/images/06-blazer-e-shorts-listrado-natural.jpg",
       "imageFile": "06-blazer-e-shorts-listrado-natural.jpg",
       "lookId": "look-06",
-      "colors": [
-        "Listrado natural"
-      ],
+      "colors": ["Listrado natural"],
       "composition": "Em linho e liocel",
       "details": [],
       "active": true,
@@ -1471,10 +1233,7 @@
       "imageUrl": "/images/07-blazer-e-shorts-khaki-natural.jpg",
       "imageFile": "07-blazer-e-shorts-khaki-natural.jpg",
       "lookId": "look-07",
-      "colors": [
-        "Khaki",
-        "Natural"
-      ],
+      "colors": ["Khaki", "Natural"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -1489,10 +1248,7 @@
       "imageUrl": "/images/07-blazer-e-shorts-khaki-natural.jpg",
       "imageFile": "07-blazer-e-shorts-khaki-natural.jpg",
       "lookId": "look-07",
-      "colors": [
-        "Khaki",
-        "Natural"
-      ],
+      "colors": ["Khaki", "Natural"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -1507,10 +1263,7 @@
       "imageUrl": "/images/08-camisa-e-calca-marrom-off.jpg",
       "imageFile": "08-camisa-e-calca-marrom-off.jpg",
       "lookId": "look-08",
-      "colors": [
-        "Marrom",
-        "Off"
-      ],
+      "colors": ["Marrom", "Off"],
       "composition": "Algodão e linho na composição",
       "details": [],
       "active": true,
@@ -1525,10 +1278,7 @@
       "imageUrl": "/images/08-camisa-e-calca-marrom-off.jpg",
       "imageFile": "08-camisa-e-calca-marrom-off.jpg",
       "lookId": "look-08",
-      "colors": [
-        "Marrom",
-        "Off"
-      ],
+      "colors": ["Marrom", "Off"],
       "composition": "Algodão e linho na composição",
       "details": [],
       "active": true,
@@ -1543,10 +1293,7 @@
       "imageUrl": "/images/09-vestido-marrom-off.jpg",
       "imageFile": "09-vestido-marrom-off.jpg",
       "lookId": "look-09",
-      "colors": [
-        "Marrom",
-        "Off"
-      ],
+      "colors": ["Marrom", "Off"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1561,10 +1308,7 @@
       "imageUrl": "/images/10-blusa-e-calca-marrom-off.jpg",
       "imageFile": "10-blusa-e-calca-marrom-off.jpg",
       "lookId": "look-10",
-      "colors": [
-        "Marrom",
-        "Off"
-      ],
+      "colors": ["Marrom", "Off"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1579,10 +1323,7 @@
       "imageUrl": "/images/10-blusa-e-calca-marrom-off.jpg",
       "imageFile": "10-blusa-e-calca-marrom-off.jpg",
       "lookId": "look-10",
-      "colors": [
-        "Marrom",
-        "Off"
-      ],
+      "colors": ["Marrom", "Off"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1597,10 +1338,7 @@
       "imageUrl": "/images/11-macaquinho-khaki-verde.jpg",
       "imageFile": "11-macaquinho-khaki-verde.jpg",
       "lookId": "look-11",
-      "colors": [
-        "Khaki",
-        "Verde"
-      ],
+      "colors": ["Khaki", "Verde"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1615,9 +1353,7 @@
       "imageUrl": "/images/12-vestido-bege.jpg",
       "imageFile": "12-vestido-bege.jpg",
       "lookId": "look-12",
-      "colors": [
-        "Bege"
-      ],
+      "colors": ["Bege"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1632,9 +1368,7 @@
       "imageUrl": "/images/13-camisa-e-bermuda-khaki.jpg",
       "imageFile": "13-camisa-e-bermuda-khaki.jpg",
       "lookId": "look-13",
-      "colors": [
-        "Khaki"
-      ],
+      "colors": ["Khaki"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1649,10 +1383,7 @@
       "imageUrl": "/images/13-camisa-e-bermuda-khaki.jpg",
       "imageFile": "13-camisa-e-bermuda-khaki.jpg",
       "lookId": "look-13",
-      "colors": [
-        "Khaki",
-        "Verde"
-      ],
+      "colors": ["Khaki", "Verde"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1667,10 +1398,7 @@
       "imageUrl": "/images/14-top-e-calca-off-khaki.jpg",
       "imageFile": "14-top-e-calca-off-khaki.jpg",
       "lookId": "look-14",
-      "colors": [
-        "Off",
-        "Khaki"
-      ],
+      "colors": ["Off", "Khaki"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1685,10 +1413,7 @@
       "imageUrl": "/images/14-top-e-calca-off-khaki.jpg",
       "imageFile": "14-top-e-calca-off-khaki.jpg",
       "lookId": "look-14",
-      "colors": [
-        "Off",
-        "Khaki"
-      ],
+      "colors": ["Off", "Khaki"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1703,10 +1428,7 @@
       "imageUrl": "/images/15-camisa-e-shorts-amarelo-off.jpg",
       "imageFile": "15-camisa-e-shorts-amarelo-off.jpg",
       "lookId": "look-15",
-      "colors": [
-        "Amarelo",
-        "Off"
-      ],
+      "colors": ["Amarelo", "Off"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -1721,10 +1443,7 @@
       "imageUrl": "/images/15-camisa-e-shorts-amarelo-off.jpg",
       "imageFile": "15-camisa-e-shorts-amarelo-off.jpg",
       "lookId": "look-15",
-      "colors": [
-        "Natural",
-        "Khaki"
-      ],
+      "colors": ["Natural", "Khaki"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -1739,10 +1458,7 @@
       "imageUrl": "/images/16-vestido-longo-amarelo-off.jpg",
       "imageFile": "16-vestido-longo-amarelo-off.jpg",
       "lookId": "look-16",
-      "colors": [
-        "Amarelo",
-        "Off"
-      ],
+      "colors": ["Amarelo", "Off"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -1757,10 +1473,7 @@
       "imageUrl": "/images/17-vestido-off-amarelo.jpg",
       "imageFile": "17-vestido-off-amarelo.jpg",
       "lookId": "look-17",
-      "colors": [
-        "Off",
-        "Amarelo"
-      ],
+      "colors": ["Off", "Amarelo"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -1775,10 +1488,7 @@
       "imageUrl": "/images/18-macaquinho-khaki-preto.jpg",
       "imageFile": "18-macaquinho-khaki-preto.jpg",
       "lookId": "look-18",
-      "colors": [
-        "Khaki",
-        "Preto"
-      ],
+      "colors": ["Khaki", "Preto"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1793,9 +1503,7 @@
       "imageUrl": "/images/19-camisa-e-saia-verde.jpg",
       "imageFile": "19-camisa-e-saia-verde.jpg",
       "lookId": "look-19",
-      "colors": [
-        "Verde"
-      ],
+      "colors": ["Verde"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1810,10 +1518,7 @@
       "imageUrl": "/images/19-camisa-e-saia-verde.jpg",
       "imageFile": "19-camisa-e-saia-verde.jpg",
       "lookId": "look-19",
-      "colors": [
-        "Verde",
-        "Khaki"
-      ],
+      "colors": ["Verde", "Khaki"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1828,10 +1533,7 @@
       "imageUrl": "/images/20-camisa-e-calca-khaki-areia.jpg",
       "imageFile": "20-camisa-e-calca-khaki-areia.jpg",
       "lookId": "look-20",
-      "colors": [
-        "Khaki",
-        "Areia"
-      ],
+      "colors": ["Khaki", "Areia"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1846,10 +1548,7 @@
       "imageUrl": "/images/20-camisa-e-calca-khaki-areia.jpg",
       "imageFile": "20-camisa-e-calca-khaki-areia.jpg",
       "lookId": "look-20",
-      "colors": [
-        "Khaki",
-        "Areia"
-      ],
+      "colors": ["Khaki", "Areia"],
       "composition": null,
       "details": [],
       "active": true,
@@ -1864,10 +1563,7 @@
       "imageUrl": "/images/21-blazer-e-calca-natural-khaki.jpg",
       "imageFile": "21-blazer-e-calca-natural-khaki.jpg",
       "lookId": "look-21",
-      "colors": [
-        "Natural",
-        "Khaki"
-      ],
+      "colors": ["Natural", "Khaki"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -1882,10 +1578,7 @@
       "imageUrl": "/images/21-blazer-e-calca-natural-khaki.jpg",
       "imageFile": "21-blazer-e-calca-natural-khaki.jpg",
       "lookId": "look-21",
-      "colors": [
-        "Natural",
-        "Khaki"
-      ],
+      "colors": ["Natural", "Khaki"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -1900,10 +1593,7 @@
       "imageUrl": "/images/22-regata-e-calca-aladin-verde-preto.jpg",
       "imageFile": "22-regata-e-calca-aladin-verde-preto.jpg",
       "lookId": "look-22",
-      "colors": [
-        "Verde",
-        "Preto"
-      ],
+      "colors": ["Verde", "Preto"],
       "composition": "Em viscose",
       "details": [],
       "active": true,
@@ -1918,10 +1608,7 @@
       "imageUrl": "/images/22-regata-e-calca-aladin-verde-preto.jpg",
       "imageFile": "22-regata-e-calca-aladin-verde-preto.jpg",
       "lookId": "look-22",
-      "colors": [
-        "Verde",
-        "Preto"
-      ],
+      "colors": ["Verde", "Preto"],
       "composition": "Em viscose",
       "details": [],
       "active": true,
@@ -1936,11 +1623,7 @@
       "imageUrl": "/images/23-vestido-onca-marinho.jpg",
       "imageFile": "23-vestido-onca-marinho.jpg",
       "lookId": "look-23",
-      "colors": [
-        "Onça",
-        "Marinho",
-        "Bege"
-      ],
+      "colors": ["Onça", "Marinho", "Bege"],
       "composition": "Em viscose",
       "details": [],
       "active": true,
@@ -1955,9 +1638,7 @@
       "imageUrl": "/images/24-regata-e-saia-onca.jpg",
       "imageFile": "24-regata-e-saia-onca.jpg",
       "lookId": "look-24",
-      "colors": [
-        "Onça"
-      ],
+      "colors": ["Onça"],
       "composition": "Em viscose",
       "details": [],
       "active": true,
@@ -1972,9 +1653,7 @@
       "imageUrl": "/images/24-regata-e-saia-onca.jpg",
       "imageFile": "24-regata-e-saia-onca.jpg",
       "lookId": "look-24",
-      "colors": [
-        "Onça"
-      ],
+      "colors": ["Onça"],
       "composition": "Em viscose",
       "details": [],
       "active": true,
@@ -1989,9 +1668,7 @@
       "imageUrl": "/images/25-blusa-e-saia-cinza.jpg",
       "imageFile": "25-blusa-e-saia-cinza.jpg",
       "lookId": "look-25",
-      "colors": [
-        "Cinza"
-      ],
+      "colors": ["Cinza"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2006,9 +1683,7 @@
       "imageUrl": "/images/25-blusa-e-saia-cinza.jpg",
       "imageFile": "25-blusa-e-saia-cinza.jpg",
       "lookId": "look-25",
-      "colors": [
-        "Cinza"
-      ],
+      "colors": ["Cinza"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2023,9 +1698,7 @@
       "imageUrl": "/images/26-colete-e-shorts-cinza.jpg",
       "imageFile": "26-colete-e-shorts-cinza.jpg",
       "lookId": "look-26",
-      "colors": [
-        "Cinza"
-      ],
+      "colors": ["Cinza"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2040,9 +1713,7 @@
       "imageUrl": "/images/26-colete-e-shorts-cinza.jpg",
       "imageFile": "26-colete-e-shorts-cinza.jpg",
       "lookId": "look-26",
-      "colors": [
-        "Cinza"
-      ],
+      "colors": ["Cinza"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2057,9 +1728,7 @@
       "imageUrl": "/images/27-colete-e-calca-cinza.jpg",
       "imageFile": "27-colete-e-calca-cinza.jpg",
       "lookId": "look-27",
-      "colors": [
-        "Cinza"
-      ],
+      "colors": ["Cinza"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2074,9 +1743,7 @@
       "imageUrl": "/images/27-colete-e-calca-cinza.jpg",
       "imageFile": "27-colete-e-calca-cinza.jpg",
       "lookId": "look-27",
-      "colors": [
-        "Cinza"
-      ],
+      "colors": ["Cinza"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2091,10 +1758,7 @@
       "imageUrl": "/images/28-blusa-e-shorts-marrom-off.jpg",
       "imageFile": "28-blusa-e-shorts-marrom-off.jpg",
       "lookId": "look-28",
-      "colors": [
-        "Marrom",
-        "Off"
-      ],
+      "colors": ["Marrom", "Off"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -2109,10 +1773,7 @@
       "imageUrl": "/images/28-blusa-e-shorts-marrom-off.jpg",
       "imageFile": "28-blusa-e-shorts-marrom-off.jpg",
       "lookId": "look-28",
-      "colors": [
-        "Marrom",
-        "Off"
-      ],
+      "colors": ["Marrom", "Off"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -2127,10 +1788,7 @@
       "imageUrl": "/images/29-vestido-azul-off.jpg",
       "imageFile": "29-vestido-azul-off.jpg",
       "lookId": "look-29",
-      "colors": [
-        "Azul",
-        "Off"
-      ],
+      "colors": ["Azul", "Off"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2145,10 +1803,7 @@
       "imageUrl": "/images/30-saia-transpassada-marrom-natural.jpg",
       "imageFile": "30-saia-transpassada-marrom-natural.jpg",
       "lookId": "look-30",
-      "colors": [
-        "Marrom",
-        "Natural"
-      ],
+      "colors": ["Marrom", "Natural"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -2163,10 +1818,7 @@
       "imageUrl": "/images/31-vestido-marrom-natural.jpg",
       "imageFile": "31-vestido-marrom-natural.jpg",
       "lookId": "look-31",
-      "colors": [
-        "Marrom",
-        "Natural"
-      ],
+      "colors": ["Marrom", "Natural"],
       "composition": "Linho e viscose na composição",
       "details": [],
       "active": true,
@@ -2181,10 +1833,7 @@
       "imageUrl": "/images/32-macacao-khaki-preto.jpg",
       "imageFile": "32-macacao-khaki-preto.jpg",
       "lookId": "look-32",
-      "colors": [
-        "Khaki",
-        "Preto"
-      ],
+      "colors": ["Khaki", "Preto"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2199,10 +1848,7 @@
       "imageUrl": "/images/33-camisa-manga-curta-rosa-off-white.jpg",
       "imageFile": "33-camisa-manga-curta-rosa-off-white.jpg",
       "lookId": "look-33",
-      "colors": [
-        "Rosa",
-        "Off white"
-      ],
+      "colors": ["Rosa", "Off white"],
       "composition": "Em algodão",
       "details": [],
       "active": true,
@@ -2217,11 +1863,7 @@
       "imageUrl": "/images/34-camisa-e-shorts-natural-verde.jpg",
       "imageFile": "34-camisa-e-shorts-natural-verde.jpg",
       "lookId": "look-34",
-      "colors": [
-        "Natural",
-        "Verde",
-        "Khaki"
-      ],
+      "colors": ["Natural", "Verde", "Khaki"],
       "composition": "Algodão e linho na composição",
       "details": [],
       "active": true,
@@ -2236,10 +1878,7 @@
       "imageUrl": "/images/34-camisa-e-shorts-natural-verde.jpg",
       "imageFile": "34-camisa-e-shorts-natural-verde.jpg",
       "lookId": "look-34",
-      "colors": [
-        "Natural",
-        "Verde"
-      ],
+      "colors": ["Natural", "Verde"],
       "composition": "Algodão e linho na composição",
       "details": [],
       "active": true,
@@ -2254,10 +1893,7 @@
       "imageUrl": "/images/35-camisa-e-shorts-azul-bege.jpg",
       "imageFile": "35-camisa-e-shorts-azul-bege.jpg",
       "lookId": "look-35",
-      "colors": [
-        "Azul",
-        "Bege"
-      ],
+      "colors": ["Azul", "Bege"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2272,10 +1908,7 @@
       "imageUrl": "/images/35-camisa-e-shorts-azul-bege.jpg",
       "imageFile": "35-camisa-e-shorts-azul-bege.jpg",
       "lookId": "look-35",
-      "colors": [
-        "Azul",
-        "Bege"
-      ],
+      "colors": ["Azul", "Bege"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2290,9 +1923,7 @@
       "imageUrl": "/images/36-vestido-verde.jpg",
       "imageFile": "36-vestido-verde.jpg",
       "lookId": "look-36",
-      "colors": [
-        "Verde"
-      ],
+      "colors": ["Verde"],
       "composition": "Em linho e algodão",
       "details": [],
       "active": true,
@@ -2307,10 +1938,7 @@
       "imageUrl": "/images/37-blusa-com-gola-khaki-off.jpg",
       "imageFile": "37-blusa-com-gola-khaki-off.jpg",
       "lookId": "look-37",
-      "colors": [
-        "Khaki",
-        "Off"
-      ],
+      "colors": ["Khaki", "Off"],
       "composition": "Em linho e algodão",
       "details": [],
       "active": true,
@@ -2325,10 +1953,7 @@
       "imageUrl": "/images/38-camisa-em-viscose-verde-bege.jpg",
       "imageFile": "38-camisa-em-viscose-verde-bege.jpg",
       "lookId": "look-38",
-      "colors": [
-        "Verde",
-        "Bege"
-      ],
+      "colors": ["Verde", "Bege"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2343,10 +1968,7 @@
       "imageUrl": "/images/39-camisa-em-viscose-fluida-caramelo-bege.jpg",
       "imageFile": "39-camisa-em-viscose-fluida-caramelo-bege.jpg",
       "lookId": "look-39",
-      "colors": [
-        "Caramelo",
-        "Bege"
-      ],
+      "colors": ["Caramelo", "Bege"],
       "composition": null,
       "details": [],
       "active": true,
@@ -2361,9 +1983,7 @@
       "imageUrl": "/images/40-camisa-e-shorts-bege.jpg",
       "imageFile": "40-camisa-e-shorts-bege.jpg",
       "lookId": "look-40",
-      "colors": [
-        "Bege"
-      ],
+      "colors": ["Bege"],
       "composition": "Em viscose",
       "details": [],
       "active": true,
@@ -2378,9 +1998,7 @@
       "imageUrl": "/images/40-camisa-e-shorts-bege.jpg",
       "imageFile": "40-camisa-e-shorts-bege.jpg",
       "lookId": "look-40",
-      "colors": [
-        "Bege"
-      ],
+      "colors": ["Bege"],
       "composition": "Em viscose",
       "details": [],
       "active": true,
@@ -2395,10 +2013,7 @@
       "imageUrl": "/images/41-blusa-e-calca-verde-bege.jpg",
       "imageFile": "41-blusa-e-calca-verde-bege.jpg",
       "lookId": "look-41",
-      "colors": [
-        "Verde",
-        "Bege"
-      ],
+      "colors": ["Verde", "Bege"],
       "composition": "Em viscose",
       "details": [],
       "active": true,
@@ -2413,10 +2028,7 @@
       "imageUrl": "/images/41-blusa-e-calca-verde-bege.jpg",
       "imageFile": "41-blusa-e-calca-verde-bege.jpg",
       "lookId": "look-41",
-      "colors": [
-        "Verde",
-        "Bege"
-      ],
+      "colors": ["Verde", "Bege"],
       "composition": "Em viscose",
       "details": [],
       "active": true,

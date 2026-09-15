@@ -14,7 +14,10 @@ export function WishlistFloatingButton() {
       data-testid="floating-wishlist-button"
       onClick={() => setIsDrawerOpen(true)}
       aria-label={`Abrir Lista de Desejos com ${totalCount} itens`}
-      className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 px-5 py-3.5 bg-black text-white shadow-2xl hover:bg-neutral-800 active:scale-95 transition-all duration-200 cursor-pointer select-none"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2.5 px-4 sm:px-5 py-3 sm:py-3.5 bg-black text-white shadow-2xl hover:bg-neutral-800 active:scale-95 transition-all duration-200 cursor-pointer select-none border border-neutral-700/50"
+      style={{
+        paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom))'
+      }}
     >
       <div className="relative">
         <Heart className="w-4 h-4 text-white fill-white" />

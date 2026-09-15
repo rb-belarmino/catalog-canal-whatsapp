@@ -26,24 +26,18 @@ export default async function HomePage() {
         {/* Main Content Area */}
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10">
           {config.dbError && (
-            <div className="mb-6 p-4 bg-white border border-amber-200 text-amber-900 text-xs sm:text-sm">
-              <p className="font-semibold mb-1">
-                Aviso de Configuração (Banco de Dados):
-              </p>
-              <p className="text-amber-800 text-xs">
+            <details className="mb-6 p-3 bg-amber-50 border border-amber-200 text-amber-900 text-xs rounded-xs">
+              <summary className="font-semibold cursor-pointer select-none">
+                ℹ️ Modo Demonstração (Catálogo estático ativo - Banco de dados offline)
+              </summary>
+              <p className="text-amber-800 text-xs mt-2">
                 O banco de dados PostgreSQL ainda não foi alcançado em{' '}
-                <code className="bg-neutral-100 px-1 py-0.5 rounded">
+                <code className="bg-white/80 px-1 py-0.5 rounded border border-amber-200">
                   DATABASE_URL
                 </code>
-                . Insira a string de conexão no arquivo{' '}
-                <code className="bg-neutral-100 px-1 py-0.5 rounded">.env</code>{' '}
-                e execute{' '}
-                <code className="bg-neutral-100 px-1 py-0.5 rounded">
-                  npx prisma db push
-                </code>
-                .
+                . O catálogo está rodando com todos os 41 looks e dados completos locais.
               </p>
-            </div>
+            </details>
           )}
 
           {/* Section Heading with Editorial Canal Concept Typography */}
