@@ -3,6 +3,7 @@ import { isAuthenticatedAdmin } from '@/modules/admin/auth'
 import { prisma } from '@/shared/db'
 import { SortableProductList } from '@/modules/admin/components/sortable-product-list'
 import { StoreSettingsForm } from '@/modules/admin/components/store-settings-form'
+import type { EditableProduct } from '@/modules/admin/components/product-form-modal'
 
 export const dynamic = 'force-dynamic'
 
@@ -12,13 +13,7 @@ export default async function AdminDashboardPage() {
     redirect('/admin/login')
   }
 
-  let products: Array<{
-    id: string
-    name: string
-    priceInCents: number
-    imageUrl: string
-    active: boolean
-  }> = []
+  let products: EditableProduct[] = []
   let config: {
     storeName: string
     whatsappNumber: string
@@ -27,16 +22,18 @@ export default async function AdminDashboardPage() {
   let dbError = false
 
   try {
-    products = await prisma.product.findMany({
+    const dbProducts = await prisma.product.findMany({
       orderBy: [{ sortOrder: 'asc' }, { createdAt: 'desc' }],
       select: {
         id: true,
         name: true,
         priceInCents: true,
         imageUrl: true,
-        active: true
+        active: true,
+        pieces: true
       }
     })
+    products = dbProducts as unknown as EditableProduct[]
   } catch {
     dbError = true
   }

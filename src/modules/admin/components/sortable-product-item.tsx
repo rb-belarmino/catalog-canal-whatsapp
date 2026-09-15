@@ -77,9 +77,13 @@ export function SortableProductItem({
               </span>
             )}
           </div>
-          <p className="text-xs font-medium text-stone-500 mt-0.5">
-            {formatCurrencyBRL(product.priceInCents)}
-          </p>
+          <div className="flex items-center gap-2 mt-0.5">
+            <p className="text-xs font-medium text-stone-500">
+              {product.pieces && product.pieces.length > 1
+                ? `${product.pieces.length} peças • a partir de ${formatCurrencyBRL(product.priceInCents)}`
+                : formatCurrencyBRL(product.priceInCents)}
+            </p>
+          </div>
         </div>
       </div>
 

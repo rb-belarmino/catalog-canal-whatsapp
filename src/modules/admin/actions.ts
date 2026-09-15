@@ -56,13 +56,21 @@ async function requireAuth(): Promise<void> {
   }
 }
 
+export interface ProductPieceInput {
+  id?: string
+  name: string
+  priceInCents: number
+  colors?: string[]
+}
+
 /**
  * Create a new Product
  */
 export async function createProductAction(input: {
   name: string
-  priceInCents: number
+  priceInCents?: number
   imageUrl: string
+  pieces?: ProductPieceInput[]
 }): Promise<ActionResult<{ id: string }>> {
   try {
     await requireAuth()
@@ -71,16 +79,8 @@ export async function createProductAction(input: {
     if (!name || name.length < 2 || name.length > 120) {
       return {
         success: false,
-        error: 'O nome da peça deve ter entre 2 e 120 caracteres.'
+        error: 'O nome da peça ou look deve ter entre 2 e 120 caracteres.'
       }
-    }
-
-    if (
-      !input.priceInCents ||
-      input.priceInCents <= 0 ||
-      input.priceInCents > 100000000
-    ) {
-      return { success: false, error: 'O preço informado é inválido.' }
     }
 
     if (!input.imageUrl || !input.imageUrl.startsWith('http')) {
@@ -88,6 +88,55 @@ export async function createProductAction(input: {
         success: false,
         error: 'Por favor, envie uma foto válida para o produto.'
       }
+    }
+
+    let resolvedPieces: Array<{
+      id: string
+      name: string
+      priceInCents: number
+      colors?: string[]
+    }> = []
+
+    let primaryPriceInCents = input.priceInCents ?? 0
+
+    if (input.pieces && input.pieces.length > 0) {
+      for (let i = 0; i < input.pieces.length; i++) {
+        const p = input.pieces[i]
+        const pName = p.name?.trim()
+        if (!pName || pName.length < 2 || pName.length > 120) {
+          return {
+            success: false,
+            error: `A peça #${i + 1} deve ter um nome entre 2 e 120 caracteres.`
+          }
+        }
+        if (!p.priceInCents || p.priceInCents <= 0 || p.priceInCents > 100000000) {
+          return {
+            success: false,
+            error: `O preço da peça "${pName}" é inválido.`
+          }
+        }
+        resolvedPieces.push({
+          id: p.id || `p_${Date.now()}_${i + 1}`,
+          name: pName,
+          priceInCents: p.priceInCents,
+          colors: Array.isArray(p.colors)
+            ? p.colors.map(c => c.trim()).filter(Boolean)
+            : []
+        })
+      }
+      primaryPriceInCents = resolvedPieces[0].priceInCents
+    } else {
+      if (!primaryPriceInCents || primaryPriceInCents <= 0 || primaryPriceInCents > 100000000) {
+        return { success: false, error: 'O preço informado é inválido.' }
+      }
+      resolvedPieces = [
+        {
+          id: `p_${Date.now()}_1`,
+          name,
+          priceInCents: primaryPriceInCents,
+          colors: []
+        }
+      ]
     }
 
     // Determine next sortOrder (at the end)
@@ -99,15 +148,19 @@ export async function createProductAction(input: {
     const product = await prisma.product.create({
       data: {
         name,
-        priceInCents: input.priceInCents,
+        priceInCents: primaryPriceInCents,
         imageUrl: input.imageUrl,
+        pieces: resolvedPieces,
         active: true,
         sortOrder: nextSortOrder
       },
       select: { id: true }
     })
 
-    logger.info('AdminActions', 'Product created', { productId: product.id })
+    logger.info('AdminActions', 'Product created', {
+      productId: product.id,
+      piecesCount: resolvedPieces.length
+    })
     revalidatePath('/')
     revalidatePath('/admin')
     return { success: true, data: { id: product.id } }
@@ -128,6 +181,7 @@ export async function updateProductAction(input: {
   priceInCents?: number
   imageUrl?: string
   active?: boolean
+  pieces?: ProductPieceInput[]
 }): Promise<ActionResult> {
   try {
     await requireAuth()
@@ -139,13 +193,55 @@ export async function updateProductAction(input: {
       if (trimmed.length < 2 || trimmed.length > 120) {
         return {
           success: false,
-          error: 'O nome da peça deve ter entre 2 e 120 caracteres.'
+          error: 'O nome da peça ou look deve ter entre 2 e 120 caracteres.'
         }
       }
       data.name = trimmed
     }
 
-    if (input.priceInCents !== undefined) {
+    if (input.pieces !== undefined) {
+      if (input.pieces.length === 0) {
+        return {
+          success: false,
+          error: 'O look deve ter ao menos 1 peça.'
+        }
+      }
+
+      const resolvedPieces: Array<{
+        id: string
+        name: string
+        priceInCents: number
+        colors?: string[]
+      }> = []
+
+      for (let i = 0; i < input.pieces.length; i++) {
+        const p = input.pieces[i]
+        const pName = p.name?.trim()
+        if (!pName || pName.length < 2 || pName.length > 120) {
+          return {
+            success: false,
+            error: `A peça #${i + 1} deve ter um nome entre 2 e 120 caracteres.`
+          }
+        }
+        if (!p.priceInCents || p.priceInCents <= 0 || p.priceInCents > 100000000) {
+          return {
+            success: false,
+            error: `O preço da peça "${pName}" é inválido.`
+          }
+        }
+        resolvedPieces.push({
+          id: p.id || `${input.id}-p${i + 1}`,
+          name: pName,
+          priceInCents: p.priceInCents,
+          colors: Array.isArray(p.colors)
+            ? p.colors.map(c => c.trim()).filter(Boolean)
+            : []
+        })
+      }
+
+      data.pieces = resolvedPieces
+      data.priceInCents = resolvedPieces[0].priceInCents
+    } else if (input.priceInCents !== undefined) {
       if (input.priceInCents <= 0 || input.priceInCents > 100000000) {
         return { success: false, error: 'O preço informado é inválido.' }
       }
