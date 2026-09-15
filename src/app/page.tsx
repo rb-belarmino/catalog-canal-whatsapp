@@ -51,9 +51,8 @@ export default async function HomePage() {
             <h1 className="inline-block bg-taupe-300 text-black px-4 py-1.5 text-xs sm:text-sm font-semibold tracking-[4px] uppercase">
               Coleção Verão 2027
             </h1>
-            <p className="text-neutral-500 text-[11px] sm:text-xs tracking-[1px] uppercase mt-2">
-              Monte sua seleção de favoritos para que a consultora oriente você
-              e reserve suas peças no WhatsApp
+            <p className="text-neutral-500 text-[11px] sm:text-xs tracking-[1px] uppercase mt-2 max-w-2xl mx-auto leading-relaxed">
+              Selecione os modelos do seu interesse, para que a consultora verifique a disponibilidade de cores e tamanhos
             </p>
           </div>
 
